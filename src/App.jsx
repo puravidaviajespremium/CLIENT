@@ -23,6 +23,7 @@ function App() {
       <h1>Pura Vida Viajes Premium</h1>
       <h3 className="read-the-docs"> Aqui comienza la aventura!!!! </h3>
       <h2>Hola que hace!</h2>
+      <h2>julian 404!</h2>
       <p>Cambios hechos por Camila...</p>
 
     </>
