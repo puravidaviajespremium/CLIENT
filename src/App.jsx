@@ -18,7 +18,7 @@ function App() {
       <h1>Pura Vida Viajes Premium</h1>
       <h3 className="read-the-docs"> Aqui comienza la aventura!!!! </h3>
       <h2>Hola que hace!</h2>
-      <h2>Este cambio corresponde a la rama practice/melodi. Verificando push en rama developer. Intento 2 jajajaja</h2>
+      <h2>Este cambio corresponde a la rama practice/melodi. Verificando push en rama developer. Intento 2</h2>
     </>
   )
 }
