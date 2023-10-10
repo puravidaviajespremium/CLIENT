@@ -15,7 +15,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Pura Vida Viajes Premium</h1>
+      <h1>Pura Vida Viajes Premium!!</h1>
       <h3 className="read-the-docs"> Aqui comienza la aventura del PF!!!! </h3> 
     </>
   )
