@@ -15,12 +15,21 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
+      <h1>Pura Vida Viajes Premium!!</h1>
+      <h3 className="read-the-docs"> Aqui comienza la aventura del PF!!!! </h3> 
+
       <h1>Pura Vida Viajes Premium</h1>
       <h3 className="read-the-docs"> Aqui comienza la aventura!!!! </h3>
       <h2>Hola que hace!</h2>
-      <h2>Este cambio corresponde a la rama practice/melodi. Verificando push en rama developer. Intento 2</h2>
+
+
+
+
     </>
   )
 }
+
+//Practicando el GITFlow
 
 export default App
