@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
+
 
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
         </a>
       </div>
       <h1>Pura Vida Viajes Premium</h1>
-      <h3 className="read-the-docs"> Aqui comienza la aventura!!!! </h3>
+      <h3 className="read-the-docs"> Aqui comienza la aventura!!!!! </h3>
     </>
   )
 }
