@@ -23,7 +23,7 @@ function App() {
       <h1>Pura Vida Viajes Premium</h1>
       <h3 className="read-the-docs"> Aqui comienza la aventura!!!! </h3>
       <h2>Hola que hace!</h2>
-      <p>Cambios hechos por Cami...</p>
+      <p>Cambios hechos por Camila...</p>
 
     </>
   )
@@ -31,5 +31,6 @@ function App() {
 
 //Practicando el GITFlow
 // Hola que hace!
+//Cambiando cosas
 
 export default App
