@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
-import NavBar from ""
+import Header from "../../components/Header/Header";
+import styles from "./Home.module.css"
 
 function Home() {
     return (
-        <div>
+        <>
             <div>
-                <NavBar />
-                <h1>Comience su viaje con nosotros.</h1>
-                <p>Destinos de Ensueño. Experiencias inolvidables...</p>
+                <Header />
             </div>
-        </div>
+        </>
     )
 }
 
