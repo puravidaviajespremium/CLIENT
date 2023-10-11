@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+
+import Header from "../../components/Header/Header";
+import styles from "./Home.module.css"
 import NavBar from "../../components/NavBar/NavBar"
 import Footer from "../../components/Footer/Footer";
 
 function Home() {
     return (
-        <div>
+        <>
             <div>
-                <NavBar />
-                <h1>Comience su viaje con nosotros.</h1>
-                <p>Destinos de Ensueño. Experiencias inolvidables...</p>
+                <Header />
             </div>
             <div>
                 <h2>Body</h2>
@@ -16,7 +16,7 @@ function Home() {
             <div>
                 <Footer/>
             </div>
-        </div>
+        </>
     )
 }
 

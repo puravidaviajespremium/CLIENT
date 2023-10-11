@@ -1,0 +1,67 @@
+.mobileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.mobileHeader span {
+    height: 3.125rem;
+    width: 3.125rem;
+}
+
+.titleNB {
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.mobileMenuCont {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    background-color: gray;
+    color: white;
+}
+
+.mobileMenuCont li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    font-size: 25px;
+}
+
+.headerDesk {
+    display: none;
+}
+
+/* Tablet */
+@media (min-width:768px) {
+}
+
+/* Desktop */
+@media (min-width:992px) {
+    .mobileHeader {
+        display: none;
+    }
+
+    .headerDesk {
+        display: flex;
+        padding: 32px 80px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .deskMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+}
+
+/* Large-desktop */
+@media (min-width:1200px) {}

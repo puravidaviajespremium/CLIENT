@@ -1,0 +1,30 @@
+.headerCont {
+    /* background-color: gray; */
+}
+
+.slogan {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.slogan h1 {
+    margin-bottom: 0.1rem;
+    font-weight: 400;
+}
+
+.slogan p {
+    font-size: 1.25rem;
+}
+
+@media (min-width:992px) {
+    .slogan {
+        display: flex;
+        padding-left: 9rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+}
