@@ -3,6 +3,7 @@ import { useState } from "react"
 import styles from "./NavBar.module.css"
 import { AiOutlineMenu } from 'react-icons/ai'
 
+
 function NavBar() {
     const [toggleMobMenu, setToggleMobMenu] = useState(false);
     const [toggleUserMenu, setToggleUserMenu] = useState(false)
