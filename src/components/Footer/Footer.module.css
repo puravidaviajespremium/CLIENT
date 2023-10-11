@@ -1,0 +1,17 @@
+.divFooter{
+  display: flex;
+  flex-direction: row;
+  text-align: justify;
+  gap: 15px;
+  padding: 10px;
+  background-color: rgb(255, 183, 0);
+  color: rgb(48, 48, 48)
+}
+
+p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
