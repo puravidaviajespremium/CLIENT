@@ -1,20 +1,24 @@
 .headerCont {
-    /* background-color: gray; */
+    background-color: var(--secondary-color);
 }
 
 .slogan {
     margin-top: 3rem;
-    font-size: 1.4rem;
     text-align: left;
+    font-size: 1.4rem;
 }
 
 .slogan h1 {
+    color: var(--color-white);
+    font-family: var(--primary-font);
     margin-bottom: 0.1rem;
     font-weight: 400;
+    padding: 6rem 1.5rem 0.5rem;
 }
 
 .slogan p {
     font-size: 1.25rem;
+    padding: 0.5rem 1.5rem 4rem;
 }
 
 @media (min-width:992px) {
