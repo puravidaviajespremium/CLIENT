@@ -5,17 +5,21 @@
   text-align: center;
   width: auto;
   color: var(--color-white);
-  flex-wrap: wrap;
-  padding: 10px;   
+  flex-wrap: wrap;   
 }
 
 .divfooter{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: justify;
   font-family: var(--primary-font);
   padding-bottom: 10px;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.imgLogo{
+  width: 120px;
+  margin-bottom: 1.5rem;
 }
 
 .divSecciones{
@@ -28,13 +32,11 @@
 .divRedes {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 15px
 }
 
-.imgLogo {
-  width: 200px;
-  height: 200px;
-}
+
 
 p {
     color: var(--color-white);
@@ -53,27 +55,39 @@ a{
 
 
 /* TABLET */
-/* @media (min-width: 768px) {
-
-} */
-
-/* DESKTOP */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .divfooter{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  } 
+
+  .divFooter{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
   }
-  
+
+
+  .divRedes{
+    justify-content: left;
+  }
+
+  .imgLogo{
+    margin-bottom: 0;
+  }
+
 }
 
-/* DESKTOP LARGE */
-@media (min-width: 1200px) {
-  .divfooter{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+/* DESKTOP */
+
+@media(min-width: 992px){
+
   
 }
 
