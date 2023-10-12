@@ -22,40 +22,42 @@ function NavBar() {
 
             {/* DESKTOP */}
             <header className={styles.headerDesk}>
-                <h1 className={styles.titleNB}>PURA VIDA VIAJES</h1>
+                <img className={styles.imgLogo} src='/logo-empresa_2.png' alt="" />
 
                 <nav className={styles.deskMenu}>
-                    <Link to="/home">Home</Link>
+                    <Link to="/">Home</Link>
                     <Link to="/destinos">Destinos</Link>
                     <Link to="/contacto">Contacto</Link>
                 </nav>
 
                 <div>
-                    <span onClick={toggleUMenu}>
+                    <span className={styles.userIcon} onClick={toggleUMenu}>
                         <AiOutlineUser />
                     </span>
-
-                    <nav className={styles.userMenu}>
-                        <ul>
-                            <li>Sign in</li>
-                        </ul>
-                    </nav>
+                    <div className={styles.contUM}>
+                        <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
+                            <ul>
+                                <Link to="/register"><li>Sign in</li></Link>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </header>
 
 
+
             {/* MOBILE */}
             <header className={styles.mobileHeader}>
-                <h1 className={styles.titleNB}>PURA VIDA VIAJES</h1>
+                <img className={styles.imgLogo} src='/logo-empresa_2.png' alt="" />
 
                 <div>
                     <span className={styles.menuIcon} onClick={toggleMobileMenu}>
                         {toggleMobMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
                     </span>
 
-                    <nav className={toggleMobMenu ? styles.mobileMenuContActive : styles.mobileMenuCont}>
+                    <nav className={`${styles.mobileMenuCont}  ${toggleMobMenu && styles.mobileMenuContActive}`}>
                         <ul>
-                            <Link to="/home"><li>Home</li></Link>
+                            <Link to="/"><li>Home</li></Link>
                             <Link to="/destinos"><li>Destinos</li></Link>
                             <Link to="/contacto"><li>Contacto</li></Link>
                             <Link to="/SingIn"><li>Sign in</li></Link>
