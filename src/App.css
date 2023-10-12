@@ -5,9 +5,10 @@
 }
 
 #root{
-  --primary-font: 'Ubuntu';
-  --secondary-font: 'Montserrat';
+  --primary-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
   --primary-color: #F4AE3F;
+  --secondary-color: #172432;
   --color-gray: #F1F2F2;
   --color-black : #000000;
   --color-white : #FFFFFF;
