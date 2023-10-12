@@ -1,13 +1,12 @@
 .mobileHeader {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1rem;
 }
 
-.mobileHeader span {
-    height: 3.125rem;
-    width: 3.125rem;
+.menuIcon {
+    font-size: 1.5rem;
 }
 
 .titleNB {
@@ -17,21 +16,51 @@
 }
 
 .mobileMenuCont {
-    position: absolute;
-    left: 0;
-    height: 100%;
+    position: fixed;
+    left: 100%;
+    top: 1;
     width: 100%;
-    padding: 25px;
+    height: 100%;
     background-color: gray;
     color: white;
+    overflow: hidden;
+    transition: left 0.3s;
+}
+
+.mobileMenuContActive {
+    position: fixed;
+    left: 0;
+    top: 1;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    color: white;
+    overflow: hidden;
+    transition: left 0.3s;
 }
 
 .mobileMenuCont li {
-    display: flex;
-    flex-direction: column;
+    list-style: none;
+    margin-right: 1rem;
     text-align: center;
-    padding: 2rem;
-    font-size: 25px;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+
+.mobileMenuContActive li {
+    list-style: none;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+
+.mobileMenuCont a {
+    text-decoration: none;
+}
+
+.mobileMenuContActive a {
+    text-decoration: none;
 }
 
 .headerDesk {
@@ -56,10 +85,7 @@
     }
 
     .deskMenu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
+
     }
 }
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import styles from "./NavBar.module.css"
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineClose, AiOutlineUser } from 'react-icons/ai'
 
 
 function NavBar() {
@@ -13,7 +13,7 @@ function NavBar() {
     }
 
     const toggleUMenu = () => {
-        setToggleUserMenu(!setToggleUserMenu)
+        setToggleUserMenu(!toggleUserMenu)
     }
 
     return (
@@ -31,17 +31,15 @@ function NavBar() {
                 </nav>
 
                 <div>
-                    <button >Search</button>
-                    <button onClick={toggleUMenu}>user</button>
-                    {
-                        toggleUserMenu && <nav>
-                            <ul>
-                                <li>SingIn</li>
-                                <li>LogIn</li>
-                                <li>LogOut</li>
-                            </ul>
-                        </nav>
-                    }
+                    <span onClick={toggleUMenu}>
+                        <AiOutlineUser />
+                    </span>
+
+                    <nav className={styles.userMenu}>
+                        <ul>
+                            <li>Sign in</li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
 
@@ -49,15 +47,20 @@ function NavBar() {
             {/* MOBILE */}
             <header className={styles.mobileHeader}>
                 <h1 className={styles.titleNB}>PURA VIDA VIAJES</h1>
+
                 <div>
-                    <span className={styles.menuIcon} onClick={toggleMobileMenu}><AiOutlineMenu /></span>
-                    {
-                        toggleMobMenu && <nav className={styles.mobileMenuCont}>
+                    <span className={styles.menuIcon} onClick={toggleMobileMenu}>
+                        {toggleMobMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
+                    </span>
+
+                    <nav className={toggleMobMenu ? styles.mobileMenuContActive : styles.mobileMenuCont}>
+                        <ul>
                             <Link to="/home"><li>Home</li></Link>
                             <Link to="/destinos"><li>Destinos</li></Link>
                             <Link to="/contacto"><li>Contacto</li></Link>
-                        </nav>
-                    }
+                            <Link to="/SingIn"><li>Sign in</li></Link>
+                        </ul>
+                    </nav>
                 </div>
             </header>
 
