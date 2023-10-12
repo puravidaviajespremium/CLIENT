@@ -1,17 +1,79 @@
-.divFooter{
+.divFooter {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  text-align: center;
+  width: auto;
+  color: var(--color-white);
+  flex-wrap: wrap;
+  padding: 10px;   
+}
+
+.divfooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  font-family: var(--primary-font);
+  padding-bottom: 10px;
+}
+
+.divSecciones{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  
+}
+
+.divRedes {
   display: flex;
   flex-direction: row;
-  text-align: justify;
-  gap: 15px;
-  padding: 10px;
-  background-color: rgb(255, 183, 0);
-  color: rgb(48, 48, 48)
+  justify-content: space-evenly;
+}
+
+.imgLogo {
+  width: 200px;
+  height: 200px;
 }
 
 p {
-    color: black;
+    color: var(--color-white);
     font-weight: normal;
     font-size: 14px;
+    width: auto;
+    height: auto;
+    margin:0;
+    font-family: var(--secondary-font);
 }
 
+a{
+  width: auto;
+  height: auto;
+}
+
+
+/* TABLET */
+/* @media (min-width: 768px) {
+
+} */
+
+/* DESKTOP */
+@media (min-width: 992px) {
+  .divfooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1200px) {
+  .divfooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+}
 
