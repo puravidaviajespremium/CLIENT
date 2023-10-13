@@ -5,7 +5,7 @@
   text-align: center;
   width: auto;
   color: var(--color-white);
-  flex-wrap: wrap;   
+  flex-wrap: wrap;
 }
 
 .divfooter{
@@ -22,10 +22,11 @@
   margin-bottom: 1.5rem;
 }
 
-.divSecciones{
+.divSections{
   display: flex;
   flex-direction: column;
   height: auto;
+  margin-bottom: 20px;
   
 }
 
@@ -38,10 +39,11 @@
 
 
 
-p {
+.divFooter p {
     color: var(--color-white);
     font-weight: normal;
     font-size: 14px;
+    padding: 5px;
     width: auto;
     height: auto;
     margin:0;

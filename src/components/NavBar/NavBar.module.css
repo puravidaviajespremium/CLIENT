@@ -1,42 +1,41 @@
 .mobileHeader {
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    height: 70px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--secondary-color); ;
+}
+
+.imgLogo {
+    width: 7.5rem;
 }
 
 .menuIcon {
     font-size: 1.5rem;
-}
-
-.titleNB {
-    font-size: 1.25rem;
-    font-weight: 400;
-    text-align: left;
+    align-items: center;
+    color: var(--color-white);
 }
 
 .mobileMenuCont {
     position: fixed;
-    left: 100%;
+    z-index: 100;
     top: 1;
+    left: 100%;
     width: 100%;
     height: 100%;
-    background-color: gray;
-    color: white;
-    overflow: hidden;
     transition: left 0.3s;
+    overflow: hidden;
+    color: white;
+    background-color: var(--secondary-color);
 }
 
 .mobileMenuContActive {
-    position: fixed;
     left: 0;
-    top: 1;
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    color: white;
-    overflow: hidden;
-    transition: left 0.3s;
 }
 
 .mobileMenuCont li {
@@ -47,20 +46,10 @@
     padding: 2rem 0;
 }
 
-.mobileMenuContActive li {
-    list-style: none;
-    margin-right: 1rem;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 2rem 0;
-}
-
 .mobileMenuCont a {
     text-decoration: none;
-}
-
-.mobileMenuContActive a {
-    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--primary-font);
 }
 
 .headerDesk {
@@ -68,8 +57,7 @@
 }
 
 /* Tablet */
-@media (min-width:768px) {
-}
+@media (min-width:768px) {}
 
 /* Desktop */
 @media (min-width:992px) {
@@ -84,8 +72,63 @@
         align-items: center;
     }
 
-    .deskMenu {
+    .imgLogo {
+        width: 10rem;
+    }
 
+    .deskMenu {
+        margin-right: 15rem;
+    }
+
+    .deskMenu a {
+        padding: 0 2rem;
+        font-family: var(--primary-font);
+        color: var(--color-white);
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .contUM{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .userIcon {
+        font-size: 2.2rem;
+        color: var(--color-white);
+    }
+
+    .userMenu {
+        position: absolute;
+        top: 1;
+        width: 4rem;
+        height: 0;
+        overflow: hidden;
+        transition: 0.3s;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        border-radius: 0.5rem;
+    }
+
+    .userMenuActive {
+        width: 6rem;
+        height: 3rem;
+    }
+
+    .userMenu li {
+        list-style: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+    }
+
+    .userMenu a {
+        text-decoration: none;
+        color: var(--color-black);
+        font-family: var(--primary-font);
     }
 }
 
