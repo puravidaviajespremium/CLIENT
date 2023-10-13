@@ -55,13 +55,6 @@ select{
   border: 1px solid var(--primary-color);
 }
 
-.btnSecondary{
-  padding: 0.6rem 2rem;
-  background-color: var(--color-white);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-}
-
 /*LARGE DESKTOP*/
 @media (min-width: 1200px){
     .container{

@@ -21,7 +21,7 @@ const Detail = () => {
 
     return (
         <>
-            <div className={`${styles.divDetail} container`}>
+            <div className={styles.divDetail}>
                 <div className={styles.divInicio}>
                     <img className={styles.imageInicio} src={paisDetail.imageInicio} alt="" />
                     <div className={styles.divDescription}>
@@ -32,12 +32,12 @@ const Detail = () => {
 
                         <div className={styles.divButton}>
                             <button className={`${styles.buttonDetail} btnPrimary btn`}> CONTACTO </button>
-                            <button className={`${styles.buttonDetail} btnSecondary btn`}> EXPERTO </button>
+                            <button className={`${styles.buttonDetail} btnPrimary btn`}> EXPERTO </button>
                         </div>
                     </div>
                 </div>
 
-                <div className={styles.Experiencies}>
+                <div className={`${styles.Experiencies} container`}>
                     <h2>Experiencias más populares</h2>
                     <hr />
                     <p>Explora una forma diferente de viajar</p>
@@ -45,10 +45,12 @@ const Detail = () => {
                     <div className={styles.divExperiencies}>
 
                         {paisDetail.experience.map((experiencia, index) => (
-                            <div key={index} className={styles.divImageDescription}>
+                            <div key={index} className={styles.divImageDescription} >
                                 <img className={styles.imageExperiencia} src={experiencia.image} alt={experiencia.name} />
-                                <h4>{experiencia.name.toUpperCase()}</h4>
-                                <p>{experiencia.description}</p>
+                                <div className={styles.textDescription}>
+                                    <h4>{experiencia.name.toUpperCase()}</h4>
+                                    <p>{experiencia.description}</p>
+                                </div>
                             </div>
                         ))}
 
