@@ -1,0 +1,71 @@
+/* Mobile First */
+.container {
+    width: 70vw;
+    margin: 0 auto;
+    position: relative;
+}
+
+.faqSection {
+border-radius: 10px; 
+transition: border-color 0.3s ease-in-out;
+padding: 10px;
+border: 1px solid #767E86;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.faqSection h3 {
+  font-size: 20px;
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.faqSection ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.faqSection li {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: 18px;
+}
+
+.faqSection li p {
+    font-family: var(--secondary-font);
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+.faqSection:hover {
+border-color: var(--primary-color);
+}
+
+.icon {
+    float: right;
+    font-size: 20px;
+    margin-top: 3px;
+    margin-right: 5px;
+    transition: transform 0.3s ease-in-out;
+    color: #F4AE3F;
+}
+
+
+/* Media Query para Tablet (768px) */
+@media (min-width: 768px) {
+  .faqSection h3 {
+    font-size: 24px;
+  }
+}
+
+/* Media Query para Desktop (992px) */
+@media (min-width: 992px) {
+
+}
+
+/* Media Query para Large Desktop (1200px) */
+@media (min-width: 1200px) {
+}
