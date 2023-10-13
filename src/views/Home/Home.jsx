@@ -1,5 +1,3 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.css"
 
 import Encabezado from "../../components/Encabezado/Encabezado";
@@ -50,24 +48,12 @@ const countries = [
 
 function Home() {
     return (
-        <>
-            <Header />
-
-            <main>Body</main>
-
-            <Footer />
-            <main className={styles.main}>
-                <section className="container">
-                    <Encabezado
-                        title ='Destinos destacados'
-                        subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
-                    <Carrusel
-                        data = {countries}
-                    />
-                </section>
-            </main>
-            <Footer/>
-        </>
+        <section className={`${styles.sectionCarrusel} container`}>
+            <Encabezado
+                title ='Destinos destacados'
+                subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
+            <Carrusel data = {countries} />
+        </section>
     )
 }
 

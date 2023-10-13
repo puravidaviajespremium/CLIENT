@@ -1,19 +1,20 @@
 .containerSlider{
-    margin: 2rem 0;
+    margin-top: 2rem;
 }
 
 .swiper-pagination{
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    margin-top: 2rem;
 }
 .swiper-pagination-bullet{
     display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.6rem;
+    height: 0.6rem;
     border-radius: 50%;
     background-color: var(--secondary-color);
     margin: 0 0.2rem;
+    cursor: pointer;
 }
 
 .swiper-pagination-bullet-active{
