@@ -10,6 +10,7 @@
   --primary-color: #F4AE3F;
   --secondary-color: #172432;
   --color-gray: #F1F2F2;
+  --color-silver: #767E86;
   --color-black : #000000;
   --color-white : #FFFFFF;
   
@@ -52,13 +53,6 @@ select{
   padding: 0.6rem 2rem;
   background-color: var(--primary-color);
   color: #fff;
-  border: 1px solid var(--primary-color);
-}
-
-.btnSecondary{
-  padding: 0.6rem 2rem;
-  background-color: var(--color-white);
-  color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
 
