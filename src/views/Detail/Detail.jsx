@@ -2,28 +2,27 @@ import React from 'react';
 import styles from "./Detail.module.css"
 import {BsFillGeoAltFill } from "react-icons/bs";
 import Footer from '../../components/Footer/Footer.jsx'
+import Encabezado from '../../components/Encabezado/Encabezado';
 
 const Detail = () => {
 
     const paisDetail = {
         name: 'Costa Rica',
         description: 'Es un país de América Central con una geografía accidentada, que incluye bosques tropicales y costas en el Caribe y el Pacífico. Aunque su capital, San José, es hogar de instituciones culturales, como el Museo del Oro Precolombino, Costa Rica es conocida por sus playas, sus volcanes y su biodiversidad',
-        imageInicio: '/images/image_Detail.jpg',
+        imagenPais: 'https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200',
         experience: [
-            { name: 'Surf', description:'Embárcate en una aventura extrema surcando las olas más desafiantes y emocionantes de toda América Latina', image: '/images/surf.jpg'},
-            { name: 'Trekking', description:'Sumérgete en la experiencia del trekking como nunca antes, conectando con la belleza salvaje de la región', image: '/images/trekking.jpg'},
-            { name: 'Canotaje', description:'Vive tu experiencia extrema, descendiendo por los ríos  más salvajes de toda latinoamérica', image: '/images/canotaje.jpg'},        
-            { name: 'Buceo', description:'Descubre la vida marina en su estado más puro y vive una experiencia emocionante', image: '/images/buceo.jpg'},
+            { name: 'Parque Nacional Tortuguero', description:'Es uno de los principales iconos turísticos de Costa Rica debido a que se reconoce internacionalmente por proteger la playa de anidación de tortugas verdes más importante del hemisferio occidental.', image: 'https://images.pexels.com/photos/3661926/pexels-photo-3661926.jpeg?auto=compress&cs=tinysrgb&w=600'},
+            { name: 'Playa Manuel Antonio', description:'Esta playa de arena blanca forma parte del Parque Nacional Manuel Antonio. Podrá disfrutar de un hermoso sitio de arena blanca, agua cristalina y árboles que dan sombra en la orilla.', image: 'https://images.pexels.com/photos/13501101/pexels-photo-13501101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},
+            { name: 'Cataratas de la Fortuna', description:'Se esconde un pedacito de naturaleza, de oro verde, la que le da el sustento a nuestra comunidad y nos hace sentir orgullosos por su belleza, la Catarata Río Fortuna', image: 'https://images.pexels.com/photos/14580735/pexels-photo-14580735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},        
+            { name: 'Cahuita National Park', description:'Ideal para actividades acuáticas, como el esnórquel, alberga uno de los mayores arrecifes coralinos de la costa caribeña y el más importante de Costa Rica.', image: 'https://images.pexels.com/photos/3324590/pexels-photo-3324590.jpeg?auto=compress&cs=tinysrgb&w=600'},
         ]
-    
-    
     }
 
     return (
         <>
             <div className={styles.divDetail}>
                 <div className={styles.divInicio}>
-                    <img className={styles.imageInicio} src={paisDetail.imageInicio} alt="" />
+                    <img className={styles.imagenPais} src={paisDetail.imagenPais} alt="" />
                     <div className={styles.divDescription}>
                         <div className={styles.divText}>
                             <h2> <BsFillGeoAltFill/> {paisDetail.name.toUpperCase()}</h2>
@@ -38,9 +37,7 @@ const Detail = () => {
                 </div>
 
                 <div className={`${styles.Experiencies} container`}>
-                    <h2>Experiencias más populares</h2>
-                    <hr />
-                    <p>Explora una forma diferente de viajar</p>
+                <Encabezado title="Destinos más populares" subtitle="Explora una forma diferente de viajar" />
 
                     <div className={styles.divExperiencies}>
 
