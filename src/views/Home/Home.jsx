@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import styles from "./Home.module.css"
 import NavBar from "../../components/NavBar/NavBar"
 import Footer from "../../components/Footer/Footer";
+import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 
 const countries = [
@@ -52,16 +53,17 @@ function Home() {
     return (
         <>
             <Header />
-            
-            <main>Body</main>
-            <Carrusel
-                data = {countries}
-                title ='Destinos destacados'
-                subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'
-            />
-
+            <main className={styles.main}>
+                <section className="container">
+                    <Encabezado
+                        title ='Destinos destacados'
+                        subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
+                    <Carrusel
+                        data = {countries}
+                    />
+                </section>
+            </main>
             <Footer/>
-            
         </>
     )
 }
