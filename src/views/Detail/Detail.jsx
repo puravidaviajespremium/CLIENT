@@ -9,7 +9,7 @@ const Detail = () => {
     const paisDetail = {
         name: 'Costa Rica',
         description: 'Es un país de América Central con una geografía accidentada, que incluye bosques tropicales y costas en el Caribe y el Pacífico. Aunque su capital, San José, es hogar de instituciones culturales, como el Museo del Oro Precolombino, Costa Rica es conocida por sus playas, sus volcanes y su biodiversidad',
-        imagenPais: 'https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        imagenPais: 'https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1920',
         experience: [
             { name: 'Parque Nacional Tortuguero', description:'Es uno de los principales iconos turísticos de Costa Rica debido a que se reconoce internacionalmente por proteger la playa de anidación de tortugas verdes más importante del hemisferio occidental.', image: 'https://images.pexels.com/photos/3661926/pexels-photo-3661926.jpeg?auto=compress&cs=tinysrgb&w=600'},
             { name: 'Playa Manuel Antonio', description:'Esta playa de arena blanca forma parte del Parque Nacional Manuel Antonio. Podrá disfrutar de un hermoso sitio de arena blanca, agua cristalina y árboles que dan sombra en la orilla.', image: 'https://images.pexels.com/photos/13501101/pexels-photo-13501101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},

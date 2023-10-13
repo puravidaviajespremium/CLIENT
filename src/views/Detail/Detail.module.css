@@ -27,6 +27,7 @@
 .imagenPais {
     width: 100%;
     height: 400px;
+    object-fit: cover;
 }
 
 .divButton {
@@ -152,12 +153,10 @@ hr {
     .divDescription {
         display: flex;
         flex-direction: row;
-        padding: 30px;
-        width: 600px;
+        padding: 2rem;
+        width: 80%;
         align-items: center;
-        bottom: 20px;  
-        gap: 50px;
-        margin-bottom: 30px;
+        gap: 30px;
     }
 
     .divDescription h2{
@@ -177,11 +176,11 @@ hr {
     .divExperiencies {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        margin-bottom: 200px;
     }
 
     .divImageDescription {
-        position: relative;
         width: 300px;
         height: 400px; 
     }
@@ -193,19 +192,10 @@ hr {
     }
 
     .textDescription{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(0, 0, 0, 0.6);
-        position: absolute;
         width: 100%; 
-        border-radius: 5px;
-        top: 0;
         left: 0; 
-        bottom: 0;
-        color: var(--primary-color);
     }
+    
     
     .textDescription p{
         color: var(--color-white); 
@@ -221,9 +211,7 @@ hr {
 /* DESKTOP */
 @media(min-width: 992px){
     .divImageDescription {
-        position: relative;
-        width: 350px; /* Aumenta el ancho de la descripción */
-        height: 460px; /* Ajusta automáticamente la altura */
+        width: 400px; 
     }
     
     .imageExperiencia {
@@ -231,6 +219,14 @@ hr {
         height: 100%; 
         object-fit: cover; 
     }
+
+    .divDescription {
+        padding: 3rem;
+        width: 70%;
+        gap: 40px;
+    }
+
+    
 }
 
 /* DESKTOP LARGE */
@@ -241,6 +237,17 @@ hr {
 
     .imagenPais{
         object-fit: cover;
+    }
+
+    .divDescription {
+        padding: 3rem;
+        width: 70%;
+        gap: 40px;
+    }
+
+    .divImageDescription {
+        width: 450px; 
+        height: 500px;
     }
 }
 
