@@ -1,8 +1,7 @@
-
 import Header from "../../components/Header/Header";
-import styles from "./Home.module.css"
-import NavBar from "../../components/NavBar/NavBar"
 import Footer from "../../components/Footer/Footer";
+import styles from "./Home.module.css"
+
 import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 
@@ -53,6 +52,10 @@ function Home() {
     return (
         <>
             <Header />
+
+            <main>Body</main>
+
+            <Footer />
             <main className={styles.main}>
                 <section className="container">
                     <Encabezado
