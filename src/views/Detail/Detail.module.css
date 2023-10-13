@@ -24,7 +24,7 @@
     height: auto;
 }
 
-.imageInicio {
+.imagenPais {
     width: 100%;
     height: 400px;
 }
@@ -149,19 +149,13 @@ hr {
         padding-bottom: 0;
     }
 
-    .imageInicio{
-        width: 100%;
-    }
-
     .divDescription {
         display: flex;
         flex-direction: row;
         padding: 30px;
         width: 600px;
-        height: 300px;
         align-items: center;
         bottom: 20px;  
-        text-align: left;
         gap: 50px;
         margin-bottom: 30px;
     }
@@ -176,13 +170,6 @@ hr {
     }
    
 
-    .divButton {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        margin-top: 16px;      
-    }
-
     .buttonDetail{
         margin: 10px;
     }
@@ -191,14 +178,12 @@ hr {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr); 
-        grid-auto-rows: 200px; 
-        gap: 30px; 
     }
 
     .divImageDescription {
         position: relative;
         width: 300px;
-        height: 300px; 
+        height: 400px; 
     }
     
     .imageExperiencia {
@@ -237,8 +222,8 @@ hr {
 @media(min-width: 992px){
     .divImageDescription {
         position: relative;
-        width: 400px; /* Aumenta el ancho de la descripción */
-        height: 400px; /* Ajusta automáticamente la altura */
+        width: 350px; /* Aumenta el ancho de la descripción */
+        height: 460px; /* Ajusta automáticamente la altura */
     }
     
     .imageExperiencia {
@@ -251,7 +236,11 @@ hr {
 /* DESKTOP LARGE */
 @media(min-width: 1200px){
     .divExperiencies {
-        gap: 50px; 
+        gap: 30px; 
+    }
+
+    .imagenPais{
+        object-fit: cover;
     }
 }
 
