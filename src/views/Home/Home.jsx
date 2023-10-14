@@ -2,6 +2,7 @@ import styles from "./Home.module.css"
 
 import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
+import Information from "../../components/Information/Information";
 
 const countries = [
     {
@@ -53,6 +54,8 @@ function Home() {
                 title ='Destinos destacados'
                 subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
             <Carrusel data = {countries} />
+            <Information/>
+            
         </section>
     )
 }
