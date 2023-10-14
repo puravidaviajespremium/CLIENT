@@ -1,5 +1,4 @@
 import styles from "./Faqs.module.css";
-import Footer from "../../components/Footer/Footer";
 import Encabezado from "../../components/Encabezado/Encabezado";
 import sections from "./FaqsList";
 
@@ -23,7 +22,6 @@ const Faqs = () => {
   };
 
   return (
-     
     <div className={styles.container}>
         <Encabezado
           title="Preguntas Frecuentes"
@@ -56,7 +54,6 @@ const Faqs = () => {
           </div>
         ))}
     </div>
-   
   );
 };
 

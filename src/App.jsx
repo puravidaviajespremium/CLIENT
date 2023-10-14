@@ -5,6 +5,7 @@ import Home from './views/Home/Home'
 import Detail from './views/Detail/Detail'
 import Faqs from './views/FAQs/Faqs'
 import Contact from './views/Contact/Contact'
+import Destinations from './views/Destinations/Destinations'
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path='/faqs' element={<Faqs />} />
             <Route path='/detalle' element={<Detail/>} />
             <Route path='/contacto' element={<Contact/>}/>
+            <Route path='/destinos' element={<Destinations />} />
         </Routes>
       </main>
       <Footer />
@@ -24,8 +26,5 @@ function App() {
   )
 }
 
-//Practicando el GITFlow
-//Hola que hace!
-//Cambiando cosas
 
 export default App
