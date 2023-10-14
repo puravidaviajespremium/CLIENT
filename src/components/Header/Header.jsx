@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { AiOutlineMenu, AiOutlineClose, AiOutlineUser } from 'react-icons/ai'
-import { LuSearch } from 'react-icons/lu'
+import { BsSearch, BsFillPersonFill, BsList, BsXLg } from "react-icons/bs"
 import styles from "./Header.module.css"
 
 
@@ -26,8 +25,9 @@ function Header() {
         <header className={styles.headerCont}>
             <div className={`${styles.headerCont} container`}>
 
-
-                <img className={styles.imgLogo} src='/images/logo-empresa_2.png' alt="" />
+                <Link to="/">
+                    <img className={styles.imgLogo} src='/images/logo-empresa_2.png' alt="" />
+                </Link>
 
                 <nav className={styles.deskMenu}>
                     <Link to="/">Home</Link>
@@ -35,21 +35,25 @@ function Header() {
                     <Link to="/contacto">Contacto</Link>
                 </nav>
 
-
-
                 <div className={styles.menus} >
                     <div >
                         <span className={styles.searchIcon} onClick={toggleInput}>
-                            <LuSearch />
+                            <BsSearch />
                         </span>
-                    {/* <div>
-                        <input type="text" placeholder="Buscar pais"/>
-                    </div> */}
 
+                        <div className={`${styles.searchSection} ${toggleSearch && styles.searchSectionActive}`}>
+                            <div>
+                                <input type="text" placeholder="Buscar pais" />
+                                <li>Resultado de busqueda</li>
+                                <li>Resultado de busqueda</li>
+                                <li>Resultado de busqueda</li>
+                            </div>
+                        </div>
                     </div>
+
                     {/* DESKTOP */}
                     <span className={styles.userIcon} onClick={toggleUMenu}>
-                        <AiOutlineUser />
+                        <BsFillPersonFill />
                     </span>
                     <div className={styles.desktopHeader}>
                         <div className={styles.contUM}>
@@ -65,7 +69,7 @@ function Header() {
                     {/* MOBILE */}
                     <div className={styles.mobileHeader}>
                         <span className={styles.burgerIcon} onClick={toggleMobileMenu}>
-                            {toggleMobMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
+                            {toggleMobMenu ? <BsXLg /> : <BsList />}
                         </span>
 
                         <nav className={`${styles.mobileMenuCont}  ${toggleMobMenu && styles.mobileMenuContActive}`}>
