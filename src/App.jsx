@@ -1,20 +1,30 @@
 import { Route, Routes } from 'react-router-dom'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Home from './views/Home/Home'
+import Detail from './views/Detail/Detail'
+import Faqs from './views/FAQs/Faqs'
+import Contact from './views/Contact/Contact'
+import Destinations from './views/Destinations/Destinations'
 import './App.css'
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path='/home' element={<Home />} />
-      </Routes>
-
+      <Header />
+      <main className='main'>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/faqs' element={<Faqs />} />
+            <Route path='/detalle' element={<Detail/>} />
+            <Route path='/contacto' element={<Contact/>}/>
+            <Route path='/destinos' element={<Destinations />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   )
 }
 
-//Practicando el GITFlow
-//Hola que hace!
-//Cambiando cosas
 
 export default App

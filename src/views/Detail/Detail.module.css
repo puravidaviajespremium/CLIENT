@@ -1,0 +1,255 @@
+
+.divDetail{
+    font-family: var(--primary-font);
+    text-align: center;
+    background-color: rgb(241, 242, 242);
+}
+
+.divDetail p {
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    font-size: small;
+}
+
+.divDetail path{
+    color: var(--primary-color);
+}
+
+.divInicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.imagenPais {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.divButton {
+    display: flex;
+    flex-direction: column;
+    align-items:center;       
+}
+
+.buttonDetail {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: .2s;
+    width: 130px;
+}
+
+.buttonDetail:hover{
+    background-color: var(--color-white);
+    color: var(--primary-color);
+}
+
+.divDescription {
+    background-color: var(--color-white);
+    padding: 16px;
+    width: 280px;
+    height: 300px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 40px; 
+    left: auto; 
+    top: 200px;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+    text-align: left;
+}
+
+.Experiencies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    text-align: center;
+    top: 130px;
+}
+
+
+.divExperiencies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.divExperiencies h2{
+    margin-bottom: 0;
+}
+
+hr {
+    width: 150px;
+    border-color: var(--primary-color);
+    border: bolder ;
+    margin-bottom: 10px;
+}
+
+
+.divImageDescription {
+    position: relative;
+    width: 300px;
+    height: 200px; 
+  
+}
+
+.imageExperiencia {
+    width: 90%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.textDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.6);
+    position: absolute;
+    width: 90%; 
+    border-radius: 5px;
+    top: 0;
+    left: 15px; 
+    transform: translateX(0);
+    bottom: 0;
+    color: var(--primary-color);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.divImageDescription:hover .textDescription {
+    left:15px;
+    opacity: 1;
+}
+
+.textDescription p{
+    color: var(--color-white); 
+    width: 80%;  
+}
+
+
+/* TABLET */
+@media(min-width: 768px){
+    .divDetail p{
+        font-size: medium;
+    }
+
+    .divDetail{
+        padding-bottom: 0;
+    }
+
+    .divDescription {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem;
+        width: 80%;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .divDescription h2{
+        margin-bottom: 30px;
+    }
+
+    .Experiencies{
+        top:180px;
+        padding: 0;
+    }
+   
+
+    .buttonDetail{
+        margin: 10px;
+    }
+
+    .divExperiencies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr); 
+        margin-bottom: 200px;
+    }
+
+    .divImageDescription {
+        width: 300px;
+        height: 400px; 
+    }
+    
+    .imageExperiencia {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+
+    .textDescription{
+        width: 100%; 
+        left: 0; 
+    }
+    
+    
+    .textDescription p{
+        color: var(--color-white); 
+        width: 90%;          
+    }
+    .divImageDescription:hover .textDescription {
+        left:0px;
+        opacity: 1;
+    }
+    
+}
+
+/* DESKTOP */
+@media(min-width: 992px){
+    .divImageDescription {
+        width: 400px; 
+    }
+    
+    .imageExperiencia {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+
+    .divDescription {
+        padding: 3rem;
+        width: 70%;
+        gap: 40px;
+    }
+
+    
+}
+
+/* DESKTOP LARGE */
+@media(min-width: 1200px){
+    .divExperiencies {
+        gap: 30px; 
+    }
+
+    .imagenPais{
+        object-fit: cover;
+    }
+
+    .divDescription {
+        padding: 3rem;
+        width: 70%;
+        gap: 40px;
+    }
+
+    .divImageDescription {
+        width: 450px; 
+        height: 500px;
+    }
+}
+
+
+

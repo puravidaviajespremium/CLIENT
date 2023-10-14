@@ -1,0 +1,91 @@
+.divInformation{
+    background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-size: cover;
+    width: 100%;
+}
+
+.divInformation p {
+    color: var( --color-gray);
+}
+
+.divValues{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.divValues path{
+    color: var(--primary-color);
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 140px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 0%, 0.3);
+    font-family: var(--secondary-font);
+    font-size: small;    
+    border: solid 1px var(--primary-color);
+    padding: 5px;
+}
+
+.values p{
+    text-align: center;
+    width: 80%;
+    color: var( --color-gray);
+}
+
+.values h3{
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+
+/* TABLET */
+@media(min-width: 768px){
+    .divValues{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap:15px;
+        align-items: center;
+    }
+    
+    .values{
+        width: 200px;
+        height: 220px;
+    }
+    
+    .values img{
+        width: 200px;
+    }
+
+}
+
+
+/* DESKTOP */
+@media(min-width: 992px){        
+    .values{
+        margin: 10px;
+        width: 260px; 
+        height: 200px;       
+    }
+}
+
+
+/* DESKTOP LARGE */
+@media(min-width: 1200px){  
+   
+}
+
+
