@@ -13,19 +13,19 @@ const Information = () => {
                     />
                     <div className={styles.divValues}>
                         <div className={styles.values}>
-                            <BsFillKeyFill/>
+                            <BsFillKeyFill size={'20'}/>
                             <h3>SEGURIDAD</h3>
                             <p>Ofrecemos la posibilidad de gestionar un fideicomiso estatal para que su dinero queda resguardado.</p>
                         </div>
 
                         <div className={styles.values}>
-                            <BsPuzzleFill/>   
+                            <BsPuzzleFill size={'20'}/>   
                             <h3>FLEXIBILIDAD</h3>
                             <p> Para su tranquilidad no cobramos multas si deja de pagar y su dinero nunca se pierde , puede mandar a alguien mas.</p>
                         </div>
 
                         <div className={styles.values}>
-                            <BsFillPencilFill/>
+                            <BsFillPencilFill size={'20'}/>
                             <h3>PERSONALIZACIÓN</h3>
                             <p>Planificamos un viaje a su medida, donde lo que nos impulsa es el deseo de que tenga la mejor experiencia túristica de su vida.</p>
                         </div>

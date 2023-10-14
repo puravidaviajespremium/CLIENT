@@ -118,24 +118,35 @@
         height: 240px;       
     }
 
-    
-.divInformation p {
-    color: var(--color-gray); 
-    font-size: medium;
-}
+    .divInformation p {
+        color: var(--color-gray); 
+        font-size: medium;
+    }
+
 }
 
 
 /* DESKTOP LARGE */
 @media(min-width: 1200px){  
+
+    .divInformation p{
+        font-size: large;
+    }
+
+    .divInformation h3{
+        font-size: large;
+    }
+
+    
+
     .divValues{
         margin-top: 80px;
     }
     
     .values{
         margin: 10px;
-        width: 260px; 
-        height: 200px;       
+        width: 300px; 
+        height: 250px;       
     }
 }
 
