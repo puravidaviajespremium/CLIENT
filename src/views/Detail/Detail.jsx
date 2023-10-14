@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Detail.module.css";
 import { BsFillGeoAltFill } from "react-icons/bs";
 import Encabezado from "../../components/Encabezado/Encabezado";
