@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+import useClickOutside from "../Hooks/useClickOutside.js"
 import { Link } from "react-router-dom"
 import { BsSearch, BsFillPersonFill, BsList, BsXLg } from "react-icons/bs"
 import styles from "./Header.module.css"
@@ -8,6 +9,11 @@ function Header() {
     const [toggleMobMenu, setToggleMobMenu] = useState(false);
     const [toggleUserMenu, setToggleUserMenu] = useState(false);
     const [toggleSearch, setToggleSearch] = useState(false);
+    const [fillColor, setFillColor] = useState(false)
+
+    // Refs
+    const searchSection = useRef(null);
+    const userSection = useRef(null);
 
     const toggleMobileMenu = () => {
         setToggleMobMenu(!toggleMobMenu)
@@ -21,9 +27,31 @@ function Header() {
         setToggleSearch(!toggleSearch)
     }
 
+    useClickOutside(searchSection, () => {
+        setToggleSearch(false)
+    })
+
+    useClickOutside(userSection, () => {
+        setToggleUserMenu(false)
+    })
+
+    const navBarControl = () => {
+        window.scrollY > 100 ?
+            setFillColor(true) :
+            setFillColor(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', navBarControl)
+        return () => {
+            window.removeEventListener('scroll', navBarControl)
+        }
+    }, [])
+
     return (
-        <header className={styles.headerCont}>
+        <header className={`${styles.headerContBackGround} ${fillColor && styles.headerContBackGroundScroll}`}>
             <div className={`${styles.headerCont} container`}>
+
 
                 <Link to="/">
                     <img className={styles.imgLogo} src='/images/logo-empresa_2.png' alt="" />
@@ -36,7 +64,7 @@ function Header() {
                 </nav>
 
                 <div className={styles.menus} >
-                    <div >
+                    <div ref={searchSection}>
                         <span className={styles.searchIcon} onClick={toggleInput}>
                             <BsSearch />
                         </span>
@@ -52,16 +80,20 @@ function Header() {
                     </div>
 
                     {/* DESKTOP */}
-                    <span className={styles.userIcon} onClick={toggleUMenu}>
-                        <BsFillPersonFill />
-                    </span>
-                    <div className={styles.desktopHeader}>
-                        <div className={styles.contUM}>
-                            <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
-                                <ul>
-                                    <Link to="/register"><li>Sign in</li></Link>
-                                </ul>
-                            </nav>
+                    <div ref={userSection}>
+                        <span className={styles.userIcon} onClick={toggleUMenu}>
+                            <BsFillPersonFill />
+                            <br />
+                            {/* <h1>Log in</h1> */}
+                        </span>
+                        <div className={styles.desktopHeader}>
+                            <div className={styles.contUM}>
+                                <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
+                                    <ul>
+                                        <Link to="/register"><li>Sign in</li></Link>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
 

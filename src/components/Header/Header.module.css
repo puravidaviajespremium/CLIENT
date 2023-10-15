@@ -1,14 +1,25 @@
 .headerCont {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    height: 70px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+}
+
+.headerContBackGround {
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 81.77%);
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    height: 70px;
+    width: 100%;
+    transition: 0.6s;
+}
+
+.headerContBackGroundScroll {
+    background: none;
     background-color: var(--secondary-color);
+    transition-timing-function: ease-out;
+    transition: step-end;
 }
 
 .imgLogo {
@@ -56,13 +67,13 @@
     align-items: center;
 }
 
-.burgerIcon{
+.burgerIcon {
     font-size: 1.3rem;
     color: var(--color-white);
 
 }
 
-.searchIcon{
+.searchIcon {
     font-size: 1rem;
     color: var(--color-white);
     margin-right: 1rem;
@@ -119,8 +130,25 @@
         display: none;
     }
 
-    .burgerIcon{
-        display: none;    
+    .burgerIcon {
+        display: none;
+    }
+
+    .headerContBackGround {
+        background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 81.77%);
+        top: 0;
+        position: fixed;
+        z-index: 100;
+        height: 70px;
+        width: 100%;
+        transition: 0.6s;
+    }
+
+    .headerContBackGroundScroll {
+        background: none;
+        background-color: var(--secondary-color);
+        transition-timing-function: ease-out;
+        transition: step-end;
     }
 
     /* Mostrar */
@@ -133,6 +161,10 @@
         align-items: center;
     }
 
+    .deskMenu a{
+        line-height: normal;
+    }
+
     .imgLogo {
         width: 7.5rem;
     }
@@ -140,11 +172,11 @@
     /* Iconos */
     .userIcon {
         font-size: 1.5rem;
-    }    
-    
-    .searchIcon{
+    }
+
+    .searchIcon {
         font-size: 1.1rem;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     .menus {
@@ -169,6 +201,12 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        text-decoration: none; 
+        transition: box-shadow 0.2s; 
+    }
+    
+    .deskMenu a:hover {
+        box-shadow: 0 1px 0 0 var(--primary-color); 
     }
 
     .contUM {
