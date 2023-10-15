@@ -16,3 +16,4 @@ export const countriesSlice = createSlice({
 
 export const { getCountries } = countriesSlice.actions;     //  <--- Agregar más actions aquí!!!
 export default countriesSlice.reducer;
+

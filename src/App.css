@@ -9,11 +9,12 @@
   --secondary-font: 'Roboto', sans-serif;
   --primary-color: #F4AE3F;
   --secondary-color: #172432;
-  --color-gray: #F1F2F2;
+  --color-ligthGrey: #FAFAFA;
+  --color-shadow: #F2F2F2;
   --color-silver: #767E86;
   --color-black : #000000;
   --color-white : #FFFFFF;
-  
+  --color-error: #cf2424;
 }
 
 a{
@@ -39,11 +40,19 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 input,
-select{
+select,
+textarea{
     padding: 12px 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-family: var(--secondary-font);
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
 }
 
 .btn{
@@ -54,6 +63,7 @@ select{
 }
 
 .btnPrimary{
+  font-weight: 600;
   padding: 0.6rem 2rem;
   background-color: var(--primary-color);
   color: #fff;

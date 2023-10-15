@@ -49,14 +49,16 @@ const countries = [
 
 function Home() {
     return (
-        <section className={`${styles.sectionCarrusel} container`}>
-            <Encabezado
-                title ='Destinos destacados'
-                subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
-            <Carrusel data = {countries} />
+        <>
+            <section className={`${styles.sectionCarrusel} container`}>
+                <Encabezado
+                    title ='Destinos destacados'
+                    subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
+                <Carrusel data = {countries} />
+                
+            </section>
             <Information/>
-            
-        </section>
+        </>
     )
 }
 
