@@ -1,11 +1,11 @@
 .containerItem {
-    box-shadow: 0 2px 4px 2px var(--color-gray);
+    box-shadow: 1px 1px 5px 2px var(--color-shadow);
     border-radius: 5px;
 }
 
 .headeritem img{
     width: 100%;
-    height: 230px;
+    height: 200px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 }
@@ -70,6 +70,6 @@
 /*Large Desktop*/
 @media (min-width: 1200px){
     .headeritem img{
-        height: 220px;
+        height: 200px;
     }
 }
