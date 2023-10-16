@@ -95,7 +95,7 @@ function Header() {
                             <div>
                                 <input type="text" placeholder="Buscar pais" onChange={handleSearchInput} />
                                 {searchValue && findCountries?.map((country) => (
-                                    <Link to="DETALLE">
+                                    <Link to={`detalle/${country.id}`}>
                                         <li key={country.id}>{country.name}</li>
                                     </Link>
                                 ))}
@@ -108,7 +108,6 @@ function Header() {
                         <span className={styles.userIcon} onClick={toggleUMenu}>
                             <BsFillPersonFill />
                             <br />
-                            {/* <h1>Log in</h1> */}
                         </span>
                         <div className={styles.desktopHeader}>
                             <div className={styles.contUM}>
