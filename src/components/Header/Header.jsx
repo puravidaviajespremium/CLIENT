@@ -1,15 +1,24 @@
 import { useState, useRef, useEffect } from "react"
+import { useDispatch, useSelector } from 'react-redux'
 import useClickOutside from "../Hooks/useClickOutside.js"
 import { Link } from "react-router-dom"
 import { BsSearch, BsFillPersonFill, BsList, BsXLg } from "react-icons/bs"
+import { getAllCountries, countriesFilter } from "../../redux/actions/countriesActions.js"
 import styles from "./Header.module.css"
 
 
 function Header() {
+    // Estados booleanos
     const [toggleMobMenu, setToggleMobMenu] = useState(false);
     const [toggleUserMenu, setToggleUserMenu] = useState(false);
     const [toggleSearch, setToggleSearch] = useState(false);
-    const [fillColor, setFillColor] = useState(false)
+    const [fillColor, setFillColor] = useState(false) //              <------ Cambia el color de la navbar
+
+    // Estado de busqueda
+    const [searchValue, setSearchValue] = useState('')
+
+    const dispatch = useDispatch()
+    const findCountries = useSelector((state) => state.countries.searchResult)
 
     // Refs
     const searchSection = useRef(null);
@@ -35,6 +44,11 @@ function Header() {
         setToggleUserMenu(false)
     })
 
+    const handleSearchInput = (event) => {
+        const { value } = event.target;
+        setSearchValue(value)
+    }
+
     const navBarControl = () => {
         window.scrollY > 100 ?
             setFillColor(true) :
@@ -47,6 +61,14 @@ function Header() {
             window.removeEventListener('scroll', navBarControl)
         }
     }, [])
+
+    useEffect(() => {
+        dispatch(getAllCountries());
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(countriesFilter(searchValue))
+    }, [searchValue])
 
     return (
         <header className={`${styles.headerContBackGround} ${fillColor && styles.headerContBackGroundScroll}`}>
@@ -71,10 +93,12 @@ function Header() {
 
                         <div className={`${styles.searchSection} ${toggleSearch && styles.searchSectionActive}`}>
                             <div>
-                                <input type="text" placeholder="Buscar pais" />
-                                <li>Resultado de busqueda</li>
-                                <li>Resultado de busqueda</li>
-                                <li>Resultado de busqueda</li>
+                                <input type="text" placeholder="Buscar pais" onChange={handleSearchInput} />
+                                {searchValue && findCountries?.map((country) => (
+                                    <Link to="DETALLE">
+                                        <li key={country.id}>{country.name}</li>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
                     </div>
