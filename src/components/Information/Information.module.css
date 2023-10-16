@@ -1,25 +1,48 @@
-.divInformation{
-    background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1920');
-    margin-top: 50px;
+.divInformation {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+    background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size: cover;
+    background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
     width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    left: 0;
+    margin-bottom: 60px;
 }
 
 .divInformation p {
-    color: var( --color-gray);
+    color: var(--color-gray); 
+    margin: 0;
 }
+
+.divInformation h3{
+    font-size: small;
+    padding: 0;
+    margin: 10px;
+}
+
+.divContenido {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 100vh;
+}
+
 
 .divValues{
     display:flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    position: relative;
+    margin-top: 10px;
 }
 
-.divValues path{
+.values path{
     color: var(--primary-color);
 }
 
@@ -28,20 +51,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 260px;
-    height: 140px;
-    margin-bottom: 20px;
+    width: 270px;
+    height: 130px;
+    padding: 5px;
+    margin-bottom: 10px;
     border-radius: 10px;
     background-color: hsl(0, 0%, 0%, 0.3);
     font-family: var(--secondary-font);
     font-size: small;    
     border: solid 1px var(--primary-color);
-    padding: 5px;
 }
 
 .values p{
     text-align: center;
-    width: 80%;
+    width: 90%;
     color: var( --color-gray);
 }
 
@@ -52,18 +75,28 @@
 
 
 /* TABLET */
-@media(min-width: 768px){
+@media(min-width: 768px){   
+    .divContenido{
+        margin-top: 10px;
+    }
+    
     .divValues{
         display:flex;
         flex-direction: row;
         justify-content: space-around;
-        gap:15px;
-        align-items: center;
+        gap:10px;
+        margin-top: 100px;
+    }
+
+    .divInformation h3{
+        margin: 20px;
+        font-size: medium;
     }
     
     .values{
         width: 200px;
-        height: 220px;
+        height: 250px;
+        justify-content: center;
     }
     
     .values img{
@@ -74,18 +107,47 @@
 
 
 /* DESKTOP */
-@media(min-width: 992px){        
+@media(min-width: 992px){ 
+    .divValues{
+        margin-top: 100px;
+    }
+    
     .values{
         margin: 10px;
-        width: 260px; 
-        height: 200px;       
+        width: 280px; 
+        height: 240px;       
     }
+
+    .divInformation p {
+        color: var(--color-gray); 
+        font-size: medium;
+    }
+
 }
 
 
 /* DESKTOP LARGE */
 @media(min-width: 1200px){  
-   
+
+    .divInformation p{
+        font-size: large;
+    }
+
+    .divInformation h3{
+        font-size: large;
+    }
+
+    
+
+    .divValues{
+        margin-top: 80px;
+    }
+    
+    .values{
+        margin: 10px;
+        width: 300px; 
+        height: 250px;       
+    }
 }
 
 
