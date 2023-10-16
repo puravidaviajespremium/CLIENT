@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
-const ItemCarrusel = ({name, image}) => {
+const ItemCarrusel = ({id, name, image}) => {
     const [toggle, setToggle] = useState(false);
 
     const handleFavorite = () =>{
@@ -19,7 +19,7 @@ const ItemCarrusel = ({name, image}) => {
             </div>
             <div className="bodyItem">
                 <h2 className='nameItem'>{name}</h2>
-                <Link to="/detalle">
+                <Link to={`/detalle/${id}`}> 
                     <div className="btnItem">
                         <BsChevronRight />
                     </div>

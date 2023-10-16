@@ -5,7 +5,7 @@
     align-items: center;
     position: relative;
     padding-top: 40px;
-    background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-image: url('https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size: cover;
     background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
     width: 100%;
@@ -41,6 +41,7 @@
     flex-direction: column;
     width: 80vw;
     height: 100vh;
+    padding-top: 2rem;
 }
 
 .divInformation h1{
