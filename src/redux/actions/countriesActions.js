@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getCountries, getCountryId, searchCountries } from '../slices/countriesSlice';
+import { getCountries, getCountryId, searchCountries, cleanDetail } from '../slices/countriesSlice';
 
 
 export const getAllCountries = () => async (dispatch) => {
@@ -20,6 +20,10 @@ export const getCountryById = (id) => async (dispatch) => {
     }
 }
 
+export const cleanCountryDetail = () => (dispatch) => {
+    dispatch(cleanDetail({}));
+}
+
 export const countriesFilter = (nameValue) => async (dispatch, getState) => {
     try {
         const { countries } = getState();
@@ -31,4 +35,7 @@ export const countriesFilter = (nameValue) => async (dispatch, getState) => {
         console.log(error);
     }
 }
+
+
+
 

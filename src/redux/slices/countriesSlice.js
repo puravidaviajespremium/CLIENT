@@ -20,6 +20,10 @@ export const countriesSlice = createSlice({
         getCountryId: (state, action) => {
             state.detail = action.payload;
         },
+
+        cleanDetail: (state, action) => {
+            state.detail = action.payload
+        },
                                           
         searchCountries: (state, action) => {
             state.searchResult = action.payload;
@@ -29,6 +33,6 @@ export const countriesSlice = createSlice({
 });
 
 
-export const { getCountries, getCountryId, searchCountries  } = countriesSlice.actions;     //  <--- Agregar más actions aquí!!!
+export const { getCountries, getCountryId, searchCountries, cleanDetail  } = countriesSlice.actions;     //  <--- Agregar más actions aquí!!!
 export default countriesSlice.reducer;
 
