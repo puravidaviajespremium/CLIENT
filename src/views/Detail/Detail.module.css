@@ -50,7 +50,8 @@
 }
 
 .divDescription {
-    background-color: var(--color-white);
+    background-color: rgb(255, 255, 255);
+    /* background-color: var(--color-white);  */
     padding: 16px;
     width: 280px;
     height: 300px;

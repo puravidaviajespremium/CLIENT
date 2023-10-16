@@ -12,6 +12,7 @@
     height: 100vh;
     margin-top: 50px;
     left: 0;
+    padding-bottom: 2rem;
     margin-bottom: 60px;
 }
 
@@ -25,8 +26,15 @@
     z-index: 0;
 }
 
+.divInformation h1{
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    color: var(--color-ligthGrey);
+}
+
 .divInformation p {
-    color: var(--color-gray); 
+    color: var(--color-ligthGrey); 
     margin: 0;
 }
 
@@ -42,13 +50,6 @@
     width: 80vw;
     height: 100vh;
     padding-top: 2rem;
-}
-
-.divInformation h1{
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-    color: var(--color-gray);
 }
 
 
@@ -83,7 +84,7 @@
 .values p{
     text-align: center;
     width: 90%;
-    color: var( --color-gray);
+    color: var( --color-ligthGrey);
 }
 
 .values h3{
@@ -121,6 +122,9 @@
         width: 200px;
     }
 
+    .divInformation p {
+        font-size: medium;
+    }
 }
 
 
@@ -135,12 +139,6 @@
         width: 280px; 
         height: 240px;       
     }
-
-    .divInformation p {
-        color: var(--color-gray); 
-        font-size: medium;
-    }
-
 }
 
 

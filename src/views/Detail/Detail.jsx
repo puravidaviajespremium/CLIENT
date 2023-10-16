@@ -1,16 +1,13 @@
 import styles from "./Detail.module.css";
 import { BsFillGeoAltFill } from "react-icons/bs";
 import Encabezado from "../../components/Encabezado/Encabezado";
-import { useParams } from 'react-router-dom';
-import { getCountryById } from '../../redux/actions/countriesActions';
+import { useParams } from "react-router-dom";
+import { getCountryById, cleanCountryDetail } from "../../redux/actions/countriesActions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { Link } from 'react-router-dom'
-
-
+import { Link } from "react-router-dom";
 
 const Detail = () => {
-
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -18,15 +15,20 @@ const Detail = () => {
   const countryId = useSelector((state) => state.countries.detail);
 
   useEffect(() => {
-    dispatch(getCountryById(id))
-}, [dispatch, id])
-
-
+    dispatch(getCountryById(id));
+    return () => {
+      dispatch(cleanCountryDetail());
+    };
+  }, [dispatch, id]);
 
   return (
     <div className={styles.divDetail}>
       <div className={styles.divInicio}>
-        <img className={styles.imagenPais} src={countryId?.image} alt={countryId?.name} />
+        <img
+          className={styles.imagenPais}
+          src={countryId?.image}
+          alt={countryId?.name}
+        />
         <div className={styles.divDescription}>
           <div className={styles.divText}>
             <h2>
@@ -34,16 +36,18 @@ const Detail = () => {
               <BsFillGeoAltFill /> {countryId?.name}
             </h2>
             <p>{countryId?.description}</p>
-            <p><b>Experiencias:</b> {countryId?.experiences} </p>
+            <p>
+              <b>Experiencias:</b> {countryId?.experiences}{" "}
+            </p>
           </div>
 
           <div className={styles.divButton}>
-            <Link to={`/contacto`}> 
+            <Link to={`/contacto`}>
               <button className={`${styles.buttonDetail} btnPrimary btn`}>
                 CONTACTO
-              </button>              
+              </button>
             </Link>
-            <Link to=''>
+            <Link to="">
               <button className={`${styles.buttonDetail} btnPrimary btn`}>
                 EXPERTO
               </button>
