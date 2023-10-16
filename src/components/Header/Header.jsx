@@ -1,13 +1,28 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+import { useDispatch, useSelector } from 'react-redux'
+import useClickOutside from "../Hooks/useClickOutside.js"
 import { Link } from "react-router-dom"
 import { BsSearch, BsFillPersonFill, BsList, BsXLg } from "react-icons/bs"
+import { getAllCountries, countriesFilter } from "../../redux/actions/countriesActions.js"
 import styles from "./Header.module.css"
 
 
 function Header() {
+    // Estados booleanos
     const [toggleMobMenu, setToggleMobMenu] = useState(false);
     const [toggleUserMenu, setToggleUserMenu] = useState(false);
     const [toggleSearch, setToggleSearch] = useState(false);
+    const [fillColor, setFillColor] = useState(false) //              <------ Cambia el color de la navbar
+
+    // Estado de busqueda
+    const [searchValue, setSearchValue] = useState('')
+
+    const dispatch = useDispatch()
+    const findCountries = useSelector((state) => state.countries.searchResult)
+
+    // Refs
+    const searchSection = useRef(null);
+    const userSection = useRef(null);
 
     const toggleMobileMenu = () => {
         setToggleMobMenu(!toggleMobMenu)
@@ -21,9 +36,44 @@ function Header() {
         setToggleSearch(!toggleSearch)
     }
 
+    useClickOutside(searchSection, () => {
+        setToggleSearch(false)
+    })
+
+    useClickOutside(userSection, () => {
+        setToggleUserMenu(false)
+    })
+
+    const handleSearchInput = (event) => {
+        const { value } = event.target;
+        setSearchValue(value)
+    }
+
+    const navBarControl = () => {
+        window.scrollY > 100 ?
+            setFillColor(true) :
+            setFillColor(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', navBarControl)
+        return () => {
+            window.removeEventListener('scroll', navBarControl)
+        }
+    }, [])
+
+    useEffect(() => {
+        dispatch(getAllCountries());
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(countriesFilter(searchValue))
+    }, [searchValue])
+
     return (
-        <header className={styles.headerCont}>
+        <header className={`${styles.headerContBackGround} ${fillColor && styles.headerContBackGroundScroll}`}>
             <div className={`${styles.headerCont} container`}>
+
 
                 <Link to="/">
                     <img className={styles.imgLogo} src='/images/logo-empresa_2.png' alt="" />
@@ -36,32 +86,38 @@ function Header() {
                 </nav>
 
                 <div className={styles.menus} >
-                    <div >
+                    <div ref={searchSection}>
                         <span className={styles.searchIcon} onClick={toggleInput}>
                             <BsSearch />
                         </span>
 
                         <div className={`${styles.searchSection} ${toggleSearch && styles.searchSectionActive}`}>
                             <div>
-                                <input type="text" placeholder="Buscar pais" />
-                                <li>Resultado de busqueda</li>
-                                <li>Resultado de busqueda</li>
-                                <li>Resultado de busqueda</li>
+                                <input type="text" placeholder="Buscar pais" onChange={handleSearchInput} />
+                                {searchValue && findCountries?.map((country) => (
+                                    <Link to="DETALLE">
+                                        <li key={country.id}>{country.name}</li>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
                     </div>
 
                     {/* DESKTOP */}
-                    <span className={styles.userIcon} onClick={toggleUMenu}>
-                        <BsFillPersonFill />
-                    </span>
-                    <div className={styles.desktopHeader}>
-                        <div className={styles.contUM}>
-                            <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
-                                <ul>
-                                    <Link to="/register"><li>Sign in</li></Link>
-                                </ul>
-                            </nav>
+                    <div ref={userSection}>
+                        <span className={styles.userIcon} onClick={toggleUMenu}>
+                            <BsFillPersonFill />
+                            <br />
+                            {/* <h1>Log in</h1> */}
+                        </span>
+                        <div className={styles.desktopHeader}>
+                            <div className={styles.contUM}>
+                                <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
+                                    <ul>
+                                        <Link to="/register"><li>Sign in</li></Link>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
 
