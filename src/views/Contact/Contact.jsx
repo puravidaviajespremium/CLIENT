@@ -5,11 +5,16 @@ import {
   BsInstagram,
   BsFillEnvelopeFill,
   BsHeadset,
-  BsFillExclamationCircleFill
+  BsFillExclamationCircleFill,
+  BsFillInfoCircleFill
 } from "react-icons/bs";
 import validate from "./validate.js";
+import { addClient } from "../../redux/actions/clientsActions";
+import { useDispatch } from 'react-redux';
 
 const Contact = () => {
+  const dispatch = useDispatch();
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -30,6 +35,7 @@ const Contact = () => {
   const handleChange = (event) =>{
     const property = event.target.name;
     const value = event.target.value;
+    
     setForm({...form, [property]:value});
     validate({...form, [property]:value}, property, setErrors, errors);
   }
@@ -51,6 +57,7 @@ const Contact = () => {
   //Enviar datos
   const handleSubmit = (event) => {
      event.preventDefault();
+     dispatch(addClient(form));
      setForm({
         firstName: "",
         lastName: "",
@@ -105,59 +112,73 @@ const Contact = () => {
           <form action="" onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.containerInputs}>
                 <div className={styles.contentInput}>
-                    {/* <label htmlFor="name" className={styles.label}>Nombres:</label> */}
+                  <div className={styles.inputLabel}>
                     <input
-                    type="text"
-                    name="firstName"
-                    onChange={handleChange}
-                    value={form.firstName}
-                    placeholder="Nombres"
+                      id="firstNamr"
+                      type="text"
+                      name="firstName"
+                      onChange={handleChange}
+                      value={form.firstName}
                     />
-                    {errors.firstName && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.firstName}</span>}
+                    <label htmlFor="firstName" className={`${styles.label} ${form.firstName && styles.efectoLabel}`}>Nombres:</label>
+                  </div>
+                  {errors.firstName && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.firstName}</span>}
                 </div>
                 <div className={styles.contentInput}>
-                    {/* <label htmlFor="name" className={styles.label}>Nombres:</label> */}
+                  <div className={styles.inputLabel}>
                     <input
-                    type="text"
-                    name="lastName"
-                    onChange={handleChange}
-                    value={form.lastName}
-                    placeholder="Apellidos"
-                    />
-                    {errors.lastName && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.lastName}</span>}
+                      id="lastName"
+                      type="text"
+                      name="lastName"
+                      onChange={handleChange}
+                      value={form.lastName}
+                      />
+                    <label htmlFor="lastName" className={`${styles.label} ${form.lastName && styles.efectoLabel}`}>Apellidos:</label>
+                  </div>
+                  {errors.lastName && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.lastName}</span>}
                 </div>
             </div>
             <div className={styles.containerInputs}>
                 <div className={styles.contentInput}>
+                  <div className={styles.inputLabel}>
                     <input
-                    type="text"
-                    name="email"
-                    onChange={handleChange}
-                    value={form.email}
-                    placeholder="Email"
-                    />
-                    {errors.email && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.email}</span>}
+                        id="email"
+                        type="text"
+                        name="email"
+                        onChange={handleChange}
+                        value={form.email}
+                        />
+                    <label htmlFor="email" className={`${styles.label} ${form.email && styles.efectoLabel}`}>Correo electrónico:</label>
+                  </div>
+                  {errors.email && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.email}</span>}
                 </div>
                 <div className={styles.contentInput}>
+                  <div className={styles.inputLabel}>
                     <input
-                    type="text"
-                    name="telephone"
-                    onChange={handleChange}
-                    value={form.telephone}
-                    placeholder="Celular"
-                    />
-                    {errors.telephone && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.telephone}</span>}
+                      id='telephone'
+                      type="text"
+                      name="telephone"
+                      onChange={handleChange}
+                      value={form.telephone}
+                      />
+                    <label htmlFor="telephone" className={`${styles.label} ${form.telephone && styles.efectoLabel}`}>Celular:</label>
+                  </div>
+                  {(!form.telephone && !errors.telephone) && <span className={styles.information}><BsFillInfoCircleFill/>Ingresa tu código de área del país. Ejem: +51</span>}
+                  {errors.telephone && <span className={styles.error}><BsFillExclamationCircleFill/>{errors.telephone}</span>}
                 </div>
             </div>
             <div className={styles.contentInput}>
+              <div className={styles.inputLabel}>
                 <textarea
-                name="comment"
-                onChange={handleChange}
-                value={form.comment}
-                cols="30"
-                rows="10"
-                placeholder="Comentario"
-                ></textarea>
+                  id='comment'
+                  name="comment"
+                  onChange={handleChange}
+                  value={form.comment}
+                  cols="30"
+                  rows="10"
+                  ></textarea>
+                <label htmlFor="comment" className={`${styles.label} ${form.comment && styles.efectoLabel}`}>Comentario:</label>
+              </div>
             </div>
             <button className={`${styles.btnSubmit} btn btnPrimary`} disabled={
                 btnDisabled() ||
