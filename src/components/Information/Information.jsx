@@ -13,7 +13,7 @@ const Information = () => {
                     />
                     <div className={styles.divValues}>
                         <div className={styles.values}>
-                            <BsFillKeyFill size={'20'}/>
+                            <BsFillKeyFill size={'25'}/>
                             <h3>SEGURIDAD</h3>
                             <p>Ofrecemos la posibilidad de gestionar un fideicomiso estatal para que su dinero queda resguardado.</p>
                         </div>
