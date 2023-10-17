@@ -26,7 +26,7 @@ const Destinations = () => {
         <Encabezado title="Destinos" subtitle="Explore todos nuestros destinos o contacte a un experto por más lugares" />
         <div className={`${styles.containerCard}`}>
           {countries?.map((country) => {
-            return <CountryCard key={country.id} name={country.name} image={country.image} />
+            return <CountryCard id={country.id} key={country.id} name={country.name} image={country.image} />
           })}
         </div>
       </div>
