@@ -54,6 +54,12 @@ function Header() {
         setSearchValue(value)
     }
 
+    //
+    const handleCountryClick = () => {
+        setSearchValue('');
+    }
+    //
+
     const navBarControl = () => {
         window.scrollY > 100 ?
             setFillColor(true) :
