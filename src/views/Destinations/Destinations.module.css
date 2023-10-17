@@ -1,0 +1,15 @@
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.containerCard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
