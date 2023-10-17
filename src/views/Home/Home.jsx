@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 import Information from "../../components/Information/Information";
+import Promocion from "../../components/Promocion/Promocion";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
 
@@ -28,6 +29,7 @@ function Home() {
                 
             </section>
             <Information/>
+            <Promocion/>
         </>
     )
 }
