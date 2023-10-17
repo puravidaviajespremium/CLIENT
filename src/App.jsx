@@ -6,6 +6,7 @@ import Detail from './views/Detail/Detail'
 import Faqs from './views/FAQs/Faqs'
 import Contact from './views/Contact/Contact'
 import Destinations from './views/Destinations/Destinations'
+import Login from './views/Login/Login'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/detalle/:id' element={<Detail/>} />
             <Route path='/contacto' element={<Contact/>}/>
             <Route path='/destinos' element={<Destinations />} />
+            <Route path='/signin' element={<Login />} />
         </Routes>
       </main>
       <Footer />

@@ -16,9 +16,9 @@ function Header() {
 
     // Estado de busqueda
     const [searchValue, setSearchValue] = useState('')
+    const findCountries = useSelector((state) => state.countries.searchResult)
 
     const dispatch = useDispatch()
-    const findCountries = useSelector((state) => state.countries.searchResult)
 
     // Refs
     const searchSection = useRef(null);
@@ -113,7 +113,7 @@ function Header() {
                             <div className={styles.contUM}>
                                 <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
                                     <ul>
-                                        <Link to="/register"><li>Sign in</li></Link>
+                                        <Link to="/signin"><li>Sign in</li></Link>
                                     </ul>
                                 </nav>
                             </div>
@@ -132,7 +132,7 @@ function Header() {
                                 <Link to="/"><li>Home</li></Link>
                                 <Link to="/destinos"><li>Destinos</li></Link>
                                 <Link to="/contacto"><li>Contacto</li></Link>
-                                <Link to="/SingIn"><li>Sign in</li></Link>
+                                <Link to="/signin"><li>Sign in</li></Link>
                             </ul>
                         </nav>
                     </div>
