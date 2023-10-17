@@ -4,15 +4,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 40px;
     background-image: url('https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size: cover;
     background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin-top: 50px;
     left: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     margin-bottom: 60px;
 }
 
@@ -20,7 +19,7 @@
     content: '';
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     background: rgb(0, 0, 0, 0.5);
     z-index: 0;
@@ -48,7 +47,7 @@
     display: flex;
     flex-direction: column;
     width: 80vw;
-    height: 100vh;
+    height: 100%;
     padding-top: 2rem;
 }
 
@@ -94,7 +93,12 @@
 
 
 /* TABLET */
-@media(min-width: 768px){   
+@media(min-width: 768px){  
+    .divInformation {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+    } 
+
     .divContenido{
         margin-top: 10px;
     }
@@ -144,6 +148,10 @@
 
 /* DESKTOP LARGE */
 @media(min-width: 1200px){  
+    .divInformation {
+        padding-top: 2.5rem;
+        padding-bottom: 5rem;
+    }
 
     .divInformation p{
         font-size: large;
