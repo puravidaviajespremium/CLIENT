@@ -34,10 +34,10 @@ const CarruselContainer = ({ data }) => {
         },
       }}
       modules={[Pagination]}
-      className="containerSlider"
+      className="containerCarrusel"
     >
       {data.map((element, index) => (
-        <SwiperSlide key={index} className="slider">
+        <SwiperSlide key={index} className="carrusel">
           <ItemCarrusel id={element.id} name={element.name} image={element.image} />
         </SwiperSlide>
       ))}

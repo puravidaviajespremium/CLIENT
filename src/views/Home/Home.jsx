@@ -5,6 +5,7 @@ import Carrusel from '../../components/Carrusel/CarruselContainer';
 import Information from "../../components/Information/Information";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
+import Slider from "../../components/Slider/Slider";
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
     
     return (
         <>
+            <Slider/>
             <section className={`${styles.sectionCarrusel} container`}>
                 <Encabezado
                     title ='Destinos destacados'

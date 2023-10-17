@@ -188,7 +188,7 @@
     }
 
     .deskMenu a {
-        padding: 0 2rem;
+        margin: 0 2rem;
         font-family: var(--primary-font);
         color: var(--color-white);
         font-size: 1rem;
@@ -197,10 +197,11 @@
         line-height: normal;
         text-decoration: none; 
         transition: box-shadow 0.2s; 
+        position: relative;
+        padding-bottom: 0.1rem;
     }
-    
     .deskMenu a:hover {
-        box-shadow: 0 1px 0 0 var(--primary-color); 
+        box-shadow: 0 1.5px 0 0 var(--primary-color); 
     }
 
     .contUM {

@@ -106,11 +106,12 @@ textarea{
         background-image: url('./images/contactBanner.jpg');
         background-position: center;
         background-size: cover;
-        padding-top: 4rem;
-        height: 260px;
+        padding-top: 7.5rem;
+        height: 310px;
         position: relative;
         display: flex;
         justify-content: center;
+        margin-top: -70px;
     }
     .contactBanner::before{
         content: '';
