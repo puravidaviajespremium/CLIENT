@@ -30,13 +30,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-/* .label{
-    font-family: var(--primary-font);
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    color: var(--color-silver);
-} */
 .contentInput,
 .containerInputs{
     width: 100%;
@@ -44,6 +37,29 @@
 
 .contentInput{
     margin-bottom: 1.5rem;
+}
+.contentInput input,
+.contentInput textarea{
+    padding: 1.5rem 0.5rem 0.5rem 1rem;
+}
+
+.inputLabel{
+    position: relative;
+}
+.label{
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+    display: inline-block;
+    color: var(--color-silver);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+.inputLabel:focus-within label,
+.efectoLabel{
+    font-size: 0.7rem;
+    top: 7px;
+    transition: .2s all;
 }
 
 textarea{
@@ -59,14 +75,20 @@ textarea{
     cursor: not-allowed;
 }
 
-.error{
+.error,
+.information{
     font-size: 0.75rem;
     font-family: var(--secondary-font);
-    color: var(--color-error);
     margin-top: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+}
+.information{
+    color: var(--color-silver);
+}
+.error{
+    color: var(--color-error);
 }
 
 /*Tablet*/
@@ -84,11 +106,12 @@ textarea{
         background-image: url('./images/contactBanner.jpg');
         background-position: center;
         background-size: cover;
-        padding-top: 4rem;
-        height: 260px;
+        padding-top: 7.5rem;
+        height: 310px;
         position: relative;
         display: flex;
         justify-content: center;
+        margin-top: -70px;
     }
     .contactBanner::before{
         content: '';

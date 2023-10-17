@@ -11,6 +11,7 @@ import "swiper/css";
 import { Pagination } from "swiper/modules";
 
 const CarruselContainer = ({ data }) => {
+
   return (
     <Swiper
       slidesPerView={1}
@@ -33,11 +34,11 @@ const CarruselContainer = ({ data }) => {
         },
       }}
       modules={[Pagination]}
-      className="containerSlider"
+      className="containerCarrusel"
     >
       {data.map((element, index) => (
-        <SwiperSlide key={index} className="slider">
-          <ItemCarrusel name={element.name} image={element.image} />
+        <SwiperSlide key={index} className="carrusel">
+          <ItemCarrusel id={element.id} name={element.name} image={element.image} />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -5,18 +5,36 @@
     align-items: center;
     position: relative;
     padding-top: 40px;
-    background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-image: url('https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size: cover;
     background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
     width: 100%;
     height: 100vh;
     margin-top: 50px;
     left: 0;
+    padding-bottom: 2rem;
     margin-bottom: 60px;
 }
 
+.divInformation::before{
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.divInformation h1{
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    color: var(--color-ligthGrey);
+}
+
 .divInformation p {
-    color: var(--color-gray); 
+    color: var(--color-ligthGrey); 
     margin: 0;
 }
 
@@ -31,6 +49,7 @@
     flex-direction: column;
     width: 80vw;
     height: 100vh;
+    padding-top: 2rem;
 }
 
 
@@ -65,7 +84,7 @@
 .values p{
     text-align: center;
     width: 90%;
-    color: var( --color-gray);
+    color: var( --color-ligthGrey);
 }
 
 .values h3{
@@ -103,6 +122,9 @@
         width: 200px;
     }
 
+    .divInformation p {
+        font-size: medium;
+    }
 }
 
 
@@ -117,12 +139,6 @@
         width: 280px; 
         height: 240px;       
     }
-
-    .divInformation p {
-        color: var(--color-gray); 
-        font-size: medium;
-    }
-
 }
 
 
