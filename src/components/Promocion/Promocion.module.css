@@ -1,11 +1,10 @@
 .divPromocion{
     background-image: url('https://evro.themescare.com/Ordan/assets/image/discount.jpg');
-    margin-bottom: 100px;
     width: 100%;
     height: 550px;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 100px;
+    margin-top: 50px;
     position: relative;
     text-align: center;
 }
