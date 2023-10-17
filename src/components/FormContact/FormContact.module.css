@@ -1,0 +1,104 @@
+.contactContainer{
+    padding: 3rem 0;
+    background-color: var(--color-ligthGrey);
+}
+.containerform{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    box-shadow: 1px 1px 6px 8px var(--color-shadow);
+    padding: 2rem 1.5rem;
+    border-radius: 5px;
+}
+.containerform p{
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+}
+
+.titleForm{
+    font-size: 1.75rem;
+    font-family: var(--primary-font);
+}
+.form{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contentInput,
+.containerInputs{
+    width: 100%;
+}
+
+.contentInput{
+    margin-bottom: 1.5rem;
+}
+.contentInput input,
+.contentInput textarea{
+    padding: 1.5rem 0.5rem 0.5rem 1rem;
+}
+
+.inputLabel{
+    position: relative;
+}
+.label{
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+    display: inline-block;
+    color: var(--color-silver);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+.inputLabel:focus-within label,
+.efectoLabel{
+    font-size: 0.7rem;
+    top: 7px;
+    transition: .2s all;
+}
+
+textarea{
+    resize: none;
+}
+.btnSubmit{
+    height: 40px;
+    max-width: 150px;
+}
+.btnSubmit:disabled{
+    background: var(--color-error);
+    border: 1px solid var(--color-error);
+    cursor: not-allowed;
+}
+
+.error,
+.information{
+    font-size: 0.75rem;
+    font-family: var(--secondary-font);
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.information{
+    color: var(--color-silver);
+}
+.error{
+    color: var(--color-error);
+}
+
+/*Tablet*/
+@media (min-width: 768px){
+    .containerInputs{
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 992px){
+    .contactContainer{
+        padding: 8rem 0 5rem;
+    }
+}
+
