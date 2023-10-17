@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import FormContact from "../../components/FormContact/FormContact";
+
 const Detail = () => {
   const { id } = useParams();
 
@@ -78,6 +80,7 @@ const Detail = () => {
           ))}
         </div>
       </div>
+      <FormContact/>
     </div>
   );
 };
