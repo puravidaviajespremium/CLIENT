@@ -24,7 +24,7 @@ const CountryCard = ({ name, image, id }) => {
 
             <div className={styles.cardBody}>
                 <h3>{name}</h3>
-                <Link to={`/detalle`}>
+                <Link to={`/detalle/${id}`}>
                     <BsFillPatchPlusFill />
                 </Link>
             </div>
