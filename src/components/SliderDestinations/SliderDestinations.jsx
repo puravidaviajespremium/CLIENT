@@ -3,9 +3,8 @@ import styles from './SliderDestinations.module.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Keyboard, Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, Navigation } from 'swiper/modules';
 
 
 const SliderDestinations = () => {
@@ -22,7 +21,7 @@ const SliderDestinations = () => {
                         clickable: true,
                     }}
                     navigation={true}
-                    modules={[Keyboard, Pagination, Navigation]}
+                    modules={[Keyboard, Navigation]}
                     className="mySwiper"
                 >
                     <SwiperSlide >
