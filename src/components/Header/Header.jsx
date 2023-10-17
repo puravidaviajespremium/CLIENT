@@ -49,6 +49,12 @@ function Header() {
         setSearchValue(value)
     }
 
+    //
+    const handleCountryClick = () => {
+        setSearchValue('');
+    }
+    //
+
     const navBarControl = () => {
         window.scrollY > 100 ?
             setFillColor(true) :
@@ -96,7 +102,7 @@ function Header() {
                                 <input type="text" placeholder="Buscar pais" onChange={handleSearchInput} />
                                 {searchValue && findCountries?.map((country) => (
                                     <Link to={`detalle/${country.id}`}>
-                                        <li key={country.id}>{country.name}</li>
+                                        <li onClick={handleCountryClick} key={country.id}>{country.name}</li>
                                     </Link>
                                 ))}
                             </div>
