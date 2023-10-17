@@ -12,4 +12,23 @@
   padding-bottom: 30px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 30px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-family: var(--primary-font);
+  font-weight: 600;
+}
+
+.activePage {
+  color: var(--primary-color); 
+}
+
+.disabled {
+  cursor: not-allowed;
+}
 
