@@ -27,7 +27,6 @@ const Faqs = () => {
           title="Preguntas Frecuentes"
           subtitle="Respuestas a las preguntas más comunes que nuestros clientes se suelen plantear"
         />
-
         {sections.map((section, index) => (
           <div key={index} className={styles.faqSection}>
             <h3 onClick={() => toggleSection(index)}>
