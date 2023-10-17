@@ -9,7 +9,7 @@
 .divDetail p {
     color: var(--secondary-color);
     font-family: var(--secondary-font);
-    font-size: small;
+    font-size: 12px;
 }
 
 .divDetail path{
@@ -26,22 +26,24 @@
 
 .imagenPais {
     width: 100%;
-    height: 400px;
+    height: 600px;
     object-fit: cover;
 }
 
 .divButton {
     display: flex;
     flex-direction: column;
-    align-items:center;       
+    align-items:center;   
 }
 
 .buttonDetail {
     font-family: var(--primary-font);
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: .2s;
     width: 130px;
+    height: auto;
+    font-size: 10px;
 }
 
 .buttonDetail:hover{
@@ -50,19 +52,19 @@
 }
 
 .divDescription {
-    background-color: rgb(255, 255, 255);
-    /* background-color: var(--color-white);  */
+    background-color: rgb(255, 255, 255, 0.8);
     padding: 16px;
     width: 280px;
-    height: 300px;
+    height: 430px;
     border-radius: 15px;
     position: absolute;
     bottom: 40px; 
     left: auto; 
-    top: 200px;
+    top: 150px;
     font-family: var(--secondary-font);
     color: var(--secondary-color);
     text-align: left;
+    padding-bottom: 15px;
 }
 
 .Experiencies {
@@ -72,7 +74,8 @@
     padding-top: 20px;
     padding-bottom: 150px;
     text-align: center;
-    top: 130px;
+    top: 60px;
+    margin: 0;
 }
 
 
@@ -81,21 +84,13 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    margin-top: 30px;
+    margin-top: 10px;
     padding-bottom: 30px;
 }
 
 .divExperiencies h2{
     margin-bottom: 0;
 }
-
-hr {
-    width: 150px;
-    border-color: var(--primary-color);
-    border: bolder ;
-    margin-bottom: 10px;
-}
-
 
 .divImageDescription {
     position: relative;
@@ -137,14 +132,15 @@ hr {
 
 .textDescription p{
     color: var(--color-white); 
-    width: 80%;  
+    width: 80%; 
+    font-size: 10px; 
 }
 
 
 /* TABLET */
 @media(min-width: 768px){
     .divDetail p{
-        font-size: medium;
+        font-size: small;
     }
 
     .divDetail{
@@ -155,7 +151,8 @@ hr {
         display: flex;
         flex-direction: row;
         padding: 2rem;
-        width: 80%;
+        width: 600px;
+        height: 400px;
         align-items: center;
         gap: 30px;
     }
@@ -165,13 +162,16 @@ hr {
     }
 
     .Experiencies{
-        top:180px;
+        top:80px;
         padding: 0;
     }
    
 
     .buttonDetail{
         margin: 10px;
+        width: 160px;
+        height: 50px;
+        font-size: 12px;
     }
 
     .divExperiencies {
@@ -200,7 +200,8 @@ hr {
     
     .textDescription p{
         color: var(--color-white); 
-        width: 90%;          
+        width: 90%;   
+        font-size: 12px;       
     }
     .divImageDescription:hover .textDescription {
         left:0px;
@@ -226,7 +227,6 @@ hr {
         width: 70%;
         gap: 40px;
     }
-
     
 }
 
@@ -242,7 +242,8 @@ hr {
 
     .divDescription {
         padding: 3rem;
-        width: 70%;
+        width: 50%;
+        height: 350px;
         gap: 40px;
     }
 
