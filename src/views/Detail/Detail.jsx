@@ -80,7 +80,6 @@ const Detail = () => {
           ))}
         </div>
       </div>
-      <FormContact/>
     </div>
   );
 };
