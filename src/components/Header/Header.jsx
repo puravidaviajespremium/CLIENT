@@ -36,8 +36,13 @@ function Header() {
         setToggleSearch(!toggleSearch)
     }
 
+    const handleClicSearch = () => {
+        setSearchValue('')
+    }
+
     useClickOutside(searchSection, () => {
         setToggleSearch(false)
+        setSearchValue('')
     })
 
     useClickOutside(userSection, () => {
@@ -99,10 +104,10 @@ function Header() {
 
                         <div className={`${styles.searchSection} ${toggleSearch && styles.searchSectionActive}`}>
                             <div>
-                                <input type="text" placeholder="Buscar pais" onChange={handleSearchInput} />
+                                <input type="text" placeholder="Buscar pais" value={searchValue} onChange={handleSearchInput} />
                                 {searchValue && findCountries?.map((country) => (
                                     <Link to={`detalle/${country.id}`}>
-                                        <li onClick={handleCountryClick} key={country.id}>{country.name}</li>
+                                        <li key={country.id} onClick={handleClicSearch}>{country.name}</li>
                                     </Link>
                                 ))}
                             </div>

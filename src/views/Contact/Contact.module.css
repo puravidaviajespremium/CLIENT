@@ -3,102 +3,7 @@
     display: none;
 }
 
-.contactContainer{
-    padding: 3rem 0;
-    background-color: var(--color-ligthGrey);
-}
-.containerform{
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--color-white);
-    box-shadow: 1px 1px 6px 8px var(--color-shadow);
-    padding: 2rem 1.5rem;
-    border-radius: 5px;
-}
-.containerform p{
-    font-family: var(--secondary-font);
-    font-size: 0.9rem;
-}
 
-.titleForm{
-    font-size: 1.75rem;
-    font-family: var(--primary-font);
-}
-.form{
-    margin-top: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-}
-.contentInput,
-.containerInputs{
-    width: 100%;
-}
-
-.contentInput{
-    margin-bottom: 1.5rem;
-}
-.contentInput input,
-.contentInput textarea{
-    padding: 1.5rem 0.5rem 0.5rem 1rem;
-}
-
-.inputLabel{
-    position: relative;
-}
-.label{
-    font-family: var(--secondary-font);
-    font-size: 0.9rem;
-    display: inline-block;
-    color: var(--color-silver);
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-}
-.inputLabel:focus-within label,
-.efectoLabel{
-    font-size: 0.7rem;
-    top: 7px;
-    transition: .2s all;
-}
-
-textarea{
-    resize: none;
-}
-.btnSubmit{
-    height: 40px;
-    max-width: 150px;
-}
-.btnSubmit:disabled{
-    background: var(--color-error);
-    border: 1px solid var(--color-error);
-    cursor: not-allowed;
-}
-
-.error,
-.information{
-    font-size: 0.75rem;
-    font-family: var(--secondary-font);
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-.information{
-    color: var(--color-silver);
-}
-.error{
-    color: var(--color-error);
-}
-
-/*Tablet*/
-@media (min-width: 768px){
-    .containerInputs{
-        display: flex;
-        justify-content: space-between;
-        gap: 1.5rem;
-    }
-}
 
 /*Desktop*/
 @media (min-width: 992px){
@@ -122,6 +27,20 @@ textarea{
         top: 0;
         background: rgba(15,20,45,0.8);
     }
+    .containerInfo{
+        display: flex;
+        gap: 1rem;
+        position: absolute;
+        bottom: -25%;
+    }
+    .contactInfo{
+        text-align: center;
+        padding: 2rem 0 1rem;
+        width: 250px;
+        border-radius: 5px;
+        background-color: var(--color-white);
+        box-shadow: 1px 1px 2px 1px var(--color-shadow);
+    }
     .titleBanner{
         font-size: 2.25rem;
         font-family: var(--primary-font);
@@ -140,28 +59,15 @@ textarea{
         left: 15%;
         bottom: -10px;
     }
-    .contactContainer{
-        padding: 8rem 0 5rem;
-    }
-    .containerInfo{
-        display: flex;
-        gap: 1rem;
-        position: absolute;
-        bottom: -25%;
-    }
-    .contactInfo{
-        text-align: center;
-        padding: 2rem 0 1rem;
-        width: 250px;
-        border-radius: 5px;
-        background-color: var(--color-white);
-        box-shadow: 1px 1px 2px 1px var(--color-shadow);
-    }
     .icon{
         font-size: 1.5rem;
         color: var(--primary-color);
         margin-bottom: 0.5rem;
     }
+    .social .icon{
+        margin-right: 0.5rem;
+    }
+    
     .info{
         color: var(--secondary-color);
     }
@@ -174,8 +80,4 @@ textarea{
         font-family: var(--secondary-font);
         font-size: 0.85rem;
     }
-    .social .icon{
-        margin-right: 0.5rem;
-    }
-
 }

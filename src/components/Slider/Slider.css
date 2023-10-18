@@ -45,25 +45,30 @@
 
 .titleSlider{
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 1.5rem;
     z-index: 1;
     color: var(--color-white);
+    width: 80%;
 }
 
 .titleSlider h1{
     text-transform: uppercase;
     font-family: var(--primary-font);
     margin-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
 .titleSlider p{
     font-family: var(--secondary-font);
     font-size: 0.8rem;
 }
 
-.btnDestinations{
+.titleSlider .btnDestinations{
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    padding: 0.8rem;
+    color: var(--color-white);
+    font-weight: 700;
 }
 @media (min-width: 992px){
     .mySlider{
@@ -78,17 +83,22 @@
     }
     .titleSlider{
         left: 5%;
+        top: 38%;
     }
     .titleSlider h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .titleSlider p{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
-    .btnDestinations{
+    .titleSlider .btnDestinations{
+        padding: 1rem 1.5rem;
         margin-top: 1.5rem;
         font-size: 1rem;
         transition: .2s all;
+    }
+    .titleSlider .btnDestinations:hover{
+        color: var(--secondary-color);
     }
 }
 
@@ -98,5 +108,8 @@
     }
     .titleSlider{
         left: 10%;
+    }
+    .titleSlider h1{
+        font-size: 3rem;
     }
 }

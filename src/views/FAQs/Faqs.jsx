@@ -1,5 +1,4 @@
 import styles from "./Faqs.module.css";
-import Encabezado from "../../components/Encabezado/Encabezado";
 import sections from "./FaqsList";
 
 import { useState } from "react";
@@ -22,11 +21,11 @@ const Faqs = () => {
   };
 
   return (
+<>
+  <div className={styles.faqsBanner}>
+    <h1 className={styles.titleBanner}>Preguntas Frecuentes</h1>
+  </div>
     <div className={styles.container}>
-        <Encabezado
-          title="Preguntas Frecuentes"
-          subtitle="Respuestas a las preguntas más comunes que nuestros clientes se suelen plantear"
-        />
         {sections.map((section, index) => (
           <div key={index} className={styles.faqSection}>
             <h3 onClick={() => toggleSection(index)}>
@@ -53,6 +52,7 @@ const Faqs = () => {
           </div>
         ))}
     </div>
+    </>
   );
 };
 

@@ -26,7 +26,7 @@ function Home() {
             <section className={`${styles.sectionCarrusel} container`}>
                 <Encabezado
                     title ='Destinos destacados'
-                    subtitle = 'Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.'/>
+                    subtitle = 'Disfruta de estos increíbles destinos llenos de cultura, naturaleza, playas, gastronomia, tradiciones y más.'/>
                 <Carrusel data = {countries} />
                 
             </section>
