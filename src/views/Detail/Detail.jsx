@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 import FormContact from "../../components/FormContact/FormContact";
 
+
 const Detail = () => {
   const { id } = useParams();
 
@@ -34,26 +35,13 @@ const Detail = () => {
         <div className={styles.divDescription}>
           <div className={styles.divText}>
             <h2>
-              {" "}
-              <BsFillGeoAltFill /> {countryId?.name}
+              <BsFillGeoAltFill /> ¿Quiéres conocer {countryId?.name}?
             </h2>
             <p>{countryId?.description}</p>
             <p>
-              <b>Experiencias:</b> {countryId?.experiences}{" "}
+              <b>Experiencias:</b> {countryId?.experiences}
             </p>
-          </div>
 
-          <div className={styles.divButton}>
-            <Link to={`/contacto`}>
-              <button className={`${styles.buttonDetail} btnPrimary btn`}>
-                CONTACTO
-              </button>
-            </Link>
-            <Link to="">
-              <button className={`${styles.buttonDetail} btnPrimary btn`}>
-                EXPERTO
-              </button>
-            </Link>
           </div>
         </div>
       </div>
@@ -62,9 +50,9 @@ const Detail = () => {
         <Encabezado
           title="Destinos más populares"
           subtitle="Explora una forma diferente de viajar"
-        />
+        />     
 
-        <div className={styles.divExperiencies}>
+        <div className={`${styles.divExperiencies} container`}>
           {countryId?.Destinies?.map((destino, index) => (
             <div key={index} className={styles.divImageDescription}>
               <img
@@ -80,6 +68,7 @@ const Detail = () => {
           ))}
         </div>
       </div>
+      <FormContact/>
     </div>
   );
 };
