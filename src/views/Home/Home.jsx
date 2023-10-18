@@ -33,11 +33,6 @@ function Home() {
                 
             </section>
 
-            {/* Los puse aqui para ver */}
-            <PromocionII/>
-            <PromocionIII/>
-
-
             <Information/>
             <Promocion/>
         </>
