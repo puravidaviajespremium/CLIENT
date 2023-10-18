@@ -58,8 +58,9 @@
 }
 
 .btnItem svg{
-    color: var(--color-white);
+    fill: var(--color-white);
 }
+
 
 /*Tablet*/
 @media (min-width: 768px){

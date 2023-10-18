@@ -9,7 +9,6 @@ const ItemCarrusel = ({id, name, image}) => {
         <div className="containerItem">
             <div className="headeritem">
                 <img src={image} alt={name} />
-                
             </div>
             <div className="bodyItem">
                 <h2 className='nameItem'>{name}</h2>
