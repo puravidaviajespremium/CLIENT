@@ -41,7 +41,7 @@ const sections = [
         title: "Servicios y personalización",
         questions: [
             {
-                question: "¿Qué servicios están incluidos en los paquetes de viaje de Pura Vida Viajes Premium?",
+                question: "¿Qué servicios están incluidos en los paquetes de viaje de Pura Vida Viajes?",
                 answer: "Todo nuestro servicio es personalizado, hacemos un propuesta en base a lo que usted desea experimentar, en la que podrá incluir o desestimar los servicios que considere, pero también contamos con 3 paquetes base en caso de que lo requiera."
             },
             {
@@ -75,7 +75,7 @@ const sections = [
         title: "Contacto y soporte al cliente",
         questions: [
             {
-                question: "¿Cómo puedo ponerme en contacto con el equipo de Pura Vida Viajes Premium?",
+                question: "¿Cómo puedo ponerme en contacto con el equipo de Pura Vida Viajes?",
                 answer: "Usted tendra disponible tanto la comunicación directa con el experto de nuestro equipo especializado como todos los medios de comunicación que tiene disponibles la empresa."
             },
             {
@@ -88,7 +88,7 @@ const sections = [
         title: "Documentación y requisitos de viaje",
         questions: [
             {
-                question: "¿Qué documentos necesito para viajar con Pura Vida Viajes Premium?",
+                question: "¿Qué documentos necesito para viajar con Pura Vida Viajes?",
                 answer: "La documentación necesaria varia de acuerdo al destino elegido, pero siempre se le informará de los requisitos necesarios para su viaje al momento de la planificación."
             },
             {

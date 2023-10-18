@@ -1,5 +1,5 @@
 :root {
-    --swiper-theme-color: #172432;
+    --swiper-theme-color: #F4AE3F;
     --swiper-navigation-size: 30px;
 }
 
@@ -84,6 +84,16 @@
         opacity: 1;
     }
 }
+
+element.style {
+    margin-left: 150px;
+    --swiper-navigation-size: 30px;
+}
+
+.swiper-button-prev {
+    margin-left: 150px;
+}
+
 
 @media (min-width: 992px) {
     .destinations .slide {
