@@ -1,0 +1,31 @@
+.errorContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    background-size: cover;
+    margin-top: -70px;
+}
+
+.errorContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 20, 45, 0.8);
+}
+
+.errorMessage {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    font-family: var(--primary-font);
+    z-index: 1;
+}

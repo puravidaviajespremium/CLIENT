@@ -4,6 +4,8 @@ import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 import Information from "../../components/Information/Information";
 import Promocion from "../../components/Promocion/Promocion";
+import PromocionII from "../../components/PromocionII/PromocionII";
+import PromocionIII from "../../components/PromocionIII/PromocionIII";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
 import Slider from "../../components/Slider/Slider";
@@ -30,6 +32,12 @@ function Home() {
                 <Carrusel data = {countries} />
                 
             </section>
+
+            {/* Los puse aqui para ver */}
+            <PromocionII/>
+            <PromocionIII/>
+
+
             <Information/>
             <Promocion/>
         </>
