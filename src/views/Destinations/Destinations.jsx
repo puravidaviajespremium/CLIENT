@@ -7,6 +7,7 @@ import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-ico
 import SliderDestinations from '../../components/SliderDestinations/SliderDestinations';
 import Encabezado from '../../components/Encabezado/Encabezado';
 import CountryCard from '../../components/CountryCard/CountryCard';
+import StepsBanner from '../../components/StepsBanner/StepsBanner';
 import styles from './Destinations.module.css';
 
 
@@ -62,6 +63,8 @@ const Destinations = () => {
         previousClassName={currentPage === 0 ? styles.disabled : ''}
         nextClassName={currentPage === pageCount - 1 ? styles.disabled : ''}
       />
+
+<StepsBanner />
     </>
   );
 };
