@@ -15,7 +15,7 @@
     align-items: center;
     position: relative;
     height: auto;
-    background-color: rgb(0,0 , 0, 0.3);
+    background-color: rgba(0, 0 , 0, 0.5);
     text-align: center;
     color: var(--color-ligthGrey);;
     font-family: var(--secondary-font);
@@ -35,7 +35,7 @@
 }
 
 .divDescription {
-    background-color: rgb(0,0 , 0, 0.4);
+    background-color: rgb(0,0 , 0, 0.5);
     padding: 2rem;
     width: 100%;
     height: 460px;
@@ -45,7 +45,7 @@
 }
 
 .divText{
-    padding-top:100px ;
+    padding-top:130px ;
 }
 
 .divText p {
@@ -58,7 +58,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 150px;
+    padding-bottom: 100px; 
     text-align: center;
     top: 60px;
     margin: 0;
@@ -69,6 +69,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
     margin-top: 20px;
     padding-bottom: 10px;
@@ -125,6 +126,7 @@
 
 /* TABLET */
 @media(min-width: 768px){
+
     
     .divImageDescription:hover {
         transform: translateY(-20px); 
@@ -135,21 +137,19 @@
         opacity: 1;
     }
     .divDetail p{
-        font-size: small;
+        font-size: medium;
+        font-weight: 500;
     }
     .divInicio h2 {
         font-size: 2.5rem;
     }
     
     .divText{
-        padding-top:50px ;
+        padding-top: 4rem;
     }
 
     .divDescription {
-        padding: 5rem;
-        width: 100%;
-        height: 460px;
-        
+        padding: 5rem;        
     }
 
     .divDescription h2{
@@ -171,6 +171,7 @@
     .divImageDescription {
         width: 300px;
         height: 300px; 
+        transition: 0.2s all; /*para que no suba de golpe*/
     }
     
     
@@ -194,7 +195,6 @@
     .divImageDescription:hover .textDescription {
         left:0px;
     }
-    
 }
 
 
@@ -208,6 +208,10 @@
     .divDescription {
         margin-top: -70px;
         height: 530px;
+    }
+
+    .textDescription p{   
+        font-size: 14px;       
     }
 
     .divText {
@@ -237,6 +241,7 @@
     
     .divText {
         margin-top: 40px;
+        padding-top: 6rem;
     }
 
     .divText p {
@@ -246,6 +251,13 @@
     .divExperiencies {
         gap: 30px; 
     }
+
+    .divImageDescription {
+        width: 450px;
+        height: 300px; 
+    }
+
+    
 }
 
 

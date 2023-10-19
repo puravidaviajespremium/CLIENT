@@ -38,9 +38,9 @@ const Detail = () => {
               <BsFillGeoAltFill /> ¿Quiéres conocer {countryId?.name}?
             </h2>
             <p>{countryId?.description}</p>
-            <p>
+            {/* <p>
               <b>Experiencias:</b> {countryId?.experiences}
-            </p>
+            </p> */}
 
           </div>
         </div>
