@@ -4,6 +4,7 @@ import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 import Information from "../../components/Information/Information";
 import Promocion from "../../components/Promocion/Promocion";
+// import Banner from "../../components/Banner/Banner";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
 import Slider from "../../components/Slider/Slider";
@@ -19,19 +20,24 @@ function Home() {
         dispatch(getAllCountries());
     }, []);
 
-    
+
     return (
         <>
-            <Slider/>
+            <Slider />
             <section className={`${styles.sectionCarrusel} container`}>
                 <Encabezado
-                    title ='Destinos destacados'
-                    subtitle = 'Disfruta de estos increíbles destinos llenos de cultura, naturaleza, playas, gastronomia, tradiciones y más.'/>
+                    title='Destinos destacados'
+                    subtitle='Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.' />
+                <Carrusel data={countries} />
+                {/* <Encabezado
+                    title='Nuestros expertos locales te llevarán a los lugares más auténticos y te garantizarán una experiencia inolvidable'
+                    subtitle='No pierdas la oportunidad de vivir un turismo que cambiariá tu perspectiva del mundo. ¡Ven y únete a nosotros para comenzar
+                    tu viaje extraordinario hoy mismo!'/> */}
                 <Carrusel data = {countries} />
-                
             </section>
-            <Information/>
-            <Promocion/>
+            {/* <Banner /> */}
+            <Information />
+            <Promocion />
         </>
     )
 }
