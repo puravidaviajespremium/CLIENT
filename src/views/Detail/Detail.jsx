@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { getCountryById, cleanCountryDetail } from "../../redux/actions/countriesActions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import FormContact from "../../components/FormContact/FormContact";
 
@@ -38,13 +37,10 @@ const Detail = () => {
               <BsFillGeoAltFill /> ¿Quiéres conocer {countryId?.name}?
             </h2>
             <p>{countryId?.description}</p>
-            {/* <p>
-              <b>Experiencias:</b> {countryId?.experiences}
-            </p> */}
-
           </div>
         </div>
       </div>
+
 
       <div className={`${styles.Experiencies} container`}>
         <Encabezado
@@ -68,7 +64,9 @@ const Detail = () => {
           ))}
         </div>
       </div>
+      
       <FormContact/>
+
     </div>
   );
 };
