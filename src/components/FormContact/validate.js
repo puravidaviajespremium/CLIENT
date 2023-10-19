@@ -2,7 +2,7 @@
 const validate = (form, property, setErrors, errors) =>{
     //Expresiones regulares
     const regexLetters=/^[a-zA-Z ]+$/;
-    const regexNumbers = /^\+\d{1,4}\s?\d{8,14}$/;
+    const regexTelephone = /^\d{1,4}\s?\d{8,14}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{3}$/;
 
     if(property === "firstName"){
@@ -22,7 +22,7 @@ const validate = (form, property, setErrors, errors) =>{
     }
     if(property === "telephone"){
         if(form.telephone === "") setErrors({...errors, telephone:"El celular es requerido"});
-        else if(!regexNumbers.test(form.telephone)) setErrors({...errors, telephone:"Ingrese un celular válido"});
+        else if(!regexTelephone.test(form.telephone)) setErrors({...errors, telephone:"Ingrese un celular válido"});
         else setErrors({...errors, telephone: ""})
     }
 
