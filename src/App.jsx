@@ -12,17 +12,12 @@ import Error from './views/Error/Error'
 import './App.css'
 
 function App() {
-
-  const [showHeader, setShowHeader] = useState(true);
-  const [showFooter, setShowFooter] = useState(true);
-
-
   return (
     <>
-      {showHeader && <Header />}
+      <Header />
       <main className='main'>
         <Routes>
-          <Route path='*' element={<Error setShowHeader={setShowHeader} setShowFooter={setShowFooter} />} />
+          <Route path='*' element={<Error/>} />
           <Route path='/' element={<Home />} />
           <Route path='/faqs' element={<Faqs />} />
           <Route path='/detalle/:id' element={<Detail />} />
@@ -31,7 +26,7 @@ function App() {
           <Route path='/signin' element={<Login />} />
         </Routes>
       </main>
-      {showFooter && <Footer />}
+      <Footer />
     </>
   )
 }

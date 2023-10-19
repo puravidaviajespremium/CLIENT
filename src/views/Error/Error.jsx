@@ -1,18 +1,6 @@
-import { useEffect } from 'react';
 import styles from './Error.module.css'
 
-function Error({ setShowHeader, setShowFooter }) {
-
-    useEffect(() => {
-        setShowHeader(false);
-        setShowFooter(false);
-
-        return () => {
-            setShowHeader(true);
-            setShowFooter(true);
-        };
-    }, [setShowHeader, setShowFooter]);
-
+function Error() {
     return (
         <div className={styles.errorContainer}>
             <div className={styles.errorMessage}>

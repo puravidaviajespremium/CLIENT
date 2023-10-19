@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BsGlobeAmericas, BsFillCreditCardFill, BsStars } from 'react-icons/bs'
-import styles from './PromocionIII.module.css'
+import styles from './Banner.module.css'
 
 function PromocionIII() {
     return (
