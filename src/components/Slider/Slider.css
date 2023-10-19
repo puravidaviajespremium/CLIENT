@@ -49,7 +49,7 @@
     left: 1.5rem;
     z-index: 1;
     color: var(--color-white);
-    width: 80%;
+    max-width: 80%;
 }
 
 .titleSlider h1{

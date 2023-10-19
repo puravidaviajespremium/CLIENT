@@ -1,21 +1,25 @@
-import { useState } from "react";
-import styles from "./FormContact.module.css";
-import {
-  BsFillExclamationCircleFill,
-  BsFillInfoCircleFill,
-} from "react-icons/bs";
+import { useState} from "react";
+import {BsFillExclamationCircleFill, BsFillInfoCircleFill} from "react-icons/bs";
 import validate from "./validate.js";
 import { addClient } from "../../redux/actions/clientsActions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
+import styles from "./FormContact.module.css";
 
 const FormContact = () => {
+  const countries = useSelector(state => state.countries.countries);
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    countryOrigin: "",
     telephone: "",
+    countryDestination:"",
     comment: "",
   });
 
@@ -23,8 +27,8 @@ const FormContact = () => {
     firstName: "",
     lastName: "",
     email: "",
-    telephone: "",
-    comment: "",
+    countryOrigin: "",
+    telephone: ""
   });
 
   //Capturar datos
@@ -34,6 +38,11 @@ const FormContact = () => {
 
     setForm({ ...form, [property]: value });
     validate({ ...form, [property]: value }, property, setErrors, errors);
+  };
+
+  const handleChangeCountryOrigin = (value, countryData) => {
+    setForm({...form, countryOrigin: countryData.name, telephone:value})
+    validate({ ...form, telephone: value }, "telephone", setErrors, errors);
   };
 
   //Deshabilitar botón
@@ -58,9 +67,12 @@ const FormContact = () => {
       firstName: "",
       lastName: "",
       email: "",
+      countryOrigin: "",
       telephone: "",
+      countryDestination:"",
       comment: "",
     });
+
   };
   return (
     <div className={styles.contactContainer}>
@@ -75,7 +87,7 @@ const FormContact = () => {
             <div className={styles.contentInput}>
               <div className={styles.inputLabel}>
                 <input
-                  id="firstNamr"
+                  id="firstName"
                   type="text"
                   name="firstName"
                   onChange={handleChange}
@@ -151,34 +163,43 @@ const FormContact = () => {
             </div>
             <div className={styles.contentInput}>
               <div className={styles.inputLabel}>
-                <input
-                  id="telephone"
-                  type="text"
-                  name="telephone"
-                  onChange={handleChange}
-                  value={form.telephone}
+                <PhoneInput
+                  country={'pe'}
+                  onChange={handleChangeCountryOrigin}
+                  inputClass={styles.phoneInput}
+                  placeholder=""
                 />
                 <label
-                  htmlFor="telephone"
-                  className={`${styles.label} ${
-                    form.telephone && styles.efectoLabel
-                  }`}
-                >
-                  Celular:
-                </label>
+                    htmlFor="telephone"
+                    className={`${styles.label} ${styles.labelPhone}`}
+                  >
+                    Celular:
+                  </label>
               </div>
-              {!form.telephone && !errors.telephone && (
-                <span className={styles.information}>
-                  <BsFillInfoCircleFill />
-                  Ingresa tu código de área del país. Ejem: +51
-                </span>
-              )}
               {errors.telephone && (
-                <span className={styles.error}>
-                  <BsFillExclamationCircleFill />
-                  {errors.telephone}
-                </span>
-              )}
+                  <span className={styles.error}>
+                    <BsFillExclamationCircleFill />
+                    {errors.telephone}
+                  </span>
+                )}
+            </div>
+          </div>
+          <div className={styles.containerInputs}>
+          <div className={styles.contentInput}>
+            <span className={styles.information}> <BsFillInfoCircleFill/>¿Ya sabes que país quieres visitar? Selecciónalo</span>
+          </div>
+            <div className={styles.contentInput}>
+              <select 
+                name="countryDestination"
+                onChange={handleChange}
+                defaultValue="destino">
+                <option value="destino" disabled>Pais de destino</option>
+                {
+                  countries?.map(country => (
+                    <option key={country.id} value={country.name}>{country.name}</option>
+                  ))
+                }
+              </select>
             </div>
           </div>
           <div className={styles.contentInput}>
@@ -208,6 +229,7 @@ const FormContact = () => {
               !form.firstName ||
               !form.lastName ||
               !form.email ||
+              !form.countryOrigin||
               !form.telephone
             }
           >
