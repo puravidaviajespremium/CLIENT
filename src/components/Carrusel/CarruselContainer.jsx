@@ -30,7 +30,7 @@ const CarruselContainer = ({ data }) => {
         },
         992: {
           slidesPerView: 4,
-          spaceBetween: 30,
+          spaceBetween: 35,
         },
       }}
       modules={[Pagination]}

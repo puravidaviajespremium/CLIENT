@@ -42,9 +42,9 @@ const Slider = () =>{
                 <img src="https://images.pexels.com/photos/2450296/pexels-photo-2450296.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1" />
             </SwiperSlide>
             <section className='titleSlider'>
-                <h1>Comienza tu <br/> viaje con nosotros.</h1>
-                <p>Destinos de ensueño, experiencias inolvidables.</p>
-                <Link to="/destinos" className='btn btnPrimary btnDestinations'>Destinos</Link>
+                <h1> Amas viajar y quieres<br/>  vivir una aventura diferente.</h1>
+                <p>Personalizamos cada experiencia para que se ajuste a tus deseos y necesidades.</p>
+                <Link to="/destinos" className='btn btnPrimary btnDestinations'>COMENCEMOS </Link>
             </section>
       </Swiper>
     )

@@ -4,7 +4,7 @@ import styles from './SliderDestinations.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Keyboard, Navigation } from 'swiper/modules';
+import { Keyboard, Navigation, Pagination } from 'swiper/modules';
 
 
 const SliderDestinations = () => {
@@ -21,7 +21,7 @@ const SliderDestinations = () => {
                         clickable: true,
                     }}
                     navigation={true}
-                    modules={[Keyboard, Navigation]}
+                    modules={[Keyboard, Navigation, Pagination]}
                     className="mySwiper"
                 >
                     <SwiperSlide >
@@ -33,7 +33,7 @@ const SliderDestinations = () => {
                                 playsInline
                                 className={styles.video}
                             >
-                                <source src="/videos/video1.mp4" type="video/mp4" />
+                                <source src="/videos/video1Compress.mp4" type="video/mp4" />
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
@@ -53,7 +53,7 @@ const SliderDestinations = () => {
                                 playsInline
                                 className={styles.video}
                             >
-                                <source src="/videos/video2.mp4" type="video/mp4" />
+                                <source src="/videos/video4Compress.mp4" type="video/mp4" />
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
@@ -73,7 +73,7 @@ const SliderDestinations = () => {
                                 playsInline
                                 className={styles.video}
                             >
-                                <source src="/videos/video3.mp4" type="video/mp4" />
+                                <source src="/videos/video2Compress.mp4" type="video/mp4" />
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
@@ -93,7 +93,7 @@ const SliderDestinations = () => {
                                 playsInline
                                 className={styles.video}
                             >
-                                <source src="/videos/video4.mp4" type="video/mp4" />
+                                <source src="/videos/video3Compress.mp4" type="video/mp4" />
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>

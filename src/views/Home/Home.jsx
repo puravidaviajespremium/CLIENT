@@ -32,7 +32,8 @@ function Home() {
                 {/* <Encabezado
                     title='Nuestros expertos locales te llevarán a los lugares más auténticos y te garantizarán una experiencia inolvidable'
                     subtitle='No pierdas la oportunidad de vivir un turismo que cambiariá tu perspectiva del mundo. ¡Ven y únete a nosotros para comenzar
-                tu viaje extraordinario hoy mismo!'/> */}
+                    tu viaje extraordinario hoy mismo!'/> */}
+                <Carrusel data = {countries} />
             </section>
             {/* <Banner /> */}
             <Information />

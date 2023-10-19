@@ -1,4 +1,46 @@
 /* Mobile First */
+.faqsBanner {
+    background-image: url('./images/faqsBanner.jpg');
+    background-position: center;
+    background-size: cover;
+    padding-top: 7.5rem;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+}
+
+.faqsBanner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(15, 20, 45, 0.8);
+}
+
+.titleBanner {
+    font-size: 1.75rem;
+    font-family: var(--primary-font);
+    color: var(--color-white);
+    position: relative;
+    height: fit-content;
+    z-index: 1;
+}
+
+.titleBanner::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 70%;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 15%;
+    bottom: -10px;
+}
+
 .container {
     width: 60vw;
     margin: 0 auto;
@@ -69,7 +111,31 @@
 @media (min-width: 768px) {}
 
 /* Media Query para Desktop (992px) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .faqsBanner {
+        height: 310px;
+    }
+
+    .titleBanner {
+        font-size: 2.25rem;
+        font-family: var(--primary-font);
+        color: var(--color-white);
+        position: relative;
+        height: fit-content;
+        z-index: 1;
+    }
+
+    .titleBanner::after {
+        content: "";
+        display: inline-block;
+        height: 2px;
+        width: 70%;
+        background-color: var(--primary-color);
+        position: absolute;
+        left: 15%;
+        bottom: -10px;
+    }
+}
 
 /* Media Query para Large Desktop (1200px) */
 @media (min-width: 1200px) {}
