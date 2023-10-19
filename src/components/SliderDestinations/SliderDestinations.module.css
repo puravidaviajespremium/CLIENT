@@ -44,16 +44,18 @@
 
 .destinations .slide .content span {
     display: block;
-    font-size: 1.5vh;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
     font-family: var(--primary-font);
     color: var(--color-white);
-    font-weight: 500;
-    padding-bottom: 1rem;
+    font-weight: 400;
+    padding-bottom: 2.5em;
     animation: fadeIn .2s linear backwards .2s;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 }
 
 .destinations .slide .content h3 {
-    font-size: 1.5vh;
+    font-size: 1rem;
     font-family: var(--primary-font);
     font-weight: 600;
     color: var(--color-white);
@@ -65,14 +67,21 @@
 }
 
 .btnPrimary {
+    padding: 20px 40px 20px 40px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 2px;
     animation: fadeIn .2s linear backwards .6s;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
 }
 
 .btnPrimary:hover {
     background-color: var(--color-white);
     color: var(--color-black);
     border: 1px solid var(--color-white);
+    transform: scale(1.08);
 }
+
 
 @keyframes fadeIn {
     0% {
@@ -112,5 +121,11 @@ element.style {
 @media (min-width: 1200px) {
     .destinations .slide {
         min-height: 50rem;
+    }
+    .destinations .slide .content span {
+    font-size: 1.2rem;
+    }
+    .destinations .slide .content h3 {
+    font-size: 3rem;
     }
 }

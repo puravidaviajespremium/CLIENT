@@ -37,9 +37,9 @@ const SliderDestinations = () => {
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
-                                <span>Vive...</span>
-                                <h3>Experiencias inolvidables en cada rincón del mundo.</h3>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>EXPERTO</button>
+                                <h3>Experiencias inolvidables en <br />cada rincón del mundo.</h3>
+                                <span>Elegir Pura Vida Viajes significa abrazar una experiencia de viaje única, enriquecedora y personalizada.</span>
+                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO VIVIR UN VIAJE DIFERENTE</button>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -57,9 +57,9 @@ const SliderDestinations = () => {
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
-                                <span>Experimenta...</span>
                                 <h3>recuerdos que durarán toda la vida</h3>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>EXPERTO</button>
+                                <span>Nuestro equipo cuenta con expertos nativos de todo el mundo que le garantizarán una experiencia increible. </span>
+                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO DESCANSAR Y DESCONECTARME</button>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -77,9 +77,9 @@ const SliderDestinations = () => {
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
-                                <span>Abrete a...</span>
                                 <h3>aventuras sin límites</h3>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>EXPERTO</button>
+                                <span>Estamos comprometidos en ayudarlo a alcanzar el viaje de sus sueños, sin importar el destino que elija.</span>
+                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO EXPLORAR AVENTURAS</button>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -97,9 +97,9 @@ const SliderDestinations = () => {
                                 Tu navegador no admite la reproducción de videos.
                             </video>
                             <div className={styles.content}>
-                                <span>Explora...</span>
                                 <h3>destinos para vivir al máximo</h3>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>EXPERTO</button>
+                                <span>¿Estás listo para conocer Pura Vida Viajes y vivir aventuras únicas y emocionantes? </span>
+                                <button className={`${styles.btnPrimary} btn btnPrimary`}>ME ATREVO A CONQUISTAR EL MUNDO</button>
                             </div>
                         </div>
                     </SwiperSlide>
