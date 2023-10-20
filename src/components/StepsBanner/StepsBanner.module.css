@@ -5,6 +5,7 @@
     text-align: center;
     background-color: var(--secondary-color);
     font-family: var(--primary-font);
+    margin-bottom: 40px;
 }
 
 .containerComponent h1 {

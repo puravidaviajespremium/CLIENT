@@ -4,6 +4,7 @@ import { getAllCountries } from '../../redux/actions/countriesActions';
 import ReactPaginate from 'react-paginate';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
+import Reviews from '../../components/Reviews/Reviews';
 import SliderDestinations from '../../components/SliderDestinations/SliderDestinations';
 import Encabezado from '../../components/Encabezado/Encabezado';
 import CountryCard from '../../components/CountryCard/CountryCard';
@@ -65,6 +66,7 @@ const Destinations = () => {
       />
 
 <StepsBanner />
+<Reviews />
     </>
   );
 };
