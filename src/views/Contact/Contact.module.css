@@ -3,15 +3,13 @@
     display: none;
 }
 
-
-
 /*Desktop*/
 @media (min-width: 992px){
     .contactBanner{
         background-image: url('./images/contactBanner.jpg');
         background-position: center;
         background-size: cover;
-        padding-top: 7.5rem;
+        padding-top: 9rem;
         height: 310px;
         position: relative;
         display: flex;
@@ -58,26 +56,5 @@
         position: absolute;
         left: 15%;
         bottom: -10px;
-    }
-    .icon{
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-    }
-    .social .icon{
-        margin-right: 0.5rem;
-    }
-    
-    .info{
-        color: var(--secondary-color);
-    }
-    .info h4{
-        margin-bottom: 0.3rem;
-        font-size: 1rem;
-        font-family: var(--primary-font);
-    }
-    .info p{
-        font-family: var(--secondary-font);
-        font-size: 0.85rem;
     }
 }
