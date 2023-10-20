@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#root{
+:root{
   --primary-font: 'Montserrat', sans-serif;
   --secondary-font: 'Roboto', sans-serif;
   --primary-color: #F4AE3F;
@@ -69,11 +69,31 @@ textarea:focus{
   color: #fff;
   border: 1px solid var(--primary-color);
 }
-
+.modalExpert>hr{
+  margin: 3rem 0 1.5rem;
+}
+.modalExpert .sectionExpert{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.modalExpert .sectionExpert>span{
+  font-size: 1rem;
+}
+.modalExpert .sectionExpert .btnPrimary{
+  width: 200px;
+  line-height: 40px;
+  font-size: 0.8rem;
+  padding: 0;
+}
 /*LARGE DESKTOP*/
 @media (min-width: 1200px){
     .container{
       width: 80vw;
+    }
+    .modalExpert .sectionExpert{
+      flex-direction: row;
     }
 }
 
