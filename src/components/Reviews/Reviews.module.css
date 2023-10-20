@@ -1,5 +1,5 @@
 .container {
-    width: 90vh;
+    width: 90vw;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -10,7 +10,7 @@
 }
 
 .error {
-  width: 90vh;
+  width: 90vw;
   color: red;
   font-weight: bold;
 }
