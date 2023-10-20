@@ -9,7 +9,7 @@
   --secondary-font: 'Roboto', sans-serif;
   --primary-color: #F4AE3F;
   --secondary-color: #172432;
-  --color-silver--color-silver: #FAFAFA;
+  --color-ligthGrey: #FAFAFA;
   --color-shadow: #F2F2F2;
   --color-silver: #767E86;
   --color-black : #000000;
@@ -64,11 +64,18 @@ textarea:focus{
 
 .btnPrimary{
   font-weight: 600;
-  padding: 0.6rem 2rem;
+  padding: 1rem 1.5rem;
   background-color: var(--primary-color);
   color: #fff;
   border: 1px solid var(--primary-color);
+  font-size: 0.875rem;
+  transition: .2s all;
 }
+
+.btnPrimary:hover{
+  transform: scale(1.06);
+}
+
 .modalExpert>hr{
   margin: 3rem 0 1.5rem;
 }
