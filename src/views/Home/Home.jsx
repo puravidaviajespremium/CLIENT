@@ -4,11 +4,14 @@ import Encabezado from "../../components/Encabezado/Encabezado";
 import Carrusel from '../../components/Carrusel/CarruselContainer';
 import Information from "../../components/Information/Information";
 import Promocion from "../../components/Promocion/Promocion";
-// import Banner from "../../components/Banner/Banner";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
-import Slider from "../../components/Slider/Slider";
-
+import SliderDestinations from "../../components/SliderDestinations/SliderDestinations";
+import PromocionII from "../../components/PromocionII/PromocionII";
+import StepsBanner from "../../components/StepsBanner/StepsBanner";
+import Reviews from "../../components/Reviews/Reviews";
+import FormContact from "../../components/FormContact/FormContact";
+import Banner from "../../components/Banner/Banner";
 
 function Home() {
 
@@ -23,21 +26,24 @@ function Home() {
 
     return (
         <>
-            <Slider />
+            <SliderDestinations />
+            <PromocionII />
             <section className={`${styles.sectionCarrusel} container`}>
                 <Encabezado
                     title='Destinos destacados'
                     subtitle='Los destinos más populares de todo el mundo, desde lugares históricos hasta maravillas naturales.' />
-                <Carrusel data={countries} />
                 {/* <Encabezado
                     title='Nuestros expertos locales te llevarán a los lugares más auténticos y te garantizarán una experiencia inolvidable'
                     subtitle='No pierdas la oportunidad de vivir un turismo que cambiariá tu perspectiva del mundo. ¡Ven y únete a nosotros para comenzar
                     tu viaje extraordinario hoy mismo!'/> */}
+                
                 <Carrusel data = {countries} />
             </section>
-            {/* <Banner /> */}
+            <StepsBanner />
+            <Banner />
             <Information />
-            <Promocion />
+            <FormContact />
+            <Reviews />
         </>
     )
 }
