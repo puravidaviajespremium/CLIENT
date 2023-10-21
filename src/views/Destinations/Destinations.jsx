@@ -4,13 +4,11 @@ import { getAllCountries } from '../../redux/actions/countriesActions';
 import ReactPaginate from 'react-paginate';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
-import Reviews from '../../components/Reviews/Reviews';
-import SliderDestinations from '../../components/SliderDestinations/SliderDestinations';
+import FormContact from '../../components/FormContact/FormContact';
 import Encabezado from '../../components/Encabezado/Encabezado';
 import CountryCard from '../../components/CountryCard/CountryCard';
-import StepsBanner from '../../components/StepsBanner/StepsBanner';
 import styles from './Destinations.module.css';
-
+import Slider from '../../components/Slider/Slider';
 
 
 const Destinations = () => {
@@ -39,7 +37,7 @@ const Destinations = () => {
 
   return (
     <>
-      <SliderDestinations />
+      <Slider />
 
       <div className={`${styles.container} container`}>
         <Encabezado title="Destinos" subtitle="Explore todos nuestros destinos o contacte a un experto por más lugares" />
@@ -64,9 +62,7 @@ const Destinations = () => {
         previousClassName={currentPage === 0 ? styles.disabled : ''}
         nextClassName={currentPage === pageCount - 1 ? styles.disabled : ''}
       />
-
-<StepsBanner />
-<Reviews />
+<FormContact />
     </>
   );
 };
