@@ -9,9 +9,7 @@
     background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
     width: 100%;
     height: 100%;
-    margin-top: 50px;
     left: 0;
-    padding-bottom: 1.5rem;
     margin-bottom: 60px;
 }
 
@@ -27,6 +25,7 @@
 
 .divInformation h1{
     font-weight: 700;
+    font-size: 1.25rem;
     position: relative;
     z-index: 1;
     color: var(--color-ligthGrey);
@@ -35,12 +34,15 @@
 .divInformation p {
     color: var(--color-ligthGrey); 
     margin: 0;
+    font-size: 1rem;
+    font-family: var(--secondary-font);
 }
 
 .divInformation h3{
-    font-size: small;
     padding: 0;
     margin: 10px;
+    font-size: 1rem;
+    font-family: var(--secondary-font);
 }
 
 .divContenido {
@@ -48,7 +50,8 @@
     flex-direction: column;
     width: 80vw;
     height: 100%;
-    padding-top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 
@@ -57,7 +60,8 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 10px;
+    margin-top: 15px;
+    gap: 10px
 }
 
 .values path{
@@ -70,20 +74,18 @@
     align-items: center;
     justify-content: center;
     width: 270px;
-    height: 130px;
+    height: 170px;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 10px;
     background-color: hsl(0, 0%, 0%, 0.3);
-    font-family: var(--secondary-font);
-    font-size: small;    
     border: solid 1px var(--primary-color);
 }
 
 .values p{
     text-align: center;
     width: 90%;
-    color: var( --color-ligthGrey);
+    color: var(--color-ligthGrey);
 }
 
 .values h3{
@@ -93,22 +95,13 @@
 
 
 /* TABLET */
-@media(min-width: 768px){  
-    .divInformation {
-        padding-top: 1.5rem;
-        padding-bottom: 3rem;
-    } 
-
-    .divContenido{
-        margin-top: 10px;
-    }
-    
+@media(min-width: 768px){      
     .divValues{
         display:flex;
         flex-direction: row;
         justify-content: space-around;
         gap:10px;
-        margin-top: 100px;
+        margin-top: 80px;
     }
 
     .divInformation h3{
@@ -148,29 +141,12 @@
 
 /* DESKTOP LARGE */
 @media(min-width: 1200px){  
-    .divInformation {
-        padding-top: 2.5rem;
-        padding-bottom: 5rem;
-    }
-
     .divInformation p{
         font-size: large;
     }
 
-    .divInformation h3{
-        font-size: large;
-    }
-
-    
-
-    .divValues{
-        margin-top: 80px;
-    }
-    
-    .values{
-        margin: 10px;
-        width: 300px; 
-        height: 250px;       
+    .divInformation h1{
+        font-size: 1.75rem;
     }
 }
 
