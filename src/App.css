@@ -94,6 +94,10 @@ textarea:focus{
   font-size: 0.8rem;
   padding: 0;
 }
+.modalExpert .sectionExpert .btnPrimary:hover{
+  transform: initial;
+}
+
 /*LARGE DESKTOP*/
 @media (min-width: 1200px){
     .container{
