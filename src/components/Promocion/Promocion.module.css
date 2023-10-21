@@ -36,7 +36,7 @@
 .divTexto h3{
     text-align: center;
     width: 250px;
-    color: var(--color-silver--color-silver);
+    color: var(--color-ligthGrey);
     font-family: var(--secondary-font);
     font-weight: 400;
 }
@@ -44,7 +44,7 @@
 
 .divTexto p {
     font-size: 1rem;
-    color: var(--color-silver--color-silver);
+    color: var(--color-ligthGrey);
     font-family: var(--secondary-font);
 }
 

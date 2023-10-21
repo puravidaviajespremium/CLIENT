@@ -11,7 +11,7 @@
     position: relative;
     height: auto;
     text-align: center;
-    color: var(--color-silver--color-silver);
+    color: var(--color-ligthGrey);
     font-family: var(--secondary-font);
     font-size: small;
 }

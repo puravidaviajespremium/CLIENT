@@ -28,11 +28,11 @@
     font-size: 1.25rem;
     position: relative;
     z-index: 1;
-    color: var(--color-silver--color-silver);
+    color: var(--color-ligthGrey);
 }
 
 .divInformation p {
-    color: var(--color-silver--color-silver); 
+    color: var(--color-ligthGrey); 
     margin: 0;
     font-size: 1rem;
     font-family: var(--secondary-font);
@@ -85,7 +85,7 @@
 .values p{
     text-align: center;
     width: 90%;
-    color: var(--color-silver--color-silver);
+    color: var(--color-ligthGrey);
 }
 
 .values h3{
