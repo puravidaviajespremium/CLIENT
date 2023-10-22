@@ -7,11 +7,11 @@ import Promocion from "../../components/Promocion/Promocion";
 import React, { useEffect } from 'react';
 import { getAllCountries } from '../../redux/actions/countriesActions';
 import SliderDestinations from "../../components/SliderDestinations/SliderDestinations";
-import PromocionII from "../../components/PromocionII/PromocionII";
 import StepsBanner from "../../components/StepsBanner/StepsBanner";
 import Reviews from "../../components/Reviews/Reviews";
 import FormContact from "../../components/FormContact/FormContact";
-import Banner from "../../components/Banner/Banner";
+import FeaturedSection from "../../components/FeaturedSection/FeaturedSection"
+import TravelFeatures from "../../components/TravelFeatures/TravelFeatures"
 
 function Home() {
 
@@ -27,7 +27,7 @@ function Home() {
     return (
         <>
             <SliderDestinations />
-            <PromocionII />
+            <FeaturedSection />
             <section className={`${styles.sectionCarrusel} container`}>
                 <Encabezado
                     title='Destinos destacados'
@@ -40,7 +40,6 @@ function Home() {
                 <Carrusel data = {countries} />
             </section>
             <StepsBanner />
-            <Banner />
             <Information />
             <FormContact />
             <Reviews />
