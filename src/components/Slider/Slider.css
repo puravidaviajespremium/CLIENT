@@ -56,20 +56,22 @@
     text-transform: uppercase;
     font-family: var(--primary-font);
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 }
 .titleSlider p{
-    font-family: var(--secondary-font);
+    font-family: var(--primary-font);
     font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 }
 
 .titleSlider .btnDestinations{
     display: inline-block;
-    font-size: 0.8rem;
-    padding: 0.8rem;
-    color: var(--color-white);
-    font-weight: 700;
 }
+
 @media (min-width: 992px){
     .mySlider{
         height: 100vh;
@@ -86,7 +88,7 @@
         top: 38%;
     }
     .titleSlider h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .titleSlider p{
         font-size: 1.1rem;
@@ -96,9 +98,6 @@
         margin-top: 1.5rem;
         font-size: 1rem;
         transition: .2s all;
-    }
-    .titleSlider .btnDestinations:hover{
-        color: var(--secondary-color);
     }
 }
 

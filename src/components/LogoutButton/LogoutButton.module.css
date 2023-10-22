@@ -1,0 +1,7 @@
+.buttonLogout {
+    font-family: var(--secondary-font);
+    color: var(--color-white);
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+}

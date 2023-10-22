@@ -64,12 +64,13 @@ textarea:focus{
 
 .btnPrimary{
   font-weight: 600;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  letter-spacing: 2px;
   background-color: var(--primary-color);
   color: #fff;
   border: 1px solid var(--primary-color);
   font-size: 0.875rem;
-  transition: .2s all;
+  transition: .3s all ease-in-out;
 }
 
 .btnPrimary:hover{
@@ -94,6 +95,10 @@ textarea:focus{
   font-size: 0.8rem;
   padding: 0;
 }
+.modalExpert .sectionExpert .btnPrimary:hover{
+  transform: initial;
+}
+
 /*LARGE DESKTOP*/
 @media (min-width: 1200px){
     .container{

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { postClient } from '../slices/clientsSlices';
-import Swal from 'sweetalert2';
+import { sendEmail } from '../../utils/sendEmail';
+import { modalSuccess, modalError } from '../../utils/modalResults';
 
 const URL_BASE = 'http://localhost:3001/clients';
 
@@ -22,12 +23,9 @@ export const addClient = (client) => async (dispatch) => {
             showConfirmButton: false,
             showCloseButton: true,
         })
+        modalSuccess();
+        sendEmail(client);
     } catch (error) {
-        Swal.fire({
-            title:"Lo sentimos",
-            text: "No pudimos cargar los datos, inténtalo mas tarde.",
-            icon: "error",
-            confirmButtonText: 'Cerrar'
-        })
+        modalError();
     }
 }
