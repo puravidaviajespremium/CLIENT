@@ -15,7 +15,7 @@ export const addClient = (client) => async (dispatch) => {
                         <hr>
                         <div class="sectionExpert">
                             <span>Si quieres tener una asesoría personalizada puedes contratar un experto por tan solo 20u$.</span>
-                            <a href="#" class="btn btnPrimary">CONTACTAR</a>
+                            <a href="/payment" class="btn btnPrimary">CONTACTAR</a>
                         </div>
                     </div>`,
             icon: "success",
