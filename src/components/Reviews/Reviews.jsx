@@ -4,35 +4,18 @@ import styles from './Reviews.module.css';
 import Encabezado from '../Encabezado/Encabezado';
 import { getAllReviews } from '../../redux/actions/reviewsActions';
 
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Pagination } from "swiper/modules";
 
 const Reviews = () => {
-const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-const { reviews } = useSelector(state => state.reviews);
+    const { reviews } = useSelector(state => state.reviews);
 
-useEffect(() => {
-    dispatch(getAllReviews())
-}, []);
-
-    // const [reviews, setReviews] = useState([]);
-    // const [error, setError] = useState(null);
-
-    // const getReviews = async () => {
-    //     const apiKey = "AIzaSyDT40Y1F9ECWc1H4Ur0QBKWWFipXbpCdRQ"
-    //     const placeId = "ChIJufOZ5uuZMpQRtlMfUenHfz8";                                                                   
-    //     try {
-    //         const { data } = await axios.get(`/api/maps/api/place/details/json?place_id=${placeId}&fields=reviews&rating,profile_photo_url&key=${apiKey}`);
-    //         setReviews(data.result.reviews);
-    //     } catch (error) {
-    //         console.error("Error getting reviews:", error);
-    //         setError("No se pudieron cargar las reseñas.");
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     getReviews();
-    // }, []);
+    useEffect(() => {
+        dispatch(getAllReviews())
+    }, []);
 
     const renderStars = (rating) => {
         const stars = [];
@@ -47,19 +30,41 @@ useEffect(() => {
     };
 
     return (
-        <>
-            <Encabezado title="Experiencias de nuestros viajeros" subtitle="Algunos comentarios increibles de nuestros viajeros." className={styles.encabezado} />
-            <div className={styles.container}>
+        <section className={`${styles.container} container`}>
+            <Encabezado title="Experiencias de nuestros viajeros" subtitle="Algunos comentarios increibles de nuestros viajeros." />
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                freeMode={true}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 35,
+                    },
+                }}
+                modules={[Pagination]}
+                className="containerCarrusel"
+            >
                 {reviews?.map((review, index) => (
-                    <div key={index} className={styles.review}>
+                    <SwiperSlide key={index} className={styles.review}>
                         <img src={review.profile_photo_url} alt={`${review.author_name}'s profile`} className={styles.profilePhoto} />
                         <h3 className={styles.author}>{review.author_name}</h3>
                         <div>{renderStars(review.rating)}</div>
                         <p className={styles.reviewText}>{review.text}</p>
-                    </div>
+                    </SwiperSlide>
                 ))}
-            </div>
-        </>
+            </Swiper>
+        </section>
     );
 }
 export default Reviews;
