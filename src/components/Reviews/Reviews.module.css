@@ -1,40 +1,43 @@
 .container {
-    width: 90vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--primary-font);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-family: var(--primary-font)
 }
 
-.error {
-  width: 90vw;
-  color: red;
-  font-weight: bold;
+.containerCarrusel{
+    margin-top: 2rem;
 }
 
-.review {
-  flex-basis: calc(33.333% - 20px);
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
+.containerCarrusel .swiper-pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.containerCarrusel .swiper-pagination-bullet{
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.containerCarrusel .swiper-pagination-bullet-active{
+    background-color: var(--primary-color);
 }
 
 .author {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 10px;
   color: var(--secondary-color);
+  margin-bottom: 0px;
 }
 
 .profilePhoto {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -54,6 +57,8 @@
 
 .reviewText {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 400;
   color: var(--color-silver);
 }
