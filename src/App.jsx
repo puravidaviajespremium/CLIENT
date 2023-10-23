@@ -12,6 +12,7 @@ import Error from './views/Error/Error'
 import CheckoutPayment from './views/CheckoutPayment/CheckoutPayment'
 import './App.css'
 import PaymentSuccess from './views/CheckoutPayment/PaymentSuccess/PaymentSuccess'
+import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Route path='/destinos' element={<Destinations />} />
           <Route path='/signin' element={<Login />} />
           <Route path='/payment' element={<CheckoutPayment />} />
-          <Route path='/payment/cancel' element="" />
+          <Route path='/payment/cancel' element={<PaymentCancel/>} />
           <Route path='/payment/success' element={<PaymentSuccess/>} />
         </Routes>
       </main>
