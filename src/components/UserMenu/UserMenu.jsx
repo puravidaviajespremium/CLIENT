@@ -26,7 +26,7 @@ const UserMenu = () => {
           <div className={menuOpen ? `${styles.menuInfo} ${styles.menuInfoOpen}` : styles.menuInfo}>
             <ul>
               <li> <p> Hola... {user.email}</p> </li>
-              <li> <p> Historial de pagos</p></li>
+              {/* <li> <p> Historial de pagos</p></li> */}
               <li> <LogoutButton/>  </li>
             </ul>
           </div>

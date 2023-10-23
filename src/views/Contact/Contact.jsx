@@ -1,7 +1,13 @@
 import FormContact from "../../components/FormContact/FormContact";
 import styles from "./Contact.module.css"
+import { animateScroll as scroll} from 'react-scroll';
+import { useEffect } from "react";
 
 const Contact = () => {
+
+  useEffect(() => {
+    scroll.scrollToTop()
+  }, []);
 
   return (
     <section>
