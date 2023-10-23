@@ -16,7 +16,7 @@ const PaymentSuccess = () => {
             <div className={`${styles.contSuccess} container`}>
                 <div className={styles.contLeft}>
                     <div className={styles.contImg}>
-                        <img src="../../../../public/images/successImg.png" alt="" />
+                        <img src="/images/successImg.png" alt="" />
                     </div>
                 </div>
                 <div className={styles.contRight}>
