@@ -1,13 +1,13 @@
 import styles from "./Faqs.module.css";
 import sections from "./FaqsList";
-
 import { useState } from "react";
-
 import {
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
   BsFillPatchQuestionFill,
 } from "react-icons/bs";
+import { animateScroll as scroll} from 'react-scroll';
+import { useEffect } from "react";
 
 const Faqs = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -19,6 +19,10 @@ const Faqs = () => {
       setActiveSection(sectionIndex);
     }
   };
+
+  useEffect(() => {
+    scroll.scrollToTop()
+  }, []);
 
   return (
 <>
