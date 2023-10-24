@@ -14,9 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       clientId='A5kuowI5gFwGpqWdIOhoEVOMJy8JAEva'
       authorizationParams={{        //Nuevo redireccionamiento
         redirect_uri: window.location.origin,
+        audience:'https://puravidaapireact',
+        scope:'openid profile email',
       }}
-      audience='https://puravidaapireact'
-      scope='openid profile email'
       >
       <Provider store={store}>
       <BrowserRouter>

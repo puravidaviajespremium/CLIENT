@@ -1,11 +1,9 @@
-/* DESKTOP: */
 
 .menuContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-right: -50px;
 }
 
 .imgProfile {
@@ -18,11 +16,11 @@
 .menuInfo {
     display: none;
     position: absolute;
-    right: 0;
+    right: -100px;
     top: 100%;
     border-radius: 5px; 
     background-color: var(--primary-color) ;
-    padding: 10px;
+    padding: 15px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     min-width: 150px;
     border-bottom: 1px solid var(--primary-color);
