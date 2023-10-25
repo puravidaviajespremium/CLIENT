@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { postClient } from '../slices/clientsSlices';
+import { postClient, getClients } from '../slices/clientsSlices';
 import { sendEmail } from '../../utils/sendEmail';
 import { modalSuccess, modalError } from '../../utils/modalResults';
 
@@ -12,7 +12,16 @@ export const addClient = (client) => async (dispatch) => {
         modalSuccess();
         sendEmail(client);
     } catch (error) {
-        modalError();
-        
+        modalError();  
     }
 }
+
+export const getAllClients = () => async (dispatch) => {
+    try {
+        const { data } = await axios.get('http://localhost:3001/clients');
+        dispatch(getClients(data));
+    } catch (error) {
+        console.log(error);
+    }
+}
+

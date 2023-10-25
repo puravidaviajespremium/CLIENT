@@ -12,6 +12,7 @@ import FormContact from "../../components/FormContact/FormContact";
 import FeaturedSection from "../../components/FeaturedSection/FeaturedSection"
 import { animateScroll as scroll} from 'react-scroll';
 
+
 function Home() {
 
     const countries = useSelector((state) => state.countries.countries);
@@ -23,6 +24,7 @@ function Home() {
         scroll.scrollToTop()
     }, []);
 
+    console.log(window.location)
 
     return (
         <>
