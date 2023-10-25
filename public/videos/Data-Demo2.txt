@@ -1,0 +1,28 @@
+//// .env
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=""
+DB_NAME=puravidaviajes
+PORT=3001
+
+PASSWORD_MAILER=zegc zjci xehg mcst
+
+APIKEY = "AIzaSyCVmHhNPUI85OMZl3CbVeMpA_SJhb7M41Y"
+PLACEID = "ChIJufOZ5uuZMpQRtlMfUenHfz8"
+
+CLIENT=AdHuAZnY6XdjqWZ9C6Tx6Eqb9dwuGqG8E2wo_C2R9-Lm1V8ngb3F5BB5haGIPhphhUJuClqATSo1R-r1
+SECRET=EAGK_NCzVCwQQC0FmaVFBXU5hXECi1NjvlWZNbuEgNvL5upLCbgZB29JRAKw9iWqRiYkOnmuJ-OSSBva
+PAYPAL_API=https://api-m.sandbox.paypal.com
+
+
+///CUENTAS PAYPAL
+PÁGINA: https://www.sandbox.paypal.com/co/home
+
+Usuario de Paypal:
+   user: sb-cpiig27785895@personal.example.com 
+   pass: 5kKJVA]/
+
+   Admin Paypal:
+   user: sb-xxtf4327893992@business.example.com
+   pass: }P-aP++0

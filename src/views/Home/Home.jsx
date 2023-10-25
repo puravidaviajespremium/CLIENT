@@ -11,7 +11,7 @@ import StepsBanner from "../../components/StepsBanner/StepsBanner";
 import Reviews from "../../components/Reviews/Reviews";
 import FormContact from "../../components/FormContact/FormContact";
 import FeaturedSection from "../../components/FeaturedSection/FeaturedSection"
-import TravelFeatures from "../../components/TravelFeatures/TravelFeatures"
+
 
 function Home() {
 
