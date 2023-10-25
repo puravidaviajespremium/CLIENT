@@ -1,7 +1,7 @@
 import axios from 'axios';
 const apiUrl = "http://localhost:3001/"
 
-const dataProvider = {
+const customDataProvider = {
   getList: (resource, params) => {
     return axios.get(`${apiUrl}${resource}`)
       .then(response => ({
@@ -11,4 +11,4 @@ const dataProvider = {
   },
 };
 
-export default dataProvider;
+export default customDataProvider;
