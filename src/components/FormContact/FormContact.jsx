@@ -25,7 +25,7 @@ const FormContact = () => {
     email: "",
     countryOrigin: "",
     telephone: "",
-    countryDestination:"",
+    destinationCountry:"",
     comment: "",
   });
 
@@ -75,7 +75,7 @@ const FormContact = () => {
       email: "",
       countryOrigin: "",
       telephone: "",
-      countryDestination:"",
+      destinationCountry:"",
       comment: "",
     });
 
@@ -204,6 +204,7 @@ const FormContact = () => {
                   onChange={handleChangeCountryOrigin}
                   inputClass={styles.phoneInput}
                   placeholder=""
+                  value={form.telephone}
                 />
                 <label
                     htmlFor="telephone"
@@ -226,7 +227,7 @@ const FormContact = () => {
           </div>
             <div className={styles.contentInput}>
               <select 
-                name="countryDestination"
+                name="destinationCountry"
                 onChange={handleChange}
                 defaultValue="destino">
                 <option value="destino" disabled>Pais de destino</option>

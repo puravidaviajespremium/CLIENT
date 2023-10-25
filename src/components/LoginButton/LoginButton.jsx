@@ -8,7 +8,7 @@ const LoginButton = () => {
 
     return (
         <>
-            <a className={styles.buttonLogin} onClick={ () => loginWithRedirect()}>Ingresar</a>
+            <a className={`${styles.buttonLogin} a`} onClick={ () => loginWithRedirect()}>Ingresar</a>
         </>
     )
 }

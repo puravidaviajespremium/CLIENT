@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SliderDestinations.module.css';
-
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -39,7 +39,7 @@ const SliderDestinations = () => {
                             <div className={styles.content}>
                                 <h3>Experiencias inolvidables en <br />cada rincón del mundo.</h3>
                                 <span>Elegir Pura Vida Viajes significa abrazar una experiencia de viaje única, enriquecedora y personalizada.</span>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO VIVIR UN VIAJE DIFERENTE</button>
+                                <Link to={'/contacto'}><button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO VIVIR UN VIAJE DIFERENTE</button></Link>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -59,7 +59,7 @@ const SliderDestinations = () => {
                             <div className={styles.content}>
                                 <h3>recuerdos que durarán toda la vida</h3>
                                 <span>Nuestro equipo cuenta con expertos nativos de todo el mundo que le garantizarán una experiencia increible. </span>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO DESCANSAR Y DESCONECTARME</button>
+                                <Link to={'/contacto'}><button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO DESCANSAR Y DESCONECTARME</button></Link>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -79,7 +79,7 @@ const SliderDestinations = () => {
                             <div className={styles.content}>
                                 <h3>aventuras sin límites</h3>
                                 <span>Estamos comprometidos en ayudarlo a alcanzar el viaje de sus sueños, sin importar el destino que elija.</span>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO EXPLORAR AVENTURAS</button>
+                                <Link to={'/contacto'}><button className={`${styles.btnPrimary} btn btnPrimary`}>QUIERO EXPLORAR AVENTURAS</button></Link>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -99,7 +99,7 @@ const SliderDestinations = () => {
                             <div className={styles.content}>
                                 <h3>destinos para vivir al máximo</h3>
                                 <span>¿Estás listo para conocer Pura Vida Viajes y vivir aventuras únicas y emocionantes? </span>
-                                <button className={`${styles.btnPrimary} btn btnPrimary`}>ME ATREVO A CONQUISTAR EL MUNDO</button>
+                                <Link to={'/contacto'}><button className={`${styles.btnPrimary} btn btnPrimary`}>ME ATREVO A CONQUISTAR EL MUNDO</button></Link>
                             </div>
                         </div>
                     </SwiperSlide>

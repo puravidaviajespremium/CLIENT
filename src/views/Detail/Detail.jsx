@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { getCountryById, cleanCountryDetail } from "../../redux/actions/countriesActions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-
+import { animateScroll as scroll} from 'react-scroll';
 import FormContact from "../../components/FormContact/FormContact";
 
 
@@ -18,6 +18,7 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(getCountryById(id));
+    scroll.scrollToTop()
     return () => {
       dispatch(cleanCountryDetail());
     };

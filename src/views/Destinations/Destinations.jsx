@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllCountries } from '../../redux/actions/countriesActions';
 import ReactPaginate from 'react-paginate';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
-
 import FormContact from '../../components/FormContact/FormContact';
 import Encabezado from '../../components/Encabezado/Encabezado';
 import CountryCard from '../../components/CountryCard/CountryCard';
 import styles from './Destinations.module.css';
 import Slider from '../../components/Slider/Slider';
+import { animateScroll as scroll} from 'react-scroll';
 
 
 const Destinations = () => {
@@ -21,6 +21,7 @@ const Destinations = () => {
 
   useEffect(() => {
     dispatch(getAllCountries());
+    scroll.scrollToTop()
   }, []);
 
   const pageCount = Math.ceil(countries?.length / countriesPerPage);

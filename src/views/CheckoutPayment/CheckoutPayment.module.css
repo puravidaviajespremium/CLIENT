@@ -1,5 +1,5 @@
 .expertHeader {
-    background-image: url('../../../../public/images/expertHeader.jpg');
+    background-image: url('/images/expertHeader.jpg');
     background-position: center;
     background-size: cover;
     padding: 7.5rem 0 1rem 0;

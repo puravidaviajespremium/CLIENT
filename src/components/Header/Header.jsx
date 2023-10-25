@@ -2,18 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useClickOutside from "../Hooks/useClickOutside.js";
 import { Link } from "react-router-dom";
-import { BsSearch, BsFillPersonFill, BsList, BsXLg } from "react-icons/bs";
-import {
-  getAllCountries,
-  countriesFilter,
-} from "../../redux/actions/countriesActions.js";
+import { BsSearch, BsList, BsXLg } from "react-icons/bs";
+import { getAllCountries, countriesFilter } from "../../redux/actions/countriesActions.js";
 import styles from "./Header.module.css";
 
 //Auth0
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "../LoginButton/LoginButton.jsx";
 import UserMenu from "../UserMenu/UserMenu";
-import axios from "axios";
+// import axios from "axios";
 
 function Header() {
   // Estados booleanos
@@ -62,12 +59,6 @@ function Header() {
     setSearchValue(value);
   };
 
-  //
-  const handleCountryClick = () => {
-    setSearchValue("");
-  };
-  //
-
   const navBarControl = () => {
     window.scrollY > 100 ? setFillColor(true) : setFillColor(false);
   };
@@ -87,33 +78,9 @@ function Header() {
     dispatch(countriesFilter(searchValue));
   }, [searchValue]);
 
-  //Authentication
-  const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
+  // Authentication
 
-  const callApi = () => {
-    axios
-      .get("http://localhost:3001/authentication/")
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error.message));
-  };
-
-  const callProtectedApi = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-      console.log(token);
-      const response = await axios.get(
-        "http://localhost:3001/authentication/protected",
-        {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const { isAuthenticated } = useAuth0();
 
   return (
     <header
@@ -135,6 +102,14 @@ function Header() {
           <Link to="/destinos">Destinos</Link>
           <Link to="/contacto">Contacto</Link>
         </nav>
+
+        {isAuthenticated ? (
+          <>
+            <UserMenu />
+          </>
+        ) : (
+          <LoginButton />
+        )}
 
         <div className={styles.menus}>
           <div ref={searchSection}>
@@ -169,28 +144,23 @@ function Header() {
           {/* DESKTOP */}
           <div ref={userSection}>
             <span className={styles.userIcon} onClick={toggleUMenu}>
-              {isAuthenticated ? (
-                <>
-                  <UserMenu/>
-                </>
-              ) : (
-                <LoginButton />
-              )}
-              {/* <h3>Usuario: {isAuthenticated ? 'Logueado' : 'No esta logueado'}</h3>
-                            <button onClick={callApi}> Call Api route</button> 
-                            <button onClick={callProtectedApi}> Call Protect Api route</button> */}
-              {/* <BsFillPersonFill /> */}
               <br />
             </span>
-            {/* <div className={styles.desktopHeader}>
-                            <div className={styles.contUM}>
-                                <nav className={`${styles.userMenu}  ${toggleUserMenu && styles.userMenuActive}`}>
-                                    <ul>
-                                        <Link to="/signin"><li>Sign in</li></Link>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div> */}
+            <div className={styles.desktopHeader}>
+              <div className={styles.contUM}>
+                <nav
+                  className={`${styles.userMenu}  ${
+                    toggleUserMenu && styles.userMenuActive
+                  }`}
+                >
+                  <ul>
+                    <Link to="/signin">
+                      <li>Sign in</li>
+                    </Link>
+                  </ul>
+                </nav>
+              </div>
+            </div>
           </div>
 
           {/* MOBILE */}
@@ -198,7 +168,6 @@ function Header() {
             <span className={styles.burgerIcon} onClick={toggleMobileMenu}>
               {toggleMobMenu ? <BsXLg /> : <BsList />}
             </span>
-
             <nav
               className={`${styles.mobileMenuCont}  ${
                 toggleMobMenu && styles.mobileMenuContActive
@@ -214,9 +183,7 @@ function Header() {
                 <Link to="/contacto">
                   <li>Contacto</li>
                 </Link>
-                <Link to="/signin">
-                  <li>Sign in</li>
-                </Link>
+                <li></li>
               </ul>
             </nav>
           </div>
