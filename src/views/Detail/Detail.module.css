@@ -1,0 +1,247 @@
+.divDetail{
+    margin-top: -70px;
+    font-family: var(--primary-font);
+    background-color: rgb(241, 242, 242);
+}
+
+.divInicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: auto;
+    text-align: center;
+    color: var(--color-ligthGrey);
+    font-family: var(--secondary-font);
+    font-size: small;
+}
+
+.divInicio h2{
+    font-size: 1.5rem;
+}
+
+
+.imagenPais {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.divDescription {
+    background-color: rgb(0,0 , 0, 0.5);
+    padding: 2rem;
+    width: 100%;
+    height: 460px;
+    position: absolute;
+    bottom: 40px; 
+    top: 40px;
+}
+
+.divText{
+    padding-top:130px ;
+}
+
+.divText p {
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+.divText path{
+    color: var(--primary-color);
+}
+
+.Experiencies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 100px; 
+    text-align: center;
+    top: 60px;
+    margin: 0;
+}
+
+
+.divExperiencies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 2rem;
+}
+
+.divExperiencies h2{
+    margin-bottom: 0;
+}
+
+.divImageDescription {
+    position: relative;
+    width: 300px;
+    height: 200px; 
+}
+
+.imageExperiencia {
+    width: 90%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.textDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.6);
+    position: absolute;
+    width: 90%; 
+    border-radius: 5px;
+    top: 0;
+    left: 15px; 
+    transform: translateX(0);
+    bottom: 0;
+    color: var(--primary-color);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.divImageDescription:hover .textDescription {
+    left:15px;
+    opacity: 1;
+}
+
+.textDescription p{
+    color: var(--color-white); 
+    width: 80%; 
+    font-size: 10px; 
+}
+
+
+/* TABLET */
+@media(min-width: 768px){
+    .divImageDescription:hover {
+        transform: translateY(-20px); 
+    }
+
+    .divImageDescription:hover .textDescription {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .divDetail p{
+        font-size: medium;
+        font-weight: 500;
+    }
+    .divInicio h2 {
+        font-size: 2.5rem;
+    }
+
+    .divText{
+        padding-top: 4rem;
+    }
+
+    .divDescription {
+        padding: 5rem;        
+    }
+    
+
+    .divDescription h2{
+        margin-bottom: 2rem;
+    }
+
+    .Experiencies{
+        top:80px;
+        padding: 0;
+    }
+
+    .divExperiencies {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10rem;
+        gap: 1rem;
+    }
+
+    .divImageDescription {
+        height: 300px; 
+        transition: 0.2s all; /*para que no suba de golpe*/
+    }
+    
+    .imageExperiencia {
+        width: 100%; 
+    }
+
+    .textDescription{
+        width: 100%; 
+        left: 0; 
+    }
+    
+    .textDescription p{
+        width: 90%;   
+        font-size: 12px;       
+    }
+
+    .divImageDescription:hover .textDescription {
+        left:0px;
+    }
+}
+
+
+
+/* DESKTOP */
+@media(min-width: 992px){
+    .divInicio h2 {
+        font-size: 3rem;
+    }
+
+    .divDescription {
+        margin-top: -70px;
+        height: 530px;
+    }
+
+    .textDescription p{   
+        font-size: 14px;       
+    }
+
+    .divText {
+        margin-top: 60px;
+    }
+
+    .divText p {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+}
+
+/* DESKTOP LARGE */
+@media(min-width: 1200px){
+    .divInicio {
+        font-size: 4rem;
+    }
+    
+    .divText {
+        margin-top: 40px;
+        padding-top: 6rem;
+    }
+
+    .divText p {
+        margin: 0 auto;
+    }
+    
+    .divExperiencies {
+        gap: 30px; 
+    }
+
+    .divImageDescription {
+        width: 450px;
+        height: 300px; 
+    }    
+
+}
+
+
+
+

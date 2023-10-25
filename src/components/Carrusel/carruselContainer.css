@@ -1,0 +1,24 @@
+.containerCarrusel{
+    margin-top: 2rem;
+}
+
+.containerCarrusel .swiper-pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.containerCarrusel .swiper-pagination-bullet{
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.containerCarrusel .swiper-pagination-bullet-active{
+    background-color: var(--primary-color);
+}
+
+

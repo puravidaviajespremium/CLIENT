@@ -1,0 +1,249 @@
+.headerCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    height: 70px;
+}
+
+.headerContBackGround {
+    background-color: var(--secondary-color);
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    transition: 0.6s;
+}
+
+.imgLogo {
+    width: 6rem;
+    filter: drop-shadow(0 0 0.8px rgba(0, 0, 0, 0.7));
+}
+
+.searchSection {
+    position: absolute;
+    margin-top: 1.4rem;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    background-color: var(--color-white);
+    box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.5);
+}
+
+.searchSectionActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchSection input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    border-radius: none;
+}
+
+.searchSection input {
+    outline: none;
+}
+
+.searchSection li {
+    margin-left: 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    color: var(--color-black)
+}
+
+.menus {
+    display: flex;
+    align-items: center;
+}
+
+.burgerIcon {
+    font-size: 1.3rem;
+    color: var(--color-white);
+
+}
+
+.searchIcon {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-right: 1rem;
+}
+
+.mobileMenuCont {
+    position: fixed;
+    z-index: 100;
+    top: 1;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.3s;
+    overflow: hidden;
+    color: black;
+    background-color: var(--secondary-color);
+}
+
+.mobileMenuContActive {
+    left: 0;
+}
+
+.mobileMenuCont li {
+    list-style: none;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 2rem 0;
+}
+
+.mobileMenuCont a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--primary-font);
+}
+
+/* Oculto */
+.deskMenu,
+.desktopHeader,
+.userIcon {
+    color: var(--color-white);
+    display: none;
+}
+
+/* Tablet */
+@media (min-width:768px) {}
+
+/* Desktop */
+@media (min-width:992px) {
+
+    /* Oculto */
+    .mobileHeader {
+        display: none;
+    }
+
+    .burgerIcon {
+        display: none;
+    }
+
+    .headerContBackGround {
+        background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 81.77%);
+        top: 0;
+        position: fixed;
+        z-index: 100;
+        height: 70px;
+        width: 100%;
+        transition: 0.6s;
+    }
+
+    .headerContBackGroundScroll {
+        background: none;
+        background-color: var(--secondary-color);
+        transition-timing-function: ease-out;
+        transition: step-end;
+    }
+
+    /* Mostrar */
+    .deskMenu,
+    .desktopHeader,
+    .searchIcon,
+    .userIcon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .deskMenu a{
+        line-height: normal;
+    }
+
+    .imgLogo {
+        width: 7.5rem;
+    }
+
+    /* Iconos */
+    .userIcon {
+        font-size: 1.5rem;
+    }
+
+    .searchIcon {
+        font-size: 1.1rem;
+        margin-right: 2rem;
+    }
+
+    .menus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .searchSection{
+        margin-top: 1.61rem;
+        width: 20%;
+        left: initial;
+        right: 0;
+    }
+
+    .deskMenu a {
+        margin: 0 2rem;
+        font-family: var(--primary-font);
+        color: var(--color-white);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-decoration: none; 
+        transition: box-shadow 0.2s; 
+        position: relative;
+        padding-bottom: 0.1rem;
+    }
+    .deskMenu a:hover {
+        box-shadow: 0 1.5px 0 0 var(--primary-color); 
+    }
+
+    .contUM {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    /* Desplegables */
+    .userMenu {
+        position: absolute;
+        width: 4rem;
+        height: 0;
+        right: -2rem;
+        overflow: hidden;
+        transition: 0.3s;
+        margin-top: 1.61rem;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        border-radius: 0.5rem;
+    }
+
+    .userMenuActive {
+        width: 6rem;
+        height: 3rem;
+    }
+
+    .userMenu li {
+        list-style: none;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .userMenu a {
+        text-decoration: none;
+        color: var(--color-black);
+        font-family: var(--primary-font);
+    }
+}
+
+/* Large-desktop */
+@media (min-width:1200px) {}

@@ -1,0 +1,81 @@
+.contFeatSect {
+    background-color: var(--secondary-color);
+}
+
+.featSect {
+    flex-direction: column;
+    padding: 4rem 0;
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
+
+.featSectLeft h2,
+.featSectLeft p {
+    color: var(--color-shadow);
+}
+
+.featSectLeft h2 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.featSectLeft p {
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+}
+
+/* 
+.featSectRight {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+} */
+
+/* Tablet */
+@media (min-width:768px) {
+}
+
+/* Desktop */
+@media (min-width:992px) {
+    .contFeatSect {
+        color: var(--color-white);
+    }
+
+    .featSect {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .featSectLeft {
+        padding: 0 5rem;
+        max-width: 80%;
+    }
+
+    .featSectLeft h2 {
+        font-size: 1.2rem;
+        font-family: var(--primary-font);
+    }
+
+    .featSectLeft p {
+        font-family: var(--secondary-font);
+        font-size: 0.9rem;
+    }
+
+    .featSectLeft h2 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .featSectLeft p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+/* Large-desktop */
+@media (min-width:1200px) {
+}   

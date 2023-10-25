@@ -1,0 +1,157 @@
+.divPromocion{
+    background-image: url('https://evro.themescare.com/Ordan/assets/image/discount.jpg');
+    width: 100%;
+    height: 580px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.divContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 580px;
+}
+
+.imgPromocion {
+    width: 220px;
+    height: 180px;
+    margin-top: 52px
+}
+
+.divTexto {
+    text-align: center;
+    width: 250px;
+    
+}
+
+.divTexto h3{
+    text-align: center;
+    width: 250px;
+    color: var(--color-ligthGrey);
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+
+.divTexto p {
+    font-size: 1rem;
+    color: var(--color-ligthGrey);
+    font-family: var(--secondary-font);
+}
+
+.divTexto h2{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.25rem;
+    font-family: var(--primary-font);
+}
+
+.buttonContact {
+    margin-top: 10px;
+}
+
+.buttonContact:hover{
+    background-color: var(--color-white);
+    color: var(--primary-color);
+}
+
+/* TABLET */
+@media(min-width: 768px){
+    .divPromocion {
+        height: 400px;
+    }
+
+    .divContenido {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        position: absolute;
+        background: rgb(0, 0, 0, 0.5);
+        width: 100%;
+        height: 400px;
+    }
+
+    .divTexto {
+        text-align: left;
+    }
+
+    .divTexto h3 {
+        text-align: left;
+    }
+
+    .imgPromocion {
+        width: 300px;
+        height: 250px;
+        margin-top: 150px;
+    }
+
+}
+
+/* DESKTOP */
+@media(min-width: 992px) {
+    .divTexto h2 {
+        font-size: 1.75rem;
+    }
+
+    .divTexto p {
+        font-size: 1.1rem;
+    }
+
+    .divTexto h3{
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    .imgPromocion {
+        width: 350px;
+        height: 300px;
+        margin-top: 100px;
+    }
+
+
+    .divTexto {
+        text-align: left;
+        font-family: var(--primary-font);
+        font-size: x-large;
+        width: 50%;
+        color: var(--color-ligthGrey);
+    }
+    
+    .divTexto p {
+        font-size: medium;
+    }
+    
+    .buttonContact {
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+
+}
+
+/* DESKTOP LARGE */
+@media(min-width: 1200px) {  
+    .divTexto {
+        width: 40%;
+    }  
+
+    .imgPromocion {
+        width: 400px;
+        height: 350px;
+        margin-top: 50px;
+    }    
+}
+
+
+
+

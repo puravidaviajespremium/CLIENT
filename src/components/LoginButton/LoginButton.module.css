@@ -1,0 +1,12 @@
+.buttonLogin {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-white);
+    padding-bottom: 0.1rem;
+}
+
+.buttonLogin:hover{
+    box-shadow: 0 1.5px 0 0 var(--primary-color);
+}

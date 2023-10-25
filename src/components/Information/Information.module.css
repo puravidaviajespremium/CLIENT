@@ -1,0 +1,152 @@
+.divInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-size: cover;
+    background-attachment: fixed; /* -- Esta propiedad crea el efecto parallax -- */
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.divInformation::before{
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.divInformation h1{
+    font-weight: 700;
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 1;
+    color: var(--color-ligthGrey);
+}
+
+.divInformation p {
+    color: var(--color-ligthGrey); 
+    margin: 0;
+    font-size: 1rem;
+    font-family: var(--secondary-font);
+}
+
+.divInformation h3{
+    padding: 0;
+    margin: 10px;
+    font-size: 1rem;
+    font-family: var(--secondary-font);
+}
+
+.divContenido {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+.divValues{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    gap: 10px
+}
+
+.values path{
+    color: var(--primary-color);
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 170px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 0%, 0.3);
+    border: solid 1px var(--primary-color);
+}
+
+.values p{
+    text-align: center;
+    width: 90%;
+    color: var(--color-ligthGrey);
+}
+
+.values h3{
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+
+/* TABLET */
+@media(min-width: 768px){      
+    .divValues{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap:10px;
+        margin-top: 80px;
+    }
+
+    .divInformation h3{
+        margin: 20px;
+        font-size: medium;
+    }
+    
+    .values{
+        width: 200px;
+        height: 250px;
+        justify-content: center;
+    }
+    
+    .values img{
+        width: 200px;
+    }
+
+    .divInformation p {
+        font-size: medium;
+    }
+}
+
+
+/* DESKTOP */
+@media(min-width: 992px){ 
+    .divValues{
+        margin-top: 100px;
+    }
+    
+    .values{
+        margin: 10px;
+        width: 280px; 
+        height: 240px;       
+    }
+}
+
+
+/* DESKTOP LARGE */
+@media(min-width: 1200px){  
+    .divInformation p{
+        font-size: large;
+    }
+
+    .divInformation h1{
+        font-size: 1.75rem;
+    }
+}
+
+

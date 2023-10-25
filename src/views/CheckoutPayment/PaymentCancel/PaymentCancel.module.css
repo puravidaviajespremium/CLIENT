@@ -1,0 +1,62 @@
+.cancelCont {
+    background-color: var(--color-shadow);
+}
+
+.cancelTextCont {
+    padding: 4rem 0;
+}
+
+.cancelText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+}
+
+.cancelText span {
+    font-size: 4rem;
+    padding: 2rem 0;
+    color: rgb(221, 18, 18);
+}
+
+.cancelText h2 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.cancelText p {
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+}
+
+
+@media (min-width:992px) {
+    .fillNavBar{
+        margin-top: -70px;
+        padding-top: 70px;
+    }
+
+    .cancelTextCont {
+        padding: 8rem 0 14rem 0;
+    }
+
+    .cancelText {
+        line-height: 3rem;
+    }
+
+    .cancelText span {
+        font-size: 8rem;
+    }
+
+    .cancelText h2 {
+        font-size: 2rem;
+    }
+
+    .cancelText p {
+        font-size: 1.2rem;
+    }
+
+
+}

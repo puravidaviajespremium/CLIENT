@@ -1,0 +1,64 @@
+.container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-family: var(--primary-font)
+}
+
+.containerCarrusel{
+    margin-top: 2rem;
+}
+
+.containerCarrusel .swiper-pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.containerCarrusel .swiper-pagination-bullet{
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.containerCarrusel .swiper-pagination-bullet-active{
+    background-color: var(--primary-color);
+}
+
+.author {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0px;
+}
+
+.profilePhoto {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.stars {
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.star.rated {
+  color: var(--primary-color);
+}
+
+.reviewText {
+  margin-top: 10px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: var(--color-silver);
+}
