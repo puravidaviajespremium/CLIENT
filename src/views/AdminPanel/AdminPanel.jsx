@@ -8,7 +8,7 @@ import dataProvider from "./dataProvider";
 const AdminPanel = () => {
     return (
         <Admin basename="/admin" dataProvider={dataProvider}>
-            <Resource name="countries/all" list={ListCountries} />               
+            <Resource name="countries" list={ListCountries} />               
         </Admin>
     );
 };

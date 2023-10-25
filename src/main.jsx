@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       domain='dev-mnltohiryggl7674.us.auth0.com'
       clientId='A5kuowI5gFwGpqWdIOhoEVOMJy8JAEva'
       authorizationParams={{        //Nuevo redireccionamiento
-        redirect_uri: window.location.origin,
+        redirect_uri: window.location.origin + window.location.pathname ,
         audience:'https://puravidaapireact',
         scope:'openid profile email',
       }}

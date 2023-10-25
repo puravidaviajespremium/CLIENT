@@ -10,9 +10,13 @@ export const clientsSlice = createSlice({
     reducers: {
         postClient: (state, action) => {
             state.clients = action.payload;
-        },                                             
+        }, 
+        getClients: (state, action) => {
+            state.clients = action.payload;
+        },
+
     },
 });
 
-export const { postClient } = clientsSlice.actions;    
+export const { postClient, getClients } = clientsSlice.actions;    
 export default clientsSlice.reducer;

@@ -24,6 +24,7 @@ function Home() {
         scroll.scrollToTop()
     }, []);
 
+    console.log(window.location)
 
     return (
         <>
