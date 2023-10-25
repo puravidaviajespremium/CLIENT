@@ -15,9 +15,10 @@ import AdminPanel from './views/AdminPanel/AdminPanel'
 import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
 
 function App() {
+  const isDashboardRoute = location.pathname.startsWith('/admin');
   return (
     <>
-      <Header />
+      {!isDashboardRoute && <Header/>}
       <main className='main'>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -33,7 +34,7 @@ function App() {
           <Route path='*' element={<Error/>} />
         </Routes>
       </main>
-      <Footer />
+      {!isDashboardRoute && <Footer/>}
     </>
   )
 }

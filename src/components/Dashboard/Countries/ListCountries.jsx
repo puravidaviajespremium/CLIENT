@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField } from "react-admin";
+import { List, Datagrid, TextField,EditButton, DeleteButton } from "react-admin";
 
 
 const ListCountries = (props) => {
@@ -9,6 +9,8 @@ const ListCountries = (props) => {
                 <TextField source="name" />
                 <TextField source="image" />
                 <TextField source="continent" />
+                <EditButton/>
+                <DeleteButton/>
             </Datagrid>
         </List>
         
