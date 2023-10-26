@@ -2,7 +2,8 @@ import React from "react";
 import { Admin, Resource } from 'react-admin';
 import ListCountries from "../../components/Dashboard/Countries/ListCountries";
 import ListClients from "../../components/Dashboard/Clients/ListClients";
-import ListUsers from "../../components/Dashboard/Users/Users";
+import ListUsers from "../../components/Dashboard/Users/List/ListUsers";
+import CreateUser from "../../components/Dashboard/Users/Create/CreateUser";
 import dataProvider from "./dataProvider";
 import MyLayout from "../../components/Dashboard/Design/Layout/MyLayout"
 
@@ -12,8 +13,8 @@ const AdminPanel = () => {
     return (
         <Admin layout={MyLayout} basename="/admin" dataProvider={dataProvider}>
             <Resource name="clients" list={ListClients}/> 
-            <Resource name="countries/all" list={ListCountries} />
-            <Resource name="users/all" list={ListUsers} />           
+            <Resource name="countries/all" list={ListCountries} /> 
+            <Resource name="/users" list={ListUsers} create={CreateUser}/>
         </Admin>
     );
 };

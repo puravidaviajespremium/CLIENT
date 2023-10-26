@@ -1,13 +1,24 @@
 import axios from 'axios';
-const apiUrl = "http://localhost:3001/"
+const apiUrl = "http://localhost:3001"
 
 const customDataProvider = {
   getList: (resource, params) => {
-    return axios.get(`${apiUrl}${resource}`)
+    if(resource ==="/users"){
+      return axios.get(`${apiUrl}${resource}`)
       .then(response => ({
         data: response.data,
         total: response.data.length, // Esto puede variar según tu backend
       }));
+    }
+  },
+  create: (resource, params) => {
+    const {data} = params;
+    if(resource ==="/users"){
+      return axios.post(`${apiUrl}${resource}/create`, data)
+      .then(response => ({
+          data: response.data,
+      }));
+    }
   },
 };
 
