@@ -4,11 +4,27 @@ const apiUrl = "http://localhost:3001"
 const customDataProvider = {
   getList: (resource, params) => {
     if (resource === "/users") {
-      return axios.get(`${apiUrl}${resource}`)
-        .then(response => ({
-          data: response.data,
-          total: response.data.length, // Esto puede variar según tu backend
-        }));
+      const { filter } = params;
+      const { firstName } = filter;
+
+      const url = `${apiUrl}${resource}`;
+      const queryParams = {};
+      
+      if (firstName) {
+        queryParams.firstName = firstName;
+      }
+
+      return axios.get(url, { params: queryParams })
+        .then((response) => {
+          return {
+            data: response.data,
+            total: response.data.length,
+          };
+        })
+        .catch((error) => {
+          console.error(error);
+          throw error;
+        });
     }
   },
   create: (resource, params) => {
