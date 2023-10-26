@@ -4,7 +4,7 @@ import { getCountries, getCountryId, searchCountries, cleanDetail } from '../sli
 
 export const getAllCountries = () => async (dispatch) => {
     try {
-        const { data } = await axios.get('http://localhost:3001/countries/all');
+        const { data } = await axios.get('http://localhost:3001/countries');
         dispatch(getCountries(data));
     } catch (error) {
         console.log(error);

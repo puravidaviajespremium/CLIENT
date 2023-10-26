@@ -9,7 +9,7 @@ const MyMenu = () => {
         <Menu className='myMenu'>
             <Menu.Item to="/admin/clients" primaryText="Clientes" leftIcon={<SupervisedUserCircleIcon />}/>
             <Menu.Item to="/admin/countries/all" primaryText="Países" leftIcon={<PublicIcon />}/>
-            <Menu.Item to="/admin/users/all" primaryText="Usuarios" leftIcon={<AccountCircleIcon />}/>
+            <Menu.Item to="/admin/users" primaryText="Usuarios" leftIcon={<AccountCircleIcon />}/>
         </Menu>
     )
 }
