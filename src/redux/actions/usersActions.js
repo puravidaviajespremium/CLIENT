@@ -4,7 +4,7 @@ import { getUsers } from '../slices/usersSlice';
 
 export const getAllUsers = () => async (dispatch) => {
     try {
-        const { data } = await axios.get('http://localhost:3001/users/all');
+        const { data } = await axios.get('http://localhost:3001/users');
         dispatch(getUsers(data));
     } catch (error) {
         console.log(error);
