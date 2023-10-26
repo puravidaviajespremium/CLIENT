@@ -6,7 +6,7 @@ import ListUsers from "../../components/Dashboard/Users/List/ListUsers";
 import CreateUser from "../../components/Dashboard/Users/Create/CreateUser";
 import dataProvider from "./dataProvider";
 import MyLayout from "../../components/Dashboard/Design/Layout/MyLayout"
-
+import EditUser from "../../components/Dashboard/Users/Edit/EditUser";
 
 
 const AdminPanel = () => {
@@ -14,7 +14,7 @@ const AdminPanel = () => {
         <Admin layout={MyLayout} basename="/admin" dataProvider={dataProvider}>
             <Resource name="clients" list={ListClients}/> 
             <Resource name="countries/all" list={ListCountries} /> 
-            <Resource name="/users" list={ListUsers} create={CreateUser}/>
+            <Resource name="/users" list={ListUsers} create={CreateUser} edit={EditUser}/>
         </Admin>
     );
 };
