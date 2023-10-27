@@ -1,13 +1,15 @@
-import { List, Datagrid, TextField, CreateButton, DeleteButton} from "react-admin";
+import { List, Datagrid, TextField, CreateButton, EditButton, TextInput, DeleteButton} from "react-admin";
 import './listUser.css'
 
 const ListUsers = (props) => {
+
+    const userFilters = [
+        <TextInput label="Nombres" source="firstName" alwaysOn />,
+    ];
+       
     return (
         <section className="containerList">
-            <div className="actionsList">
-                <CreateButton label="Agregar"/>
-            </div>
-            <List {...props} exporter={false}>
+            <List {...props} exporter={false} actions={<CreateButton label="Agregar" />} filters={userFilters}  >
                 <Datagrid rowClick="edit">
                     <TextField source="firstName" label="Nombres"/>
                     <TextField source="lastName" label="Apellidos"/>
@@ -15,6 +17,7 @@ const ListUsers = (props) => {
                     <TextField source="telephone"  label="Celular"/>
                     <TextField source="isBlocked" label="Bloqueado"/>
                     <TextField source="userStatus" label="Tipo"/>
+                    <EditButton label="Editar"/>
                     <DeleteButton label="ELIMINAR" mutationMode="pessimistic"/>
                 </Datagrid>
             </List> 
