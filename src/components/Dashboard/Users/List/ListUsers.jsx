@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, CreateButton, EditButton, TextInput} from "react-admin";
+import { List, Datagrid, TextField, CreateButton, EditButton, TextInput } from "react-admin";
 import './listUser.css'
 
 const ListUsers = (props) => {
@@ -9,7 +9,7 @@ const ListUsers = (props) => {
        
     return (
         <section className="containerList">
-            <List {...props} exporter={false} actions={<CreateButton label="Agregar" />} filters={userFilters}  >
+            <List {...props} exporter={false} filters={userFilters} actions={<CreateButton label="Agregar" />} >
                 <Datagrid rowClick="edit">
                     <TextField source="firstName" label="Nombres"/>
                     <TextField source="lastName" label="Apellidos"/>
