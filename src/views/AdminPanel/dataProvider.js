@@ -40,8 +40,6 @@ const customDataProvider = {
     if (resource === "/users") {
       return axios.get(`${apiUrl}${resource}/${params.id}`)
         .then(response => {
-          console.log("Respuesta del servidor:", response.data);
-          console.log("Respuesta estructurada:", { data: response.data });
           return { data: response.data }
         });
     }
@@ -52,7 +50,7 @@ const customDataProvider = {
       return axios.put(`${apiUrl}${resource}/update/${params.id}`, data)
         .then(response => {
           console.log("Respuesta del servidor:", response.data);
-          return { data: response.data };
+          return response.data;
         })
     }
   },
