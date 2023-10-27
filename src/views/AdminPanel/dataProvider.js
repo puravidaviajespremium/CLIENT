@@ -48,12 +48,10 @@ const customDataProvider = {
   },
   create: (resource, params) => {
     const { data } = params;
-    if (resource === "users") {
-      return axios.post(`${apiUrl}${resource}/create`, data)
+    return axios.post(`${apiUrl}${resource}/create`, data)
         .then(response => ({
           data: response.data,
-        }));
-    }
+      }));
   },
   getOne: (resource, params) => {
     if (resource === "users") {

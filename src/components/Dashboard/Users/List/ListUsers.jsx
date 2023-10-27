@@ -11,6 +11,7 @@ const ListUsers = (props) => {
         <section className="containerList">
             <List {...props} exporter={false} filters={userFilters} actions={<CreateButton label="Agregar" />} >
                 <Datagrid rowClick="edit" bulkActionButtons={<BulkDeleteButton label="Eliminar" mutationMode="pessimistic" />}>
+                    <TextField source="id" />
                     <TextField source="firstName" label="Nombres" />
                     <TextField source="lastName" label="Apellidos" />
                     <TextField source="email" label="Correo electrónico" />

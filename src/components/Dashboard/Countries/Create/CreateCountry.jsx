@@ -1,17 +1,16 @@
 import { Create, SimpleForm, TextInput, SelectInput} from 'react-admin';
-import validateUserCreation from './validate';
 import MyToolbar from '../../utils/MyToolbar';
-import './createUser.css'
+import './createCountry.css'
 
-const CreateUser = (props) => {
+const CreateClient = (props) => {
 
     return (
         <>
         <Create {...props} className='createContainer'>
-            <h1 className='titleForm'>Crear usuario</h1>
+            <h1 className='titleForm'>Crear País</h1>
             <SimpleForm 
-            toolbar={<MyToolbar modalContent="Usuario creado satisfactoriamente"/>} 
-            validate={validateUserCreation}
+            toolbar={<MyToolbar modalContent="País creado satisfactoriamente"/>} 
+            
             >
                 <div className='containerInputs'>
                     <TextInput source="firstName" label="Nombres"  />
@@ -22,22 +21,12 @@ const CreateUser = (props) => {
                     <TextInput source="telephone" label="Celular" />
                 </div>
                 <div className='containerInputs'>
-                    <SelectInput source="userStatus" label="Tipo" choices={[
-                        { id: 'Administrador', name: 'Administrador' },
-                        { id: 'Colaborador', name: 'Colaborador' }
-                    ]}/>
+                    <TextInput source="countryOrigin" label="País Origen" />
                 </div>
             </SimpleForm>
         </Create>
-        {/* <ConfirmationDialog
-            isOpen={isDialogOpen}
-            title="¡Excelente!"
-            content="Usuario creado con éxito"
-            icon="success"
-            onClose={handleClose}
-             /> */}
         </>
     )
 }
 
-export default CreateUser;
+export default CreateClient;

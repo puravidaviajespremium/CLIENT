@@ -1,9 +1,9 @@
-import {Toolbar, SaveButton, useNotify } from 'react-admin';
+import {Toolbar, SaveButton} from 'react-admin';
 import { useFormContext } from 'react-hook-form';
 
-import { modal } from '../../utils/modal';
+import { modal } from './modal';
 
-const MyToolbar = () => {
+const MyToolbar = ({modalContent}) => {
     const { reset } = useFormContext();
 
     return (
@@ -13,7 +13,7 @@ const MyToolbar = () => {
                 mutationOptions={{
                     onSuccess: () => {
                         reset();
-                        modal("¡Excelente!", "Usuario creado satisfactoriamente", "success");
+                        modal("¡Excelente!", modalContent, "success");
                     },
                     onError: () =>{
                         modal("¡Lo sentimos!", "Tuvimos un problema", "error");
