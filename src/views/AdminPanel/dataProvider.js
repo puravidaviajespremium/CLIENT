@@ -1,9 +1,28 @@
 import axios from 'axios';
-const apiUrl = "http://localhost:3001"
+const apiUrl = "http://localhost:3001/"
 
 const customDataProvider = {
   getList: (resource, params) => {
-    if (resource === "/users") {
+    if(resource ==="clients"){
+      return axios.get(`${apiUrl}${resource}`)
+        .then((response) => {
+          return {
+            data: response.data,
+            total: response.data.length,
+          };
+        })
+    }
+    if(resource ==="countries"){
+      return axios.get(`${apiUrl}${resource}`)
+        .then((response) => {
+          return {
+            data: response.data,
+            total: response.data.length,
+          };
+        })
+    }
+
+    if (resource === "users") {
       const { filter } = params;
       const { firstName } = filter;
 
@@ -29,7 +48,7 @@ const customDataProvider = {
   },
   create: (resource, params) => {
     const { data } = params;
-    if (resource === "/users") {
+    if (resource === "users") {
       return axios.post(`${apiUrl}${resource}/create`, data)
         .then(response => ({
           data: response.data,
@@ -37,7 +56,7 @@ const customDataProvider = {
     }
   },
   getOne: (resource, params) => {
-    if (resource === "/users") {
+    if (resource === "users") {
       return axios.get(`${apiUrl}${resource}/${params.id}`)
         .then(response => {
           console.log("Respuesta del servidor:", response.data);
@@ -48,7 +67,7 @@ const customDataProvider = {
   },
   update: (resource, params) => {
     const { data } = params;
-    if (resource === "/users") {
+    if (resource === "users") {
       return axios.put(`${apiUrl}${resource}/update/${params.id}`, data)
         .then(response => {
           console.log("Respuesta del servidor:", response.data);
@@ -58,7 +77,7 @@ const customDataProvider = {
   },
   delete: (resource, params) => {
     const { id } = params;
-    if (resource === "/users") {
+    if (resource === "users") {
       return axios.delete(`${apiUrl}${resource}/delete/${id}`)
         .then(response => ({
           data: response.data

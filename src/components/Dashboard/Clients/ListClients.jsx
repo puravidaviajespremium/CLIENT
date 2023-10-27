@@ -2,7 +2,7 @@ import { List, Datagrid, TextField} from "react-admin";
 
 const ListClients = (props) => {
     return (
-        <List>
+        <List {...props} exporter={false}>
             <Datagrid rowClick="edit">
                 <TextField source="id" />
                 <TextField source="firstName" />

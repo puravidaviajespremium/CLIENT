@@ -3,7 +3,7 @@ import { List, Datagrid, TextField,EditButton, DeleteButton } from "react-admin"
 
 const ListCountries = (props) => {
     return (
-        <List {...props}>
+        <List {...props} exporter={false}>
             <Datagrid rowClick="edit" >
                 <TextField source="id" />
                 <TextField source="name" />

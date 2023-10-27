@@ -13,8 +13,9 @@ const AdminPanel = () => {
     return (
         <Admin layout={MyLayout} basename="/admin" dataProvider={dataProvider}>
             <Resource name="clients" list={ListClients}/> 
-            <Resource name="countries/all" list={ListCountries} /> 
-            <Resource name="/users" list={ListUsers} create={CreateUser} edit={EditUser}/>
+            <Resource name="countries" list={ListCountries} /> 
+            <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser}/>
+            <Resource name="metrics"/> 
         </Admin>
     );
 };
