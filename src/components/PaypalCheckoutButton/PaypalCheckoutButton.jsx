@@ -1,6 +1,7 @@
 import styles from "./PaypalCheckoutButton.module.css"
 import React from "react"
 import { useAuth0 } from "@auth0/auth0-react"
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const PaypalCheckoutButton = (props) => {
     const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -29,7 +30,7 @@ const PaypalCheckoutButton = (props) => {
     
     const handleDefaultPaymentRedirect = async () => {
       try {
-        const response = await fetch("http://localhost:3001/paypal/create-payment", {
+        const response = await fetch(`${apiUrl}/paypal/create-payment`, {
           method: "GET",
         });
         const data = await response.json();

@@ -1,4 +1,5 @@
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 export const sendEmail = async ({email, firstName, lastName}) => {
     const info = {
@@ -7,7 +8,7 @@ export const sendEmail = async ({email, firstName, lastName}) => {
     }
 
     try {
-        await axios.post('http://localhost:3001/nodemailer/', info);
+        await axios.post(`${apiUrl}/nodemailer/`, info);
     } catch (error) {
         console.log(error.message);
     }
