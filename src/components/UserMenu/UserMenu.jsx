@@ -3,6 +3,7 @@ import { useAuth0  } from "@auth0/auth0-react";
 import styles from "./UserMenu.module.css";
 import LogoutButton from "../LogoutButton/LogoutButton.jsx";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_BASE_URL;
 // import { useSelector, useDispatch } from "react-redux";
 // import { getAllClients } from "../../redux/actions/clientsActions";
 // import { getAllUsers } from "../../redux/actions/usersActions";
@@ -28,7 +29,7 @@ const UserMenu = () => {
       try {
         const token = await getAccessTokenSilently();
         console.log(token)
-        const response = await axios.get("http://localhost:3001/authentication/protected", {
+        const response = await axios.get(`${apiUrl}/authentication/protected`, {
           headers: {
             authorization: `Bearer ${token}`,
           },
