@@ -5,10 +5,10 @@ const ListCountries = (props) => {
     return (
         <List {...props} exporter={false}>
             <Datagrid rowClick="edit" >
-                <TextField source="id" />
-                <TextField source="name" />
-                <TextField source="image" />
-                <TextField source="continent" />
+                <TextField source="id"  label="id"/>
+                <TextField source="name" label="Nombre"/>
+                <TextField source="description" label="Descripción"/>
+                <TextField source="experiences" label="Experiencias"/>
                 <EditButton/>
                 <DeleteButton/>
             </Datagrid>

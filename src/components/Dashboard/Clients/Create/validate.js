@@ -1,5 +1,5 @@
 
-const validateUserCreation = (values) => {
+const validateCreation = (values) => {
     const regexTelephone = /^\d{1,4}?\s?\d{6,14}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{3}$/;
 
@@ -9,7 +9,7 @@ const validateUserCreation = (values) => {
     if (!values.lastName) errors.lastName = 'Campo requerido';
     if (!values.email) errors.email = 'Campo requerido';
     if (!values.telephone) errors.telephone = 'Campo requerido';
-    if (!values.userStatus) errors.userStatus = 'Campo requerido';
+    if (!values.countryOrigin) errors.countryOrigin = 'Campo requerido';
 
     if (values.telephone) {
         if(!regexTelephone.test(values.telephone)) errors.telephone = 'Ingrese un celular válido';
@@ -21,4 +21,4 @@ const validateUserCreation = (values) => {
     return errors;
 }
 
-export default validateUserCreation;
+export default validateCreation ;
