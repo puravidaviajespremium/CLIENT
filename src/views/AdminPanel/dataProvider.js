@@ -56,6 +56,15 @@ const customDataProvider = {
         })
     }
   },
+  delete: (resource, params) => {
+    const { id } = params;
+    if (resource === "/users") {
+      return axios.delete(`${apiUrl}${resource}/delete/${id}`)
+        .then(response => ({
+          data: response.data
+        }))
+    }
+  }
 };
 
 export default customDataProvider;

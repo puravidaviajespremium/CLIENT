@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, CreateButton, EditButton, TextInput} from "react-admin";
+import { List, Datagrid, TextField, CreateButton, EditButton, TextInput, DeleteButton} from "react-admin";
 import './listUser.css'
 
 const ListUsers = (props) => {
@@ -18,9 +18,10 @@ const ListUsers = (props) => {
                     <TextField source="isBlocked" label="Bloqueado"/>
                     <TextField source="userStatus" label="Tipo"/>
                     <EditButton label="Editar"/>
+                    <DeleteButton label="ELIMINAR" mutationMode="pessimistic"/>
                 </Datagrid>
             </List> 
-        </section>     
+        </section>
     )
 }
 
