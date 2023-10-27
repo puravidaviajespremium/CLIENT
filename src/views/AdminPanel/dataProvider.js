@@ -9,7 +9,7 @@ const customDataProvider = {
 
       const url = `${apiUrl}${resource}`;
       const queryParams = {};
-      
+
       if (firstName) {
         queryParams.firstName = firstName;
       }
@@ -64,7 +64,17 @@ const customDataProvider = {
           data: response.data
         }))
     }
-  }
+  },
+  deleteMany: async (resource, params) => {
+    const query = {
+      filter: JSON.stringify({ id: params.ids }),
+    };
+    const { stringify } = JSON;
+    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${stringify(query)}`);
+    return ({
+      data: response.data
+    });
+  },
 };
 
 export default customDataProvider;
