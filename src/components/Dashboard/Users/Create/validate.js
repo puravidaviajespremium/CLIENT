@@ -1,6 +1,6 @@
+
 const validateUserCreation = (values) => {
-    console.log("values", values)
-    const regexTelephone = /^[+]?\d+$/;
+    const regexTelephone = /^\d{1,4}\s?\d{8,14}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{3}$/;
 
     const errors = {};
@@ -12,7 +12,7 @@ const validateUserCreation = (values) => {
     if (!values.userStatus) errors.userStatus = 'Campo requerido';
 
     if (values.telephone) {
-        if(!regexTelephone.test(values.telephone)) errors.telephone = 'Ingrese sólo números';
+        if(!regexTelephone.test(values.telephone)) errors.telephone = 'Ingrese un celular válido';
     }
     if (values.email) {
         if(!regexEmail.test(values.email)) errors.email = 'Ingrese un correo válido';
