@@ -6,7 +6,7 @@ const CreateClient = (props) => {
 
     return (
         <>
-        <Create {...props} className='createContainer'>
+        <Create {...props} className='createContainer' >
             <h1 className='titleForm'>Crear País</h1>
             <SimpleForm 
             toolbar={<MyToolbar modalContent="País creado satisfactoriamente"/>} 
