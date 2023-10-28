@@ -25,6 +25,7 @@ const ListUsers = (props) => {
                     <EditButton label="Editar" />
                     <DeleteButton label="ELIMINAR" mutationMode="pessimistic" />
                     
+
                 </Datagrid>
             </List>
         </section>

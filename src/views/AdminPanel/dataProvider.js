@@ -50,6 +50,15 @@ const customDataProvider = {
             throw error;
         });
 },
+  
+  create: (resource, params) => {
+    const { data } = params;
+    return axios.post(`${apiUrl}${resource}/create`, data)
+      .then(response => ({
+        data: response.data,
+      }));
+  },
+
   getOne: (resource, params) => {
     if (resource === "users") {
       return axios.get(`${apiUrl}/${resource}/${params.id}`)
@@ -60,6 +69,7 @@ const customDataProvider = {
         });
     }
   },
+  
   update: (resource, params) => {
     const { data } = params;
     if (resource === "users") {
@@ -70,24 +80,21 @@ const customDataProvider = {
         })
     }
   },
-  delete: (resource, params) => {
+  
+  delete: async (resource, params) => {
     const { id } = params;
-    if (resource === "users") {
-      return axios.delete(`${apiUrl}/${resource}/delete/${id}`)
-        .then(response => ({
-          data: response.data
-        }))
+    const response = await axios.delete(`${apiUrl}${resource}/delete/${id}`)
+    return {
+      data: response.data
     }
   },
+  
   deleteMany: async (resource, params) => {
-    const query = {
-      filter: JSON.stringify({ id: params.ids }),
+    const query = `filter=${JSON.stringify({ id: params.ids })}`;
+    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${query}`);
+    return {
+      data: [response.data]
     };
-    const { stringify } = JSON;
-    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${stringify(query)}`);
-    return ({
-      data: response.data
-    });
   },
 };
 
