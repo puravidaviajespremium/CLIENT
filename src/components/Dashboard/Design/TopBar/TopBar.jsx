@@ -1,5 +1,4 @@
-import { AppBar, Sidebar } from 'react-admin';
-import './topBar.css';
+import { AppBar} from 'react-admin';
 
 const TopBar = () => {
     return (

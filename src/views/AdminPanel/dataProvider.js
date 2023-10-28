@@ -53,7 +53,7 @@ const customDataProvider = {
   
   create: (resource, params) => {
     const { data } = params;
-    return axios.post(`${apiUrl}${resource}/create`, data)
+    return axios.post(`${apiUrl}/${resource}/create`, data)
       .then(response => ({
         data: response.data,
       }));

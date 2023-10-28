@@ -1,7 +1,7 @@
 import { Layout } from 'react-admin';
 import TopBar from '../TopBar/TopBar';
 import MyMenu from '../Menu/MyMenu';
-import './layout.css'
+import '../../utils/styleDashboard.css'
 
 const MyLayout = (props) => {
     return (

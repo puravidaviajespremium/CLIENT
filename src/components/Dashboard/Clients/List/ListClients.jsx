@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField,TextInput,SelectInput, CreateButton,EditButton, DeleteButton, BulkDeleteButton} from "react-admin";
+import { List, Datagrid, TextField,TextInput,SelectInput,EditButton, DeleteButton, BulkDeleteButton} from "react-admin";
 
 
 const ListClients = (props) => {
