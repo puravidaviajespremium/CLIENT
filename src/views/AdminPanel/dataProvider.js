@@ -3,7 +3,7 @@ const apiUrl = "http://localhost:3001/"
 
 const customDataProvider = {
   getList: (resource, params) => {
-    if(resource ==="clients"){
+    if (resource === "clients") {
       return axios.get(`${apiUrl}${resource}`)
         .then((response) => {
           return {
@@ -12,7 +12,7 @@ const customDataProvider = {
           };
         })
     }
-    if(resource ==="countries"){
+    if (resource === "countries") {
       return axios.get(`${apiUrl}${resource}`)
         .then((response) => {
           return {
@@ -49,8 +49,8 @@ const customDataProvider = {
   create: (resource, params) => {
     const { data } = params;
     return axios.post(`${apiUrl}${resource}/create`, data)
-        .then(response => ({
-          data: response.data,
+      .then(response => ({
+        data: response.data,
       }));
   },
   getOne: (resource, params) => {
@@ -73,24 +73,19 @@ const customDataProvider = {
         })
     }
   },
-  delete: (resource, params) => {
+  delete: async (resource, params) => {
     const { id } = params;
-    if (resource === "users") {
-      return axios.delete(`${apiUrl}${resource}/delete/${id}`)
-        .then(response => ({
-          data: response.data
-        }))
+    const response = await axios.delete(`${apiUrl}${resource}/delete/${id}`)
+    return {
+      data: response.data
     }
   },
   deleteMany: async (resource, params) => {
-    const query = {
-      filter: JSON.stringify({ id: params.ids }),
+    const query = `filter=${JSON.stringify({ id: params.ids })}`;
+    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${query}`);
+    return {
+      data: [response.data]
     };
-    const { stringify } = JSON;
-    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${stringify(query)}`);
-    return ({
-      data: response.data
-    });
   },
 };
 

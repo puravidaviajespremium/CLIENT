@@ -19,7 +19,7 @@ const ListUsers = (props) => {
                     <TextField source="isBlocked" label="Bloqueado" />
                     <TextField source="userStatus" label="Tipo" />
                     <EditButton label="Editar" />
-                    <DeleteButton label="ELIMINAR" mutationMode="pessimistic" />
+                    <DeleteButton label="Eliminar" mutationMode="pessimistic" />
                 </Datagrid>
             </List>
         </section>
