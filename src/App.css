@@ -71,6 +71,7 @@ textarea:focus{
   border: 1px solid var(--primary-color);
   font-size: 0.875rem;
   transition: .3s all ease-in-out;
+  cursor: pointer;
 }
 
 .btnPrimary:hover{

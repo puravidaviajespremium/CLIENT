@@ -1,59 +1,33 @@
-import styles from "./PaypalCheckoutButton.module.css"
-import React from "react"
-import { useAuth0 } from "@auth0/auth0-react"
+import styles from "./PaypalCheckoutButton.module.css";
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 const apiUrl = import.meta.env.VITE_BASE_URL;
+import axios from "axios";
+import { modalError } from "../../utils/modalResults";
 
 const PaypalCheckoutButton = (props) => {
-    const { isAuthenticated, loginWithRedirect } = useAuth0();
-  
-    const handleClicPayment = async () => {
-      if (!isAuthenticated) {
-        // Guarda la URL actual en el localStorage
-        localStorage.setItem("redirectUrl", window.location.pathname);
-  
-        
-        loginWithRedirect();
-      } else {
-        
-        const paypalUrl = localStorage.getItem("paypalUrl");
-  
-        if (paypalUrl) {
-          
-          window.location.href = paypalUrl;
-        } else {
-          
-          handleDefaultPaymentRedirect();
-        }
-      }
-    };
-  
-    
-    const handleDefaultPaymentRedirect = async () => {
-      try {
-        const response = await fetch(`${apiUrl}/paypal/create-payment`, {
-          method: "GET",
-        });
-        const data = await response.json();
-        console.log(data);
-  
-        // Almacena la URL de PayPal en el localStorage
-        localStorage.setItem("paypalUrl", data[1].href);
-  
-       
-        window.location.href = data[1].href;
+  const { isAuthenticated, loginWithPopup } = useAuth0();
 
-      } catch (error) {
-        console.error("Error al obtener la URL de PayPal:", error);
+  const handleClicPayment = async () => {
+    try {
+      if (!isAuthenticated) loginWithPopup();
+      else {
+        const response = await axios(`${apiUrl}/paypal/create-payment`);
+        if (!response) throw new Error("Paypal No disponible por el momento.");
+        window.location.href = response.data[1].href;
       }
-    };
-  
-    return (
-      <>
-        <button className={`btnPrimary`} onClick={handleClicPayment}>
-          {props.text}
-        </button>
-      </>
-    );
+    } catch (error) {
+      modalError(error.response.data.error || error.message);
+    }
   };
-  
-  export default PaypalCheckoutButton;
+
+  return (
+    <>
+      <button className={`btnPrimary`} onClick={handleClicPayment}>
+        {props.text}
+      </button>
+    </>
+  );
+};
+
+export default PaypalCheckoutButton;
