@@ -1,0 +1,34 @@
+/*TopBar*/
+.containerAppBar .appBar{
+    background-color: var(--secondary-color);
+    height: 70px;
+    flex-direction: row;
+}
+
+.containerAppBar .titleAppBar{
+    margin-bottom: 0;
+}
+.appBar .MuiToolbar-root{
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*Formulario de Creación*/
+.containerCreateCountry{
+    display: flex;
+    gap: 2rem;
+}
+.createContainer{
+    width: fit-content;
+}
+
+.containerInputs{
+    display: flex;
+    gap: 1rem;
+}
+
+/*Crear Países - Destinos*/
+.containerDestinies .RaSimpleFormIterator-line .RaSimpleFormIterator-form{
+    flex-direction: row;
+    gap: 1rem;
+}

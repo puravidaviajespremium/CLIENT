@@ -1,5 +1,4 @@
 import { List, Datagrid, TextField , EditButton, TextInput, DeleteButton, BulkDeleteButton, SelectInput } from "react-admin";
-import './listUser.css'
 
 const ListUsers = (props) => {
 

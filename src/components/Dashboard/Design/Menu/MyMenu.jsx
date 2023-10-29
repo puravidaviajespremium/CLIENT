@@ -3,7 +3,6 @@ import PublicIcon from '@mui/icons-material/Public';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import './menu.css';
 
 const MyMenu = () => {
     return (
