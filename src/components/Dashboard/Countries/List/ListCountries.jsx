@@ -22,7 +22,7 @@ const ListCountries = (props) => {
                 <TextField source="description" label="Descripción"/>
                 <TextField source="experiences" label="Experiencias"/>
                 <TextField source="continent" label="Continente"/>
-                <EditButton/>
+                <EditButton label="Editar"/>
                 <DeleteButton label="Eliminar" mutationMode="pessimistic" />
             </Datagrid>
         </List>
