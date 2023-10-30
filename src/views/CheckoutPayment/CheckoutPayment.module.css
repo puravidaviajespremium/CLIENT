@@ -48,6 +48,7 @@
     text-shadow: 0 0 1rem rgb(0 0 0 / 80%);
     font-family: var(--secondary-font);
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .expertBodyLeft h2 {

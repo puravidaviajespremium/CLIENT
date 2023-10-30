@@ -16,7 +16,7 @@ const ListCountries = (props) => {
 
     return (
         <List {...props} exporter={false} filters={countryFilters}  >
-            <Datagrid rowClick="edit" >
+            <Datagrid rowClick="edit" bulkActionButtons={<DeleteButton label="Eliminar" mutationMode="pessimistic" />}>
                 <TextField source="id"  label="id"/>
                 <TextField source="name" label="Nombre"/>
                 <TextField source="description" label="Descripción"/>
@@ -24,6 +24,8 @@ const ListCountries = (props) => {
                 <TextField source="continent" label="Continente"/>
                 <EditButton label="Editar"/>
                 <DeleteButton/>
+                <EditButton/>
+                <DeleteButton label="Eliminar" mutationMode="pessimistic" />
             </Datagrid>
         </List>
         
