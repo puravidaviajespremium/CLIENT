@@ -5,7 +5,7 @@ const EditCountry = (props) => {
     return (
         <Edit {...props} className='createContainer'>
             <SimpleForm toolbar={false} validate={validateEditCountry} >
-                <h1 className='titleForm'>Editar País</h1>
+                <h1 className='titleForm'>Modificar País</h1>
                 <TextInput disabled source="id" label="ID" />
                 <div className='containerInputs'>
                     <TextInput source="name" label="Nombre" />

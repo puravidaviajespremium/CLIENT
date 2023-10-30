@@ -23,7 +23,7 @@ const AdminPanel = () => {
 
             {isColl && (
                 <>
-                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} />
+                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient} />
                     <Resource name="countries" />
                     <Resource name="users" />
                     <Resource name="metrics" />
@@ -32,8 +32,8 @@ const AdminPanel = () => {
 
             {isAdmin && (
                 <>  
-                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} />
-                    <Resource name="countries" list={ListCountries} create={CreateCountry} />
+                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient}/>
+                    <Resource name="countries" list={ListCountries} create={CreateCountry} edit={EditCountry} />
                     <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser} />
                     <Resource name="metrics" />
                 </>
