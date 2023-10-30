@@ -36,7 +36,7 @@ const customDataProvider = {
       queryParams.continent = continent;
       url = `${apiUrl}/${resource}/filter/continent/${continent}`;
     }
-
+    
     try {
       const response = await axios.get(url, { params: queryParams })
       return {
