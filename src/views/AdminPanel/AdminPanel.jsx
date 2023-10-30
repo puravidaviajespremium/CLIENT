@@ -9,12 +9,13 @@ import CreateCountry from "../../components/Dashboard/Countries/Create/CreateCou
 import dataProvider from "./dataProvider";
 import MyLayout from "../../components/Dashboard/Design/Layout/MyLayout"
 import EditUser from "../../components/Dashboard/Users/Edit/EditUser";
+import DetailClient from "../../components/Dashboard/Clients/Detail/DetailClient";
 
 
 const AdminPanel = () => {
     return (
         <Admin layout={MyLayout} basename="/admin" dataProvider={dataProvider}>
-            <Resource name="clients" list={ListClients} create={CreateClient}/> 
+            <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient}/> 
             <Resource name="countries" list={ListCountries} create={CreateCountry}/> 
             <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser}/>
             <Resource name="metrics"/> 

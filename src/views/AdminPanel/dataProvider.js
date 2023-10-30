@@ -49,7 +49,7 @@ const customDataProvider = {
             console.error("Error en la solicitud:", error);
             throw error;
         });
-},
+  },
   
   create: (resource, params) => {
     const { data } = params;
@@ -60,15 +60,23 @@ const customDataProvider = {
   },
 
   getOne: (resource, params) => {
-    if (resource === "users") {
-      return axios.get(`${apiUrl}/${resource}/${params.id}`)
-        .then(response => {
-          console.log("Respuesta del servidor:", response.data);
-          console.log("Respuesta estructurada:", { data: response.data });
-          return { data: response.data }
-        });
-    }
-  },
+    return axios.get(`${apiUrl}/${resource}/${params.id}`)
+      .then(response => {
+        console.log('Hola soy el id')
+        console.log("Respuesta del servidor:", response.data);
+        console.log("Respuesta estructurada:", { data: response.data });
+        return { data: response.data }
+      });
+  },  
+
+  getMany: (resource, params) => {
+    return axios.get(`${apiUrl}/${resource}`)
+      .then(response => {
+        console.log("Respuesta del servidor:", response.data);
+        console.log("Respuesta estructurada:", { data: response.data });
+        return { data: response.data }
+      });
+  },  
   
   update: (resource, params) => {
     const { data } = params;
