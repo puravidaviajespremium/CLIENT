@@ -67,6 +67,7 @@ getOne: async (resource, params) => {
         url = `${apiUrl}/${resource}/${params.id}`;
     }
       const response = await axios.get(url)
+      console.log("API Response: ", response.data);
       return { data: response.data }
   },   
 

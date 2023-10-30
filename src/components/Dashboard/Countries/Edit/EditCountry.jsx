@@ -23,13 +23,11 @@ const EditCountry = (props) => {
                     <TextInput source="description" label="Descripción" />
                 </div>
                 <h2>Editar Destinos Populares</h2>
-                <ArrayInput source="destinies" label="Agregar Destinos">
-                    <SimpleFormIterator>
-                        <div className='containerInputs'>
-                            <TextInput source="name" label="Destino" />
-                            <TextInput source="image" label="Imagen" />
-                        </div>
-                        <TextInput source="description" label="Descripción" />
+                <ArrayInput source="Destinies" label="Destinos guardados">
+                    <SimpleFormIterator className='containerDestinies'>
+                            <TextInput source="name" label="Nombre del destino" />
+                            <TextInput source="image" label="Imagen del destino" />
+                            <TextInput source="description" label="Descripción del destino" />
                     </SimpleFormIterator>
                 </ArrayInput>
                 <div className='containerButtonSave'>
