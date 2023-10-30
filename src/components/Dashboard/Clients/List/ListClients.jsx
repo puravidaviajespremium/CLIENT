@@ -32,7 +32,7 @@ const ListClients = (props) => {
                 <TextField source="membershipStatus" label="Membresía"/>
                 <TextField source="contactStatus" label="Estado"/>
                 <TextField source="UserId" label="Colaborador"/>
-                <EditButton/>
+                <EditButton label= "Editar"/>
                 <DeleteButton label="Eliminar" mutationMode="pessimistic" />
             </Datagrid>
         </List>        

@@ -59,28 +59,32 @@ const customDataProvider = {
       }));
   },
 
-  getOne: (resource, params) => {
-    if (resource === "users") {
-      return axios.get(`${apiUrl}/${resource}/${params.id}`)
-        .then(response => {
-          console.log("Respuesta del servidor:", response.data);
-          console.log("Respuesta estructurada:", { data: response.data });
-          return { data: response.data }
-        });
+getOne: async (resource, params) => {
+    let url;
+    if (resource === 'countries') {
+        url = `${apiUrl}/${resource}/country/${params.id}`;
+    } else {
+        url = `${apiUrl}/${resource}/${params.id}`;
     }
-  },
-  
-  update: (resource, params) => {
-    const { data } = params;
-    if (resource === "users") {
-      return axios.put(`${apiUrl}/${resource}/update/${params.id}`, data)
-        .then(response => {
-          console.log("Respuesta del servidor:", response.data);
-          return { data: response.data };
-        })
-    }
-  },
-  
+    const response = await axios.get(url);
+  return { data: response.data };
+},
+
+update: async (resource, params) => {
+  const { data } = params;
+  const url = `${apiUrl}/${resource}/update/${params.id}`;
+  console.log("Complete URL:", url);
+  console.log("Payload:", data);
+  try {
+    const response = await axios.put(url, data);
+    console.log("Axios Response:", response);
+    return response.data;
+  } catch (error) {
+    console.log("Axios Error:", error);
+    throw error;
+  }
+},
+
   delete: async (resource, params) => {
     const { id } = params;
     const response = await axios.delete(`${apiUrl}${resource}/delete/${id}`)
