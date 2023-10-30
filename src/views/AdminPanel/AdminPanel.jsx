@@ -13,14 +13,35 @@ import DetailClient from "../../components/Dashboard/Clients/Detail/DetailClient
 
 
 const AdminPanel = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const isAdmin = user && user.role === "Administrador";
+    const isColl = user && user.role === "Colaborador";
+
     return (
         <Admin layout={MyLayout} basename="/admin" dataProvider={dataProvider}>
-            <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient}/> 
-            <Resource name="countries" list={ListCountries} create={CreateCountry}/> 
-            <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser}/>
-            <Resource name="metrics"/> 
+            {isColl && (
+                <>
+                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} />
+                    <Resource name="countries" />
+                    <Resource name="users" />
+                    <Resource name="metrics" />
+                </>
+            )}
+
+            {isAdmin && (
+                <>  
+                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} />
+                    <Resource name="countries" list={ListCountries} create={CreateCountry} />
+                    <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser} />
+                    <Resource name="metrics" />
+                </>
+            )}
         </Admin>
     );
 };
 
 export default AdminPanel;
+
+
+
+

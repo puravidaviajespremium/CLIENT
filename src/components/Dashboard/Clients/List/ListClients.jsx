@@ -1,10 +1,20 @@
-import { List, Datagrid, TextField,TextInput,SelectInput,EditButton, DeleteButton, BulkDeleteButton, ReferenceField} from "react-admin";
+import { List, Datagrid, TextField,TextInput,SelectInput,EditButton, DeleteButton, BulkDeleteButton, ReferenceField, ReferenceInput} from "react-admin";
 
 
 const ListClients = (props) => {
 
     const clientFilters = [
         <TextInput label="Nombres" source="firstName" alwaysOn />,
+        <ReferenceInput
+            label="Colaborador"
+            source="UserId"
+            reference="users"
+            basePath="/users"
+            allowEmpty
+        >
+            <SelectInput label="Colaborador" optionText="firstName" />
+        </ReferenceInput>,
+        
         <SelectInput label="Membresía" source="membershipStatus" choices={[
             { id: 'Plata', name: 'Plata' },
             { id: 'Dorado', name: 'Dorado' },
