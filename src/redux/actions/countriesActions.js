@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { getCountries, getCountryId, searchCountries, cleanDetail } from '../slices/countriesSlice';
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 
 export const getAllCountries = () => async (dispatch) => {
     try {
-        const { data } = await axios.get('http://localhost:3001/countries/all');
+        const { data } = await axios.get(`${apiUrl}/countries`);
         dispatch(getCountries(data));
     } catch (error) {
         console.log(error);
@@ -13,7 +14,7 @@ export const getAllCountries = () => async (dispatch) => {
 
 export const getCountryById = (id) => async (dispatch) => {
     try {
-        const { data } = await axios.get(`http://localhost:3001/countries/country/${id}`);
+        const { data } = await axios.get(`${apiUrl}/countries/country/${id}`);
         dispatch(getCountryId(data)); 
     } catch (error) {
         console.log(error);

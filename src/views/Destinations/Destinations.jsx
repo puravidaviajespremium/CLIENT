@@ -36,6 +36,8 @@ const Destinations = () => {
 
   const countriesPage = countries?.slice(startIndex, endIndex);
 
+  console.log(window.location)
+
   return (
     <>
       <Slider />

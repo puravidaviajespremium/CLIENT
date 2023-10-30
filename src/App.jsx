@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -12,15 +11,16 @@ import Error from './views/Error/Error'
 import CheckoutPayment from './views/CheckoutPayment/CheckoutPayment'
 import './App.css'
 import PaymentSuccess from './views/CheckoutPayment/PaymentSuccess/PaymentSuccess'
+import AdminPanel from './views/AdminPanel/AdminPanel'
 import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
 
 function App() {
+  const isDashboardRoute = location.pathname.startsWith('/admin');
   return (
     <>
-      <Header />
+      {!isDashboardRoute && <Header/>}
       <main className='main'>
         <Routes>
-          <Route path='*' element={<Error/>} />
           <Route path='/' element={<Home />} />
           <Route path='/faqs' element={<Faqs />} />
           <Route path='/detalle/:id' element={<Detail />} />
@@ -30,9 +30,11 @@ function App() {
           <Route path='/payment' element={<CheckoutPayment />} />
           <Route path='/payment/cancel' element={<PaymentCancel/>} />
           <Route path='/payment/success' element={<PaymentSuccess/>} />
+          <Route path='/admin/*' element={<AdminPanel />} />
+          <Route path='*' element={<Error/>} />
         </Routes>
       </main>
-      <Footer />
+      {!isDashboardRoute && <Footer/>}
     </>
   )
 }
