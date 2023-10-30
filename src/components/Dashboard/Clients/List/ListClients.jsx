@@ -48,7 +48,7 @@ const ListClients = (props) => {
                 >
                     <TextField source="firstName" /> {/* Nombre del colaborador dentro de users*/}
                 </ReferenceField>
-                <EditButton/>
+                <EditButton label="Editar"/>
                 <DeleteButton label="Eliminar" mutationMode="pessimistic" />
             </Datagrid>
         </List>        

@@ -2,7 +2,7 @@ import axios from 'axios';
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const customDataProvider = {
-  getList: (resource, params) => {
+  getList: async (resource, params) => {
     const { filter } = params;
     const { firstName, country, userStatus, membershipStatus, contactStatus, continent } = filter;
 
@@ -36,59 +36,67 @@ const customDataProvider = {
       queryParams.continent = continent;
       url = `${apiUrl}/${resource}/filter/continent/${continent}`;
     }
-
-
-    return axios.get(url, { params: queryParams })
-        .then((response) => {
-            return {
-                data: response.data,
-                total: response.data.length,
-            };
-        })
-        .catch((error) => {
-            console.error("Error en la solicitud:", error);
-            throw error;
-        });
-},
-  
-  create: (resource, params) => {
-    const { data } = params;
-    return axios.post(`${apiUrl}/${resource}/create`, data)
-      .then(response => ({
+    
+    try {
+      const response = await axios.get(url, { params: queryParams })
+      return {
         data: response.data,
-      }));
-  },
-
-  getOne: (resource, params) => {
-    return axios.get(`${apiUrl}/${resource}/${params.id}`)
-      .then(response => {
-        console.log("Respuesta del servidor:", response.data);
-        console.log("Respuesta estructurada:", { data: response.data });
-        return { data: response.data }
-      });
-  },  
-  getMany: (resource, params) => {
-    return axios.get(`${apiUrl}/${resource}`)
-      .then(response => {
-        console.log("Respuesta del servidor:", response.data);
-        console.log("Respuesta estructurada:", { data: response.data });
-        return { data: response.data }
-      });
-  },  
-  update: (resource, params) => {
-    const { data } = params;
-    if (resource === "users") {
-      return axios.put(`${apiUrl}/${resource}/update/${params.id}`, data)
-        .then(response => {
-          console.log("Respuesta del servidor:", response.data);
-          return { data: response.data };
-        })
+        total: response.data.length
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+      throw error;
     }
   },
   
+  create: async (resource, params) => {
+    const { data } = params;
+    try {
+      const response = await axios.post(`${apiUrl}/${resource}/create`, data)
+      return {data: response.data}
+    } catch (error) {
+      console.error("Error en la solicitud:", error.response.data.error);
+    }
+  },
+
+getOne: async (resource, params) => {
+    let url;
+    if (resource === 'countries') {
+        url = `${apiUrl}/${resource}/country/${params.id}`;
+    } else {
+        url = `${apiUrl}/${resource}/${params.id}`;
+    }
+      const response = await axios.get(url)
+      return { data: response.data }
+  },   
+
+  getMany: async (resource, params) => {
+    try {
+      const response = await axios.get(`${apiUrl}/${resource}`);
+      return { data: response.data }
+    } catch (error) {
+      console.error("Error en la solicitud:", error.response.data.error);
+    }
+  },  
+  
+  update: async (resource, params) => {
+  const { data } = params;
+  const url = `${apiUrl}/${resource}/update/${params.id}`;
+  console.log("Complete URL:", url);
+  console.log("Payload:", data);
+  try {
+    const response = await axios.put(url, data);
+    console.log("Axios Response:", response);
+    return response.data;
+  } catch (error) {
+    console.log("Axios Error:", error);
+    throw error;
+  }
+},
+  
   delete: async (resource, params) => {
     const { id } = params;
-    const response = await axios.delete(`${apiUrl}${resource}/delete/${id}`)
+    const response = await axios.delete(`${apiUrl}/${resource}/delete/${id}`)
     return {
       data: response.data
     }
@@ -96,7 +104,7 @@ const customDataProvider = {
   
   deleteMany: async (resource, params) => {
     const query = `filter=${JSON.stringify({ id: params.ids })}`;
-    const response = await axios.delete(`${apiUrl}${resource}/deleteMany?${query}`);
+    const response = await axios.delete(`${apiUrl}/${resource}/deleteMany?${query}`);
     return {
       data: [response.data]
     };
