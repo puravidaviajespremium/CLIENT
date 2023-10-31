@@ -1,0 +1,53 @@
+
+.divGeneralChart{
+    display: flex;  
+}
+
+.divDeBarras{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.divUno{
+    background-color: rgba(255, 99, 132, 0.8);
+    width: 40px;
+    height: 10px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.divDos{
+    background-color: rgba(255, 206, 86, 0.8);
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.divTres{
+    background-color: rgb(54, 163, 235, 0.8);
+    width: 40px;
+    height: 70px;
+    margin: 5px;
+    border: 1px solid black;
+}
+    
+.divCuatro{
+    background-color: rgba(153, 102, 255, 0.8);
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.divQuinto{
+    background-color: rgba(75, 192, 192, 0.8);
+    width: 40px;
+    height: 30px;
+     margin: 5px;
+     border: 1px solid black;
+}

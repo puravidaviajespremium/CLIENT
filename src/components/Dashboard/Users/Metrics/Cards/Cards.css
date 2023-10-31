@@ -1,0 +1,41 @@
+
+
+
+.listTitles{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: normal;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.tablaGeneral{
+    width: 100%;
+    text-align: center;
+    border:  1px solid rgb(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+.tablaIndividual{
+    margin: 0px;
+    padding: 0px;
+    border-top:  1px solid rgb(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    padding: 7px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.detailButton{
+    color: rgb(31, 138, 31);
+    padding-right: 2px;
+    background-color: transparent;
+    border: 0px solid transparent;
+}
+
+.detailButton:hover{
+    background-color: rgb(31, 138, 31, 0.1);
+    border-radius: 2px;
+}
