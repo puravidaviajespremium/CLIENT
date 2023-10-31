@@ -6,28 +6,27 @@ import BarChart from "../ChartBar/ChartBar";
 import { NavLink } from 'react-router-dom';
 import {BsFileBarGraphFill} from 'react-icons/bs';
 
-import metrics from "../../../utils/metricsData";
 
 const Cards = () => {
-
-    const [userData, setUserData] = useState([]);
+    
+    const [metricsData, setMetricsData] = useState([]);
 
     const [global, setGlobal] = useState(true);
 
-    useEffect(() => {
-        const allClients = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/users');
-                setUserData(response.data);
-            } catch (error) {
-                console.error(error);
-                throw error;
-            }
-        };
-        allClients();
+    const allUserMetrics = async () => {
+        try {
+            const response = (await axios.get('http://localhost:3001/users/metrics')).data;
+            setMetricsData(response)
+        } catch (error) {
+            throw error;
+        }
+    };
 
+    useEffect(() => {
+
+        allUserMetrics();
+        
         const handleResize = () => {
-            console.log(window.innerWidth)
             if (window.innerWidth <= 768) {
                 setGlobal(false);
             } else {
@@ -36,38 +35,29 @@ const Cards = () => {
         };
 
         window.addEventListener('resize', handleResize);
-
+        
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    const filteredUsers = userData.filter(user => user.userStatus !== "Administrador");
+    let prospectCountTotal = 0;
+    let contactedCountTotal = 0;
+    let waitingCountTotal = 0;
+    let wonCountTotal = 0;
+    let lostCountTotal = 0;
 
-    const filteredUsersData = metrics.filter(user => user.userStatus !== "Administrador");
-
-    let prospecto = 0;
-    let contactada = 0;
-    let enEspera = 0;
-    let ganada = 0;
-    let perdido = 0;
-
-    metrics.forEach(user => {
-        prospecto += parseInt(user.metrics.find(metric => Object.keys(metric)[0] === 'Prospecto')['Prospecto']);
-        contactada += parseInt(user.metrics.find(metric => Object.keys(metric)[0] === 'Contactada')['Contactada']);
-        enEspera += parseInt(user.metrics.find(metric => Object.keys(metric)[0] === 'En espera')['En espera']);
-        ganada += parseInt(user.metrics.find(metric => Object.keys(metric)[0] === 'Ganada')['Ganada']);
-        perdido += parseInt(user.metrics.find(metric => Object.keys(metric)[0] === 'Perdido')['Perdido']);
+    metricsData?.forEach(user => {
+        prospectCountTotal += parseInt(user.prospectCount);
+        contactedCountTotal += parseInt(user.contactedCount);
+        waitingCountTotal += parseInt(user.waitingCount);
+        wonCountTotal += parseInt(user.wonCount);
+        lostCountTotal += parseInt(user.lostCount);
     });
 
     return(
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <h1 className="titles">Métricas Individuales</h1>
-            {/* <div className="Cards">
-                {filteredUsers.map((user, index) => (
-                    <Card key={index} user={user} />
-                ))}
-            </div> */}
             <table className='tablaGeneral'>
                 <thead>
                     <tr >
@@ -75,26 +65,28 @@ const Cards = () => {
                         <th className="tablaIndividual">Nombres</th>
                         <th className="tablaIndividual">Apellidos</th>
                         <th className="tablaIndividual">Correo electrónico</th>
-                        <th className="tablaIndividual">Prospecto</th>
-                        <th className="tablaIndividual">Contactada</th>
+                        <th className="tablaIndividual">prospectCount</th>
+                        <th className="tablaIndividual">contactedCount</th>
                         <th className="tablaIndividual">En espera</th>
                         <th className="tablaIndividual">Ganado</th>
                         <th className="tablaIndividual">Perdido</th>
+                        <th className="tablaIndividual">Total</th>
                         <th className="tablaIndividual">Gráfico</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredUsersData.map((user) => (
+                    {metricsData?.map((user) => (
                         <tr key={user.id}>
                             <td className="tablaIndividual">{user.id}</td>
                             <td className="tablaIndividual">{user.firstName}</td>
                             <td className="tablaIndividual">{user.lastName}</td>
                             <td className="tablaIndividual">{user.email}</td>
-                            <td className="tablaIndividual">{user.metrics[0]['Prospecto']}</td>
-                            <td className="tablaIndividual">{user.metrics[1]['Contactada']}</td>
-                            <td className="tablaIndividual">{user.metrics[2]['En espera']}</td>
-                            <td className="tablaIndividual">{user.metrics[3]['Ganada']}</td>
-                            <td className="tablaIndividual">{user.metrics[4]['Perdido']}</td>
+                            <td className="tablaIndividual">{user.prospectCount}</td>
+                            <td className="tablaIndividual">{user.contactedCount}</td>
+                            <td className="tablaIndividual">{user.waitingCount}</td>
+                            <td className="tablaIndividual">{user.wonCount}</td>
+                            <td className="tablaIndividual">{user.lostCount}</td>
+                             <td className="tablaIndividual">{user.clientCount}</td>
                             <td className="tablaIndividual">
                                 <NavLink to={`/admin/metrics/detail/${user.id}`} key={user.id}>   
                                     <button className="detailButton">
@@ -106,18 +98,13 @@ const Cards = () => {
                     ))}
                 </tbody>
             </table>
-            {/* <div className="cards">
-                {filteredUsersData.map((user) => (
-                    <Card key={user.id} user={user} />
-                ))}
-            </div> */}
             <h1 className="titles" style={{margin: '50px'}}>Métricas Globales</h1>
             <BarChart
-                prospecto={prospecto} 
-                contactada={contactada} 
-                enEspera={enEspera}
-                ganada={ganada}
-                perdido={perdido}
+                prospectCount={prospectCountTotal} 
+                contactedCount={contactedCountTotal} 
+                waitingCount={waitingCountTotal}
+                wonCount={wonCountTotal}
+                lostCount={lostCountTotal}
                 global={global}>
             </BarChart>
             <div style={{height: '100px'}}></div>
