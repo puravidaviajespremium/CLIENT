@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate  } from 'react-router-dom'
+import { Route, Routes, Navigate, useLocation  } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './views/Home/Home'
@@ -16,15 +16,13 @@ import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
 import MetricsDetail from './components/Dashboard/Users/Metrics/MetricsDetail/MetricsDetail'
 
 function App() {
-  const isDashboardRoute = location.pathname.startsWith('/admin');
-
+  const {pathname} = useLocation();
   const user = JSON.parse(localStorage.getItem("user"));
   const userLogued = user && (user.role === "Administrador" || user.role === "Colaborador");
 
   return (
     <>
-      {/* {!isDashboardRoute && <Header/>} */}
-      <Header />
+      {!pathname.startsWith('/admin/') && <Header/>}
       <main className='main'>
         <Routes>
           <Route path='/admin/*' element={userLogued ? <AdminPanel /> : <Navigate to="/" element={<Home />} />} />
@@ -42,7 +40,7 @@ function App() {
           <Route path='*' element={<Error/>} />
         </Routes>
       </main>
-      {!isDashboardRoute && <Footer/>}
+      {!pathname.startsWith('/admin/') && <Footer/>}
     </>
   )
 }
