@@ -59,7 +59,7 @@ const customDataProvider = {
     }
   },
 
-getOne: async (resource, params) => {
+  getOne: async (resource, params) => {
     let url;
     if (resource === 'countries') {
         url = `${apiUrl}/${resource}/country/${params.id}`;
@@ -85,15 +85,15 @@ getOne: async (resource, params) => {
   const url = `${apiUrl}/${resource}/update/${params.id}`;
   console.log("Complete URL:", url);
   console.log("Payload:", data);
-  try {
-    const response = await axios.put(url, data);
-    console.log("Axios Response:", response);
-    return response.data;
-  } catch (error) {
-    console.log("Axios Error:", error);
-    throw error;
-  }
-},
+    try {
+      const response = await axios.put(url, data);
+      console.log("Axios Response:", response);
+      return response.data;
+    } catch (error) {
+      console.log("Axios Error:", error);
+      throw error;
+    }
+  },
   
   delete: async (resource, params) => {
     const { id } = params;
