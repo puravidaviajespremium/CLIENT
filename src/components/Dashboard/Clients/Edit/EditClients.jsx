@@ -4,22 +4,23 @@ import validateEditClient from "./validateEditClient";
 const EditClient = (props) => {
     return (
         <Edit {...props} className="createContainer">
-            <h1 className="titleForm">Modificar Cliente</h1>
             <SimpleForm toolbar={false} validate={validateEditClient}>
-                <TextInput disabled source="id" label="ID" />
+                <h1 className="titleForm">Modificar Cliente</h1>
+                <TextInput disabled source="id" label="ID" className='inputContent'/>
                 <div className="containerInputs">
-                    <TextInput source="firstName" label="Nombre" />
-                    <TextInput source="lastName" label="Apellido" />
+                    <TextInput source="firstName" label="Nombre" className='inputContent'/>
+                    <TextInput source="lastName" label="Apellido" className='inputContent'/>
                 </div>
                 <div className="containerInputs">
-                    <TextInput source="email" label="Correo Electrónico" />
-                    <TextInput source="telephone" label="Teléfono" />
+                    <TextInput source="email" label="Correo Electrónico" className='inputContent'/>
+                    <TextInput source="telephone" label="Teléfono" className='inputContent'/>
                 </div>
-                <TextInput source="destinationCountry" label="País de destino" />
+                <TextInput source="destinationCountry" label="País de destino" className='inputContent'/>
                 <div className="containerInputs">
                     <SelectInput
                         source="membershipStatus"
                         label="Estado de Membresía"
+                        className='inputContent'
                         choices={[
                             { id: "Plata", name: "Plata" },
                             { id: "Dorado", name: "Dorado" },
@@ -29,6 +30,7 @@ const EditClient = (props) => {
                     <SelectInput
                         source="contactStatus"
                         label="Estado de Contacto"
+                        className='inputContent'
                         choices={[
                             { id: "Prospecto", name: "Prospecto" },
                             { id: "Contactado", name: "Contactado" },

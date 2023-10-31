@@ -7,10 +7,10 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 const MyMenu = () => {
     return (
         <Menu className='myMenu'>
-            <Menu.Item to="/admin/clients" primaryText="Clientes" leftIcon={<SupervisedUserCircleIcon />}/>
-            <Menu.Item to="/admin/countries" primaryText="Países" leftIcon={<PublicIcon />}/>
-            <Menu.Item to="/admin/users" primaryText="Usuarios" leftIcon={<AccountCircleIcon />}/>
-            <Menu.Item to="/admin/metrics" primaryText="Métricas" leftIcon={<AssessmentIcon />}/>
+            <Menu.Item to="/admin/clients" primaryText="Clientes" leftIcon={<SupervisedUserCircleIcon />} className='menuOption'/>
+            <Menu.Item to="/admin/countries" primaryText="Países" leftIcon={<PublicIcon />} className='menuOption'/>
+            <Menu.Item to="/admin/users" primaryText="Usuarios" leftIcon={<AccountCircleIcon />} className='menuOption'/>
+            <Menu.Item to="/admin/metrics" primaryText="Métricas" leftIcon={<AssessmentIcon />} className='menuOption'/>
         </Menu>
     )
 }
