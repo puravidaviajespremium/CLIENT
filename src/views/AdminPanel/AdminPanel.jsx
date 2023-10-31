@@ -12,6 +12,7 @@ import EditUser from "../../components/Dashboard/Users/Edit/EditUser";
 import DetailClient from "../../components/Dashboard/Clients/Detail/DetailClient";
 import EditCountry from "../../components/Dashboard/Countries/Edit/EditCountry";
 import EditClient from "../../components/Dashboard/Clients/Edit/EditClients";
+import Cards from "../../components/Dashboard/Users/Metrics/Cards/Cards";
 
 const AdminPanel = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -26,7 +27,7 @@ const AdminPanel = () => {
                     <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient} />
                     <Resource name="countries" />
                     <Resource name="users" />
-                    <Resource name="metrics" />
+                    <Resource name="metrics" list={Cards} />
                 </>
             )}
 
@@ -35,7 +36,7 @@ const AdminPanel = () => {
                     <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient}/>
                     <Resource name="countries" list={ListCountries} create={CreateCountry} edit={EditCountry} />
                     <Resource name="users" list={ListUsers} create={CreateUser} edit={EditUser} />
-                    <Resource name="metrics" />
+                    <Resource name="metrics" list={Cards} />
                 </>
             )}
 
