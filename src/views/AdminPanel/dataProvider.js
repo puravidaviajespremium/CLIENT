@@ -3,11 +3,15 @@ const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const customDataProvider = {
   getList: async (resource, params) => {
-    const { filter } = params;
+    const { filter, pagination } = params;
     const { firstName, country, userStatus, membershipStatus, contactStatus, continent } = filter;
+    const { page, perPage } = pagination
 
-    let url = `${apiUrl}/${resource}`;
     const queryParams = {};
+    queryParams.page = page;
+    queryParams.perPage = perPage;
+    
+    let url = `${apiUrl}/${resource}`;
 
     if (firstName) {
         queryParams.firstName = firstName;
@@ -19,29 +23,30 @@ const customDataProvider = {
 
     if (userStatus) {
       queryParams.userStatus = userStatus;
-      url = `${apiUrl}/${resource}/filter/userStatus/${userStatus}`;
+      url = `${apiUrl}/${resource}/filter/userStatus`;
     }
 
     if (membershipStatus) {
       queryParams.membershipStatus = membershipStatus;
-      url = `${apiUrl}/${resource}/filter/membershipStatus/${membershipStatus}`;
+      url = `${apiUrl}/${resource}/filter/membershipStatus`;
     }
 
     if (contactStatus) {
       queryParams.contactStatus = contactStatus;
-      url = `${apiUrl}/${resource}/filter/contactStatus/${contactStatus}`;
+      url = `${apiUrl}/${resource}/filter/contactStatus`;
     }
 
     if (continent) {
       queryParams.continent = continent;
-      url = `${apiUrl}/${resource}/filter/continent/${continent}`;
+      url = `${apiUrl}/${resource}/filter/continent`;
     }
     
     try {
       const response = await axios.get(url, { params: queryParams })
       return {
-        data: response.data,
-        total: response.data.length
+        data: response.data[resource],
+        total: response.data.total,
+        pageInfo: response.data.pageInfo
       }
     } catch (error) {
       console.error("Error en la solicitud:", error);
