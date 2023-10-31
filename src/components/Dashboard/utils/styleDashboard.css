@@ -9,8 +9,78 @@
     margin-bottom: 0;
 }
 .appBar .MuiToolbar-root{
-    justify-content: space-between;
     width: 100%;
+}
+.appBar .css-lpub39-RaLoadingIndicator-root{
+    margin-left: auto;
+}
+
+/*Layout*/
+.myLayout.layout .RaLayout-appFrame{
+    margin-top: 0;
+}
+.myLayout .MuiDrawer-root{
+    background-color: var(--color-white);
+    width: 200px;
+    padding-top: 1rem;
+    transition: .3s all;
+}
+.myLayout .css-9lo51-MuiDrawer-docked-RaSidebar-root .MuiPaper-root,
+.myLayout .myMenu.RaMenu-open{
+    width: 200px;
+}
+
+.myLayout .css-rraw3v-MuiDrawer-docked-RaSidebar-root{
+    width: 50px;
+}
+
+.myLayout .RaLayout-contentWithSidebar .RaLayout-content{
+    padding: 2rem 1rem 0;
+    width: 100vw;
+}
+
+/*Menú*/
+.myMenu .menuOption{
+    font-family: var(--secondary-font);
+    width: 200px;
+}
+.myMenu .menuOption.RaMenuItemLink-active{
+    background-color: var(--color-silver);
+    color: var(--color-white);
+}
+.myMenu .menuOption.RaMenuItemLink-active svg{
+    fill: var(--color-white)
+}
+
+/*Lista*/
+.containerList .list-page .RaList-main{
+    width: 100%;
+    padding: 0.5rem ;
+    background-color: var(--color-white);
+}
+.containerList .MuiToolbar-dense .add-filter,
+.containerList .MuiToolbar-dense .RaCreateButton-root{
+    font-size: 0;
+    background-color: rgb(25, 118, 210);
+    padding: 0.5rem 1rem;
+    color: var(--color-white);
+}
+.containerList .MuiToolbar-dense .add-filter::after{
+    content: "FILTRO";
+    font-size: 13px;
+}
+
+.containerList .MuiToolbar-dense .RaCreateButton-root::after{
+    content: "CREAR";
+    font-size: 13px;
+}
+.containerList .myList .RaDatagrid-headerCell{
+    background-color: #e7e8ed;
+    font-weight: 600;
+}
+
+.RaDatagrid-tableWrapper{
+    overflow-x: auto;
 }
 
 /*Formulario de Creación*/
@@ -18,17 +88,50 @@
     display: flex;
     gap: 2rem;
 }
-.createContainer{
-    width: fit-content;
-}
 
 .containerInputs{
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
 }
 
-/*Crear Países - Destinos*/
-.containerDestinies .RaSimpleFormIterator-line .RaSimpleFormIterator-form{
-    flex-direction: row;
-    gap: 1rem;
+@media (min-width: 768px){
+    .myLayout .MuiDrawer-root{
+        height: 100vh;
+    }
+    /*Lista*/
+    .myLayout .RaLayout-contentWithSidebar .RaLayout-content{
+        width: calc(100vw - 280px);
+    }
+    .containerList .RaList-actions{
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    /*Formulario de Creación*/
+    .createContainer{
+        width: fit-content;
+    }
+    .containerInputs{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 992px){
+    /*Formulario de Creación-Edicion*/
+    .inputContent{
+        width: 220px;
+    }
+}
+
+@media (min-width: 1400px){
+    /*Lista*/
+    .RaDatagrid-tableWrapper{
+        width: 100%;
+    }
+    .RaDatagrid-tableWrapper .css-dsuxgy-MuiTableCell-root{
+        padding: 5px 10px;
+    }
 }

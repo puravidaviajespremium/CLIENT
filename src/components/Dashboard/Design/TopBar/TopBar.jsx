@@ -4,7 +4,7 @@ const TopBar = () => {
     return (
         <section className='containerAppBar'>
             <AppBar className="appBar">
-            <h1 className='titleAppBar'>Bienvenido, Administrador</h1>
+                <h2 className='titleAppBar'>Bienvenido, Administrador</h2>
             </AppBar>
         </section>
     )
