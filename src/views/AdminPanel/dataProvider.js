@@ -36,7 +36,7 @@ const customDataProvider = {
       queryParams.continent = continent;
       url = `${apiUrl}/${resource}/filter/continent/${continent}`;
     }
-
+    
     try {
       const response = await axios.get(url, { params: queryParams })
       return {
@@ -59,14 +59,17 @@ const customDataProvider = {
     }
   },
 
-  getOne: async (resource, params) => {
-    try {
-      const response = await axios.get(`${apiUrl}/${resource}/${params.id}`)
-      return { data: response.data }
-    } catch (error) {
-      console.error("Error en la solicitud:", error.response.data.error);
+getOne: async (resource, params) => {
+    let url;
+    if (resource === 'countries') {
+        url = `${apiUrl}/${resource}/country/${params.id}`;
+    } else {
+        url = `${apiUrl}/${resource}/${params.id}`;
     }
-  },  
+      const response = await axios.get(url)
+      console.log("API Response: ", response.data);
+      return { data: response.data }
+  },   
 
   getMany: async (resource, params) => {
     try {
@@ -78,16 +81,19 @@ const customDataProvider = {
   },  
   
   update: async (resource, params) => {
-    const { data } = params;
-    try {
-      if (resource === "users") {
-        const response = await axios.put(`${apiUrl}/${resource}/update/${params.id}`, data);
-        return { data: response.data };
-      }
-    } catch (error) {
-      console.error("Error en la solicitud:", error.response.data.error);
-    }
-  },
+  const { data } = params;
+  const url = `${apiUrl}/${resource}/update/${params.id}`;
+  console.log("Complete URL:", url);
+  console.log("Payload:", data);
+  try {
+    const response = await axios.put(url, data);
+    console.log("Axios Response:", response);
+    return response.data;
+  } catch (error) {
+    console.log("Axios Error:", error);
+    throw error;
+  }
+},
   
   delete: async (resource, params) => {
     const { id } = params;

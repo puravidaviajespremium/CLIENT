@@ -21,8 +21,7 @@ function Home() {
     dispatch(getAllCountries());
     scroll.scrollToTop();
   }, []);
-
-  // console.log(window.location)
+  
 
   return (
     <>

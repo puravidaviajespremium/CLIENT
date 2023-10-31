@@ -6,6 +6,7 @@ import axios from "axios";
 const apiUrl = import.meta.env.VITE_BASE_URL;
 import { BsGrid1X2Fill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 var userLogued = {};
 
 const UserMenu = () => {
@@ -20,6 +21,10 @@ const UserMenu = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   const handleProtectedRequest = async () => {
@@ -71,8 +76,6 @@ const UserMenu = () => {
   };
 
   useEffect(() => {
-    // dispatch(getAllClients())
-    // dispatch(getAllUsers())
     handleProtectedRequest();
   }, []);
 
@@ -97,27 +100,23 @@ const UserMenu = () => {
           >
             <ul>
               <li>
-                {" "}
-                <p> Hola {userLogued.name}</p>{" "}
+                <p> Hola {userLogued.name}</p>
               </li>
               {userLogued.role === "Administrador" && (
-                <Link to="/admin">
+               
                   <li>
-                    <BsGrid1X2Fill /> Dashboard Admin
+                    <a href="/admin" rel="noopener noreferrer" onClick={closeMenu}> <BsGrid1X2Fill /> Panel de Control</a>
                   </li>
-                </Link>
+                
               )}
 
               {userLogued.role === "Colaborador" && (
                 <li>
-                  <Link to="/admin">
-                    <BsGrid1X2Fill /> Dashboard
-                  </Link>
+                  <a href="/admin" rel="noopener noreferrer" onClick={closeMenu}> <BsGrid1X2Fill /> Panel de Control</a>
                 </li>
               )}
               <li>
-                {" "}
-                <LogoutButton />{" "}
+                <LogoutButton />
               </li>
             </ul>
           </div>
@@ -129,31 +128,4 @@ const UserMenu = () => {
 
 export default UserMenu;
 
-//RENDERIZADO CONDICIONAL DEL MENU
 
-// return (
-//   <>
-//     {isAuthenticated && (
-//       <div className={styles.menuContainer}>
-//         <div className={styles.imgProfile} onClick={toggleMenu}>
-//           <img src={user.picture} alt={user.name} className={styles.imgProfile} />
-//         </div>
-//         <div className={menuOpen ? `${styles.menuInfo} ${styles.menuInfoOpen}` : styles.menuInfo}>
-//           <ul>
-//             <li>
-//               <p> Hola... {user.email}</p>
-//             </li>
-//             {users.some((u) => u.id === user.id) && (      (probar id o email)
-//               <li>
-//                 <p> Dashboard</p>
-//               </li>
-//             )}
-//             <li>
-//               <LogoutButton />
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     )}
-//   </>
-// );

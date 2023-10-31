@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate  } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './views/Home/Home'
@@ -16,11 +16,17 @@ import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
 
 function App() {
   const isDashboardRoute = location.pathname.startsWith('/admin');
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userLogued = user && (user.role === "Administrador" || user.role === "Colaborador");
+
   return (
     <>
-      {!isDashboardRoute && <Header/>}
+      {/* {!isDashboardRoute && <Header/>} */}
+      <Header />
       <main className='main'>
         <Routes>
+          <Route path='/admin/*' element={userLogued ? <AdminPanel /> : <Navigate to="/" element={<Home />} />} />
           <Route path='/' element={<Home />} />
           <Route path='/faqs' element={<Faqs />} />
           <Route path='/detalle/:id' element={<Detail />} />
