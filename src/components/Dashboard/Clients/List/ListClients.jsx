@@ -27,7 +27,7 @@ const ListClients = (props) => {
         <section className="containerList">
             <h2>Lista de Clientes</h2>
             <List {...props} exporter={false} filters={clientFilters}>
-                <Datagrid className="myList" rowClick="show" bulkActionButtons={ isAdmin ? ( <BulkDeleteButton label="Eliminar" mutationMode="pessimistic" /> ) : null } >
+                <Datagrid className="myList" rowClick="show" bulkActionButtons={ isAdmin ? ( <BulkDeleteButton label="Eliminar " mutationMode="pessimistic" /> ) : null } >
                     <TextField source="id" />
                     <TextField source="firstName" label="Nombres" />
                     <TextField source="lastName" label="Apellidos"/>
@@ -36,11 +36,11 @@ const ListClients = (props) => {
                     <TextField source="membershipStatus" label="Membresía"/>
                     <TextField source="contactStatus" label="Estado"/>
                     <ReferenceField label="Colaborador"
-                        source="UserId" // ID del colaborador en "clients"
-                        reference="users" // Desde donde requiero el nombre del colab.
-                        basePath="/users" // Ruta para enlaces a la página de detalles del colaborador
+                        source="UserId" 
+                        reference="users"
+                        basePath="/users" 
                     >
-                        <TextField source="firstName" /> {/* Nombre del colaborador dentro de users*/}
+                        <TextField source="firstName" />
                     </ReferenceField>
                     <EditButton label="Editar"/>
                     {isAdmin ? <DeleteButton label="Eliminar" mutationMode="pessimistic" /> : null}
