@@ -2,11 +2,10 @@
 import './ChartBar.css';
 import React from 'react';
 
-
-const BarChart = ({ prospecto, contactada, enEspera, ganada, perdido, global }) => {
+const BarChart = ({ prospectCount, contactedCount, waitingCount, wonCount, lostCount, global }) => {
 
   const handleMouseOver = (event) => {
-    console.log(event.target.getAttribute('value'))
+    event.target.getAttribute('value')
   };
 
   const divWidth = global ? { width: '150px' } : null;
@@ -17,25 +16,25 @@ const BarChart = ({ prospecto, contactada, enEspera, ganada, perdido, global }) 
     <div className="divGeneralChart">
       <div className='divDeBarras'>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h5 style={{...sizeNumber, margin: '0px'}}>{`${prospecto}`}</h5>
+          <h5 style={{...sizeNumber, margin: '0px'}}>{`${prospectCount}`}</h5>
           <div 
-            value={`${prospecto}`} 
+            value={`${prospectCount}`} 
             onMouseOver={handleMouseOver} 
             className='divUno'
-            style={{...divWidth ,height: `${prospecto*4}px`}}
+            style={{...divWidth ,height: `${prospectCount*4}px`}}
           ></div>
           <span 
             style={{ 
               ...sizeLetter,
-              fontWeight: 'bold'}}>Prospecto</span>
+              fontWeight: 'bold'}}>prospectCount</span>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h5  style={{...sizeNumber, margin: '0px'}}>{`${contactada}`}</h5>
+          <h5  style={{...sizeNumber, margin: '0px'}}>{`${contactedCount}`}</h5>
           <div 
-            value={`${contactada}`} 
+            value={`${contactedCount}`} 
             onMouseOver={handleMouseOver} 
             className='divDos'
-            style={{...divWidth , height: `${contactada*4}px`}}
+            style={{...divWidth , height: `${contactedCount*4}px`}}
             ></div>
           <span 
             style={{
@@ -43,12 +42,12 @@ const BarChart = ({ prospecto, contactada, enEspera, ganada, perdido, global }) 
               fontWeight: 'bold'}}>Contactado</span>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h5  style={{...sizeNumber, margin: '0px'}}>{`${enEspera}`}</h5>
+          <h5  style={{...sizeNumber, margin: '0px'}}>{`${waitingCount}`}</h5>
           <div 
-            value={`${enEspera}`} 
+            value={`${waitingCount}`} 
             onMouseOver={handleMouseOver}
             className='divTres'
-            style={{...divWidth, height: `${enEspera*4}px`}}
+            style={{...divWidth, height: `${waitingCount*4}px`}}
             ></div>
           <span 
             style={{
@@ -56,12 +55,12 @@ const BarChart = ({ prospecto, contactada, enEspera, ganada, perdido, global }) 
               fontWeight: 'bold'}}>En Espera</span>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h5  style={{...sizeNumber, margin: '0px'}}>{`${ganada}`}</h5>
+          <h5  style={{...sizeNumber, margin: '0px'}}>{`${wonCount}`}</h5>
           <div 
-            value={`${ganada}`} 
+            value={`${wonCount}`} 
             onMouseOver={handleMouseOver}
             className='divCuatro'
-            style={{...divWidth, height: `${ganada*4}px`}}
+            style={{...divWidth, height: `${wonCount*4}px`}}
             ></div>
           <span 
             style={{
@@ -69,12 +68,12 @@ const BarChart = ({ prospecto, contactada, enEspera, ganada, perdido, global }) 
               fontWeight: 'bold'}}>Ganado</span>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h5  style={{...sizeNumber, margin: '0px'}}>{`${perdido}`}</h5>
+          <h5  style={{...sizeNumber, margin: '0px'}}>{`${lostCount}`}</h5>
           <div 
-            value={`${perdido}`} 
+            value={`${lostCount}`} 
             onMouseOver={handleMouseOver}
             className='divQuinto'
-            style={{...divWidth, height: `${perdido*4}px`}}
+            style={{...divWidth, height: `${lostCount*4}px`}}
             ></div>
           <span style={{
             ...sizeLetter, 
