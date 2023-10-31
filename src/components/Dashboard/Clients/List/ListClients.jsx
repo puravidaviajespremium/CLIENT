@@ -4,17 +4,7 @@ import { List, Datagrid, TextField,TextInput,SelectInput,EditButton, DeleteButto
 const ListClients = (props) => {
 
     const clientFilters = [
-        <TextInput label="Nombres" source="firstName" alwaysOn />,
-        <ReferenceInput
-            label="Colaborador"
-            source="UserId"
-            reference="users"
-            basePath="/users"
-            allowEmpty
-        >
-            <SelectInput label="Colaborador" optionText="firstName" />
-        </ReferenceInput>,
-        
+        <TextInput label="Nombres" source="firstName" alwaysOn />,        
         <SelectInput label="Membresía" source="membershipStatus" choices={[
             { id: 'Plata', name: 'Plata' },
             { id: 'Dorado', name: 'Dorado' },
@@ -28,6 +18,9 @@ const ListClients = (props) => {
             { id: 'Perdido', name: 'Perdido' },
         ]} />
     ];
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    const isAdmin = user && user.role === "Administrador";
 
     return (  
 
@@ -49,7 +42,7 @@ const ListClients = (props) => {
                     <TextField source="firstName" /> {/* Nombre del colaborador dentro de users*/}
                 </ReferenceField>
                 <EditButton label="Editar"/>
-                <DeleteButton label="Eliminar" mutationMode="pessimistic" />
+                {isAdmin ? <DeleteButton label="Eliminar" mutationMode="pessimistic" /> : null}
             </Datagrid>
         </List>        
     )

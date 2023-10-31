@@ -27,7 +27,7 @@ const AdminPanel = () => {
                     <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient} />
                     <Resource name="countries" />
                     <Resource name="users" />
-                    <Resource name="metrics" list={Cards} />
+                    <Resource name="metrics" />
                 </>
             )}
 
