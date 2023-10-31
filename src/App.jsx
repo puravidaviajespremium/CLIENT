@@ -13,6 +13,7 @@ import './App.css'
 import PaymentSuccess from './views/CheckoutPayment/PaymentSuccess/PaymentSuccess'
 import AdminPanel from './views/AdminPanel/AdminPanel'
 import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
+import MetricsDetail from './components/Dashboard/Users/Metrics/MetricsDetail/MetricsDetail'
 
 function App() {
   const isDashboardRoute = location.pathname.startsWith('/admin');
@@ -37,6 +38,7 @@ function App() {
           <Route path='/payment/cancel' element={<PaymentCancel/>} />
           <Route path='/payment/success' element={<PaymentSuccess/>} />
           <Route path='/admin/*' element={<AdminPanel />} />
+          <Route path='/admin/metrics/detail/:id' element={<MetricsDetail />} />
           <Route path='*' element={<Error/>} />
         </Routes>
       </main>
