@@ -1,5 +1,5 @@
 import React from "react";
-import { Show, SimpleShowLayout, TextField, ReferenceField } from 'react-admin';
+import { Show, SimpleShowLayout, TextField, ReferenceField, ArrayField,  DateField, Datagrid } from 'react-admin';
 
 const DetailClient = (props) => {
 
@@ -23,6 +23,16 @@ const DetailClient = (props) => {
                     >
                         <TextField source="firstName" /> {/* Nombre del colaborador dentro de users*/}
                     </ReferenceField>
+                    <ArrayField source="HistoryClients" label="Historial del Cliente" reference="clients" basePath="/clients">
+                        <Datagrid bulkActionButtons={false} >
+                            <DateField source="date" label="Fecha"/> 
+                            <TextField source="comment" label="Comentarios" /> 
+                            <TextField source="destinationCountry" label="Pais de destino" /> 
+                            <TextField source="originMsg" label="Origen del mensaje" /> 
+                            <TextField source="payment" label="Pago"/> 
+                            <TextField source="paymentConcept" label="Concepto del pago" /> 
+                        </Datagrid>
+                    </ArrayField>
                 </SimpleShowLayout>
             </Show>
         </>
