@@ -6,28 +6,30 @@ const EditCountry = (props) => {
         <Edit {...props} className='createContainer'>
             <SimpleForm toolbar={false} validate={validateEditCountry} >
                 <h1 className='titleForm'>Modificar País</h1>
-                <TextInput disabled source="id" label="ID" />
+                <TextInput disabled source="id" label="ID" className='inputContent'/>
                 <div className='containerInputs'>
-                    <TextInput source="name" label="Nombre" />
-                    <TextInput source="image" label="Imagen" />
-                    <TextInput source="experiences" label="Experiencias" />
-                </div>
-                <div className='containerInputs'>
-                    <SelectInput source="continent" label="Continente" choices={[
+                    <TextInput source="name" label="Nombre" className='inputContent'/>
+                    <SelectInput source="continent" label="Continente" className='inputContent' choices={[
                         { id: 'America', name: 'América' },
                         { id: 'Europa', name: 'Europa' },
                         { id: 'Asia', name: 'Asia' },
                         { id: 'Africa', name: 'África' },
                         { id: 'Oceania', name: 'Oceania' },
                     ]} />
-                    <TextInput source="description" label="Descripción" />
+                    <TextInput source="experiences" label="Experiencias" className='inputContent' />
+                </div>
+                <div className='containerInputs'>
+                    <TextInput source="image" label="Imagen" className='inputContent' multiline={true}/>
+                    <TextInput source="description" label="Descripción" className='inputContent' multiline={true}/>
                 </div>
                 <h2>Editar Destinos Populares</h2>
                 <ArrayInput source="Destinies" label="Destinos guardados">
-                    <SimpleFormIterator className='containerDestinies'>
-                            <TextInput source="name" label="Nombre del destino" />
-                            <TextInput source="image" label="Imagen del destino" />
-                            <TextInput source="description" label="Descripción del destino" />
+                    <SimpleFormIterator>
+                        <div className='containerInputs'>
+                            <TextInput source="name" label="Nombre del destino" className='inputContent'/>
+                            <TextInput source="image" label="Imagen del destino" className='inputContent' multiline={true}/>
+                            <TextInput source="description" label="Descripción del destino" className='inputContent' multiline={true}/>
+                        </div>
                     </SimpleFormIterator>
                 </ArrayInput>
                 <div className='containerButtonSave'>
