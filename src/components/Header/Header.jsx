@@ -174,13 +174,13 @@ function Header() {
               }`}
             >
               <ul>
-                <Link to="/">
+                <Link to="/" onClick={toggleMobileMenu}>
                   <li>Home</li>
                 </Link>
-                <Link to="/destinos">
+                <Link to="/destinos" onClick={toggleMobileMenu}>
                   <li>Destinos</li>
                 </Link>
-                <Link to="/contacto">
+                <Link to="/contacto" onClick={toggleMobileMenu}>
                   <li>Contacto</li>
                 </Link>
                 <li></li>
