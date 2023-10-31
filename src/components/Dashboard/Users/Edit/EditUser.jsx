@@ -5,28 +5,28 @@ const EditUser = (props) => {
     return (
          <Edit {...props} 
         className='createContainer' >
-            <h1 className='titleForm'>Modificar usuario</h1>
             <SimpleForm 
             toolbar={false}
             validate={validateUserCreation} >
+            <h1 className='titleForm'>Modificar usuario</h1>
                 <TextInput 
                 disabled 
-                source="id" label="ID" />
+                source="id" label="ID" className='inputContent'/>
                 <div className='containerInputs'>
-                <TextInput 
-                source="firstName" 
-                label="Nombre" />
-                <TextInput 
-                source="lastName" 
-                label="Apellido" />
+                    <TextInput 
+                    source="firstName" 
+                    label="Nombre" className='inputContent'/>
+                    <TextInput 
+                    source="lastName" 
+                    label="Apellido" className='inputContent'/>
                 </div>
                 <div className='containerInputs'>
-                <TextInput 
-                source="email" 
-                label="Correo Electrónico" />
-                <TextInput 
-                source="telephone" 
-                label="Teléfono"/>
+                    <TextInput 
+                    source="email" 
+                    label="Correo Electrónico" className='inputContent'/>
+                    <TextInput 
+                    source="telephone" 
+                    label="Teléfono" className='inputContent'/>
                 </div>
                 <BooleanInput 
                 source="isBlocked" 
@@ -34,6 +34,7 @@ const EditUser = (props) => {
                 <SelectInput 
                 source="userStatus" 
                 label= "Tipo de usuario"
+                className='inputContent'
                 choices={[
                     { id: 'Colaborador', name: 'Colaborador' },
                     { id: 'Administrador', name: 'Administrador' },
