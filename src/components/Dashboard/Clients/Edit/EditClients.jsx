@@ -1,4 +1,4 @@
-import { Edit, SimpleForm, TextInput, SelectInput, SaveButton } from "react-admin";
+import { Edit, SimpleForm, TextInput, SelectInput, SaveButton, ReferenceInput } from "react-admin";
 import validateEditClient from "./validateEditClient";
 import BackButton from "../../utils/BackButton";
 
@@ -18,7 +18,9 @@ const EditClient = (props) => {
                     <TextInput source="countryOrigin" label="País de Origen" className='inputContent'/>
                 </div>
 
-                <TextInput source="destinationCountry" label="País de destino" className='inputContent' />
+                <ReferenceInput label="Colaborador" source="UserId" reference="users" perPage={100}>
+                    <SelectInput label="Colaborador" optionText={(choice) => `${choice.firstName} ${choice.lastName}`} />
+                </ReferenceInput>
                   
                 <div className="containerInputs">
                     <SelectInput
