@@ -1,5 +1,5 @@
 const validateEditClient = (values) => {
-    const regexPhone = /^\d{9,18}$/;
+    const regexPhone = /^\d{1,4}?\s?\d{6,14}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     const errors = {};

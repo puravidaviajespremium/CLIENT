@@ -37,10 +37,6 @@
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.btnPrimary:hover {
-    background-color: #84ae6a;
-}
-
 .btnPrimary:active {
     transform: scale(0.95);
 }
