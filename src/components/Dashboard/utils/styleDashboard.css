@@ -113,12 +113,6 @@
     width: 100%;
 }
 
-/*Detalle del Cliente*/ 
-.containerInfo .etiqueta {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
 @media (min-width: 768px){
     .myLayout .MuiDrawer-root{
         height: 100vh;
@@ -157,18 +151,26 @@
 
     /*Detalle del Cliente*/
 
-    .containerDetail  {
-        text-align: justify;
+    .containerDetail .css-jfdv4h-MuiStack-root {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 1rem;  
+        font-size: 1.5rem;  
     }
 
-    .containerInfo {
-        display: grid;
-        grid-template-columns: repeat(8, auto);
-        align-items: flex-start;
-    }   
+    .containerDetail .css-jfdv4h-MuiStack-root>:not(style)~:not(style)  {
+        margin-top: 0;
+    }
 
-    .containerInfo p {
-        font-size: 1rem;
+    .divDetail .titleForm{
+        padding: 1rem;
+    }
+
+    .divDetail {
+        width: 90%;
     }
 }    
 
@@ -176,6 +178,10 @@
     /*Formulario de Creación-Edicion*/
     .inputContent{
         width: 220px;
+    }
+
+    .containerDetail .css-jfdv4h-MuiStack-root {
+        gap: 4rem;
     }
 }
 
@@ -187,4 +193,5 @@
     .RaDatagrid-tableWrapper .css-dsuxgy-MuiTableCell-root{
         padding: 5px 10px;
     }
+    
 }
