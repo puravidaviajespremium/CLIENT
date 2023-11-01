@@ -1,7 +1,9 @@
 import { List, Datagrid, TextField, TextInput, SelectInput, EditButton, DeleteButton, BulkDeleteButton, ReferenceField } from "react-admin";
+import { FunctionField } from 'react-admin';
+import { renderStatus, renderMember } from './renderFunctions';
+
 
 const ListClients = (props) => {
-
     const clientFilters = [
         <TextInput label="Nombres" source="firstName" alwaysOn />,        
         <SelectInput label="Membresía" source="membershipStatus" choices={[
@@ -33,8 +35,8 @@ const ListClients = (props) => {
                     <TextField source="lastName" label="Apellidos"/>
                     <TextField source="email" label="Correo electrónico"/>
                     <TextField source="countryOrigin" label="Origen"/>
-                    <TextField source="membershipStatus" label="Membresía" />
-                    <TextField source="contactStatus" label="Estado"/>
+                    <FunctionField label="Estado" render={renderStatus} />
+                    <FunctionField label="Membresía" render={renderMember} />
                     <ReferenceField label="Colaborador"
                         source="UserId" 
                         reference="users"

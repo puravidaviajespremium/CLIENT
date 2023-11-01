@@ -23,13 +23,11 @@ const EditCountry = (props) => {
                     <TextInput source="description" label="Descripción" className='inputContent' multiline={true}/>
                 </div>
                 <h2>Editar Destinos Populares</h2>
-                <ArrayInput source="Destinies" label="Destinos guardados">
-                    <SimpleFormIterator>
-                        <div className='containerInputs'>
-                            <TextInput source="name" label="Nombre del destino" className='inputContent'/>
+                <ArrayInput source="Destinies" label="Destinos guardados" >
+                    <SimpleFormIterator className='containerDestinies' >
+                            <TextInput source="name" label="Nombre del destino" />
                             <TextInput source="image" label="Imagen del destino" className='inputContent' multiline={true}/>
                             <TextInput source="description" label="Descripción del destino" className='inputContent' multiline={true}/>
-                        </div>
                     </SimpleFormIterator>
                 </ArrayInput>
                 <div className='containerButtonSave'>
