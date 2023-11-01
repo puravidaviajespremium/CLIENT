@@ -33,7 +33,7 @@ const ListClients = (props) => {
                     <TextField source="lastName" label="Apellidos"/>
                     <TextField source="email" label="Correo electrónico"/>
                     <TextField source="countryOrigin" label="Origen"/>
-                    <TextField source="membershipStatus" label="Membresía"/>
+                    <TextField source="membershipStatus" label="Membresía" />
                     <TextField source="contactStatus" label="Estado"/>
                     <ReferenceField label="Colaborador"
                         source="UserId" 

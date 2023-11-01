@@ -7,12 +7,31 @@
 
 .containerAppBar .titleAppBar{
     margin-bottom: 0;
+    font-size: 0.8rem;
 }
+
 .appBar .MuiToolbar-root{
     width: 100%;
 }
 .appBar .css-lpub39-RaLoadingIndicator-root{
-    margin-left: auto;
+   display: none;
+}
+
+.menuNavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.5rem;
+    font-weight: 600;
+    width: 90vw;
+    font-family: var(--primary-font);
+}
+
+.menuNavBar a {
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: var(--secondary-font);
 }
 
 /*Layout*/
@@ -95,10 +114,34 @@
     width: 100%;
 }
 
+/*Detalle del Cliente*/ 
+.containerInfo .etiqueta {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 @media (min-width: 768px){
     .myLayout .MuiDrawer-root{
         height: 100vh;
     }
+
+    /*TopBar*/
+    .menuNavBar {
+        margin: 2rem;     
+        justify-content: right;
+        width: 80vw; 
+    }
+
+    .menuNavBar a {
+        font-size: 1.25rem;
+        padding: 2rem;
+    }
+
+    .containerAppBar .titleAppBar{
+        font-size: 1.25rem;
+        width: 100vw;
+    }
+
     /*Lista*/
     .myLayout .RaLayout-contentWithSidebar .RaLayout-content{
         width: calc(100vw - 280px);
@@ -117,13 +160,34 @@
         flex-direction: row;
         gap: 1rem;
     }
-}
+
+    /*Detalle del Cliente*/
+
+    .containerDetail  {
+        text-align: justify;
+    }
+
+    .containerInfo {
+        display: grid;
+        grid-template-columns: repeat(8, auto);
+        align-items: flex-start;
+    }   
+
+    .containerInfo p {
+        font-size: 1rem;
+    }
+}    
 
 @media (min-width: 992px){
     /*Formulario de Creación-Edicion*/
     .inputContent{
         width: 220px;
     }
+
+    .menuNavBar {
+        width: 90vw; 
+    }
+
 }
 
 @media (min-width: 1400px){
@@ -134,4 +198,5 @@
     .RaDatagrid-tableWrapper .css-dsuxgy-MuiTableCell-root{
         padding: 5px 10px;
     }
+    
 }

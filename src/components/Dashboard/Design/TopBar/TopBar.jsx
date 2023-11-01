@@ -11,23 +11,24 @@ const TopBar = () => {
     return (
      
         <section className='containerAppBar'>
-                <a href="/" rel="noopener noreferrer" target='_blank'> HOME </a>
                 {isAdmin && 
-                <AppBar className="appBar">
+                <AppBar className="appBar" >
                     <h2 className='titleAppBar'>{` Bienvenido, ${user.name} `}  </h2>
-                    <UserMenu/>
-                    <a href="/" rel="noopener noreferrer" target='_blank'> HOME </a>               
+                    <section className="menuNavBar">
+                        <a href="/" rel="noopener noreferrer" target='_blank'> Home </a>               
+                        <UserMenu/>
+                    </section>
                 </AppBar>}
 
                 {isColl && 
                 <AppBar className="appBar">
-                    <h2 className='titleAppBar'>{` Bienvenido, ${user.name} `} </h2>
-                    <UserMenu/>
-                    <a href="/" rel="noopener noreferrer" target='_blank'> HOME </a>
+                    <section className="menuNavBar">
+                        <h2 className='titleAppBar'>{` Bienvenido, ${user.name} `} </h2>
+                        <a href="/" rel="noopener noreferrer" target='_blank'> Home </a>
+                        <UserMenu/>
+                    </section>
                 </AppBar>}
 
-                
-            
         </section>
     )
 }
