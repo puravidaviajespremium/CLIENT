@@ -120,6 +120,67 @@
     font-weight: 600;
 }
 
+/*Etiquetas ListClients*/
+.status-prospecto { 
+    background-color: rgb(50, 50, 207); 
+    color: var(--color-white);
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px; 
+}
+.status-contactado { 
+    background-color: rgb(16, 119, 16); 
+    color: var(--color-white);
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px; 
+}
+.status-en-espera { 
+    background-color: rgba(224, 224, 9, 0.872); 
+    color: black;
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px 
+}
+.status-ganado { 
+    background-color: rgb(214, 161, 26); 
+    color: black;
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px; 
+}
+.status-perdido { 
+    background-color: rgb(224, 41, 41); 
+    color: var(--color-white);
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px; 
+}
+
+.status-plata {
+    background-color: rgb(87, 94, 103);
+    color: var(--color-white);
+    border-radius: 10px 0px 10px 0px;
+    padding: 0.35rem;
+    letter-spacing: 1px;
+}
+
+.status-dorado {
+    background-color: rgb(190, 190, 7);
+    color: black;
+    border-radius: 10px 0px 10px 0px;
+    padding: 0.35rem;
+    letter-spacing: 1px;
+}
+
+.status-diamante {
+    background-color: rgb(90, 22, 236);
+    color: var(--color-white);
+    border-radius: 10px 0px 10px 0px;
+    padding: 0.35rem;
+    letter-spacing: 1px;
+}
+
 @media (min-width: 768px){
     .myLayout .MuiDrawer-root{
         height: 100vh;

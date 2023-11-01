@@ -23,8 +23,8 @@ const validateEditCountry = (values) => {
 
             if (!destiny.name) {
                 destinyErrors.name = 'El nombre es requerido';
-            } else if (destiny.name.length < 2 || destiny.name.length > 20) {
-                destinyErrors.name = 'El nombre debe tener entre 2 y 20 caracteres';
+            } else if (destiny.name.length < 2 || destiny.name.length > 50) {
+                destinyErrors.name = 'El nombre debe tener entre 2 y 50 caracteres';
             }
 
             if (!destiny.image) {
