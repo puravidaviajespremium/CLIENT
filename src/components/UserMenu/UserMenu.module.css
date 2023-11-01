@@ -16,8 +16,8 @@
 .menuInfo {
     display: none;
     position: absolute;
-    right: -100px;
-    top: 100%;
+    right: 0px;
+    top: 3.5rem;
     border-radius: 5px; 
     background-color: var(--primary-color) ;
     padding: 1rem;
@@ -46,4 +46,8 @@
 
 .menuInfoOpen {
     display: block;
+}
+
+@media (min-width: 768px){
+
 }
