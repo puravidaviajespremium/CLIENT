@@ -207,6 +207,13 @@
     }
 
     /*Formulario de Creación*/
+    .RaSimpleFormIterator-list .RaSimpleFormIterator-line .RaSimpleFormIterator-form{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .inputContent{
+        width: 220px;
+    }
     .createContainer{
         width: fit-content;
     }
@@ -232,13 +239,6 @@
         font-size: 1rem;
     }
 }    
-
-@media (min-width: 992px){
-    /*Formulario de Creación-Edicion*/
-    .inputContent{
-        width: 220px;
-    }
-}
 
 @media (min-width: 1400px){
     /*Lista*/

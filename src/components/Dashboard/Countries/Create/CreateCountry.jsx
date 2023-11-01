@@ -29,11 +29,9 @@ const CreateCountry = (props) => {
                     <h2>Destinos Populares</h2>
                     <ArrayInput source="destinies" label="Agregar Destinos">
                         <SimpleFormIterator className='containerDestinies'>
-                            <div className='containerInputs'>
-                                <TextInput source="name" label="Destino" className='inputContent'/>
-                                <TextInput source="image" label="Imagen" className='inputContent' multiline={true}/>
-                                <TextInput source="description" label="Descripción" className='inputContent' multiline={true}/>
-                            </div>
+                            <TextInput source="name" label="Destino" className='inputContent'/>
+                            <TextInput source="image" label="Imagen" className='inputContent' multiline={true}/>
+                            <TextInput source="description" label="Descripción" className='inputContent' multiline={true}/>
                         </SimpleFormIterator>
                     </ArrayInput>
                     
