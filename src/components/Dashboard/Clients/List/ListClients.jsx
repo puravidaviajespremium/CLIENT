@@ -7,7 +7,7 @@ const ListClients = (props) => {
     const clientFilters = [
         <TextInput label="Nombres" source="firstName" alwaysOn />, 
         <ReferenceInput label="Colaborador" source="UserId" reference="users" allowEmpty >
-            <SelectInput optionText="firstName" label="Colaborador" />
+             <SelectInput optionText={(choice) => `${choice.firstName} ${choice.lastName}`} label="Colaborador" />
         </ReferenceInput>,
         <SelectInput label="Membresía" source="membershipStatus" choices={[
             { id: 'Plata', name: 'Plata' },
@@ -45,8 +45,7 @@ const ListClients = (props) => {
                         reference="users"
                         basePath="/users" 
                     >
-                        <TextField source="firstName" />
-                        <TextField source="lastName" />
+                        <FunctionField label="Colaborador" render={(record) => `${record.firstName} ${record.lastName}`} />
                     </ReferenceField>
                     <EditButton label="Editar"/>
                     {isAdmin ? <DeleteButton label="Eliminar" mutationMode="pessimistic" /> : null}
