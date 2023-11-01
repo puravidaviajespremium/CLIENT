@@ -1,10 +1,14 @@
-import { List, Datagrid, TextField,TextInput,SelectInput,EditButton, DeleteButton, BulkDeleteButton, ReferenceField} from "react-admin";
+import { List, Datagrid, TextField, TextInput, SelectInput, EditButton, DeleteButton, BulkDeleteButton, ReferenceField, ReferenceInput } from "react-admin";
+import { FunctionField } from 'react-admin';
+import { renderStatus, renderMember } from './renderFunctions';
 
 
 const ListClients = (props) => {
-
     const clientFilters = [
-        <TextInput label="Nombres" source="firstName" alwaysOn />,
+        <TextInput label="Nombres" source="firstName" alwaysOn />, 
+        <ReferenceInput label="Colaborador" source="UserId" reference="users" allowEmpty >
+             <SelectInput optionText={(choice) => `${choice.firstName} ${choice.lastName}`} label="Colaborador" />
+        </ReferenceInput>,
         <SelectInput label="Membresía" source="membershipStatus" choices={[
             { id: 'Plata', name: 'Plata' },
             { id: 'Dorado', name: 'Dorado' },
@@ -19,29 +23,35 @@ const ListClients = (props) => {
         ]} />
     ];
 
+    const user = JSON.parse(localStorage.getItem("user"));
+    const isAdmin = user && user.role === "Administrador";
+    const isColl = user && user.role === "Colaborador";    
+
     return (  
 
-        <List {...props} exporter={false} filters={clientFilters}>
-            <Datagrid rowClick="show" bulkActionButtons={<BulkDeleteButton label="Eliminar" mutationMode="pessimistic" />} >
-                <TextField source="id" />
-                <TextField source="firstName" label="Nombres" />
-                <TextField source="lastName" label="Apellidos"/>
-                <TextField source="email" label="Correo electrónico"/>
-                <TextField source="telephone" label="Celular"/>
-                <TextField source="countryOrigin" label="Origen"/>
-                <TextField source="membershipStatus" label="Membresía"/>
-                <TextField source="contactStatus" label="Estado"/>
-                <ReferenceField label="Colaborador"
-                    source="UserId" // ID del colaborador en "clients"
-                    reference="users" // Desde donde requiero el nombre del colab.
-                    basePath="/users" // Ruta para enlaces a la página de detalles del colaborador
-                >
-                    <TextField source="firstName" /> {/* Nombre del colaborador dentro de users*/}
-                </ReferenceField>
-                <EditButton/>
-                <DeleteButton label="Eliminar" mutationMode="pessimistic" />
-            </Datagrid>
-        </List>        
+        <section className="containerList">
+            <h2>Lista de Clientes</h2>
+            <List {...props} exporter={false} filters={clientFilters}>
+                <Datagrid className="myList" rowClick="show" bulkActionButtons={ isAdmin ? ( <BulkDeleteButton label="Eliminar " mutationMode="pessimistic" /> ) : null } >
+                    <TextField source="id" />
+                    <TextField source="firstName" label="Nombres" />
+                    <TextField source="lastName" label="Apellidos"/>
+                    <TextField source="email" label="Correo electrónico"/>
+                    <TextField source="countryOrigin" label="Origen"/>
+                    <FunctionField label="Estado" render={renderStatus} />
+                    <FunctionField label="Membresía" render={renderMember} />
+                    <ReferenceField label="Colaborador"
+                        source="UserId" 
+                        reference="users"
+                        basePath="/users" 
+                    >
+                        <FunctionField label="Colaborador" render={(record) => `${record.firstName} ${record.lastName}`} />
+                    </ReferenceField>
+                    <EditButton label="Editar"/>
+                    {isAdmin ? <DeleteButton label="Eliminar" mutationMode="pessimistic" /> : null}
+                </Datagrid>
+            </List>        
+        </section>
     )
 }
 

@@ -102,15 +102,7 @@ function Header() {
           <Link to="/destinos">Destinos</Link>
           <Link to="/contacto">Contacto</Link>
         </nav>
-
-        {isAuthenticated ? (
-          <>
-            <UserMenu />
-          </>
-        ) : (
-          <LoginButton />
-        )}
-
+        
         <div className={styles.menus}>
           <div ref={searchSection}>
             <span className={styles.searchIcon} onClick={toggleInput}>
@@ -121,14 +113,14 @@ function Header() {
               className={`${styles.searchSection} ${
                 toggleSearch && styles.searchSectionActive
               }`}
-            >
+              >
               <div>
                 <input
                   type="text"
                   placeholder="Buscar pais"
                   value={searchValue}
                   onChange={handleSearchInput}
-                />
+                  />
                 {searchValue &&
                   findCountries?.map((country) => (
                     <Link to={`detalle/${country.id}`}>
@@ -140,6 +132,13 @@ function Header() {
               </div>
             </div>
           </div>
+                  {isAuthenticated ? (
+                    <>
+                      <UserMenu />
+                    </>
+                  ) : (
+                    <LoginButton />
+                  )}
 
           {/* DESKTOP */}
           <div ref={userSection}>
@@ -174,13 +173,13 @@ function Header() {
               }`}
             >
               <ul>
-                <Link to="/">
+                <Link to="/" onClick={toggleMobileMenu}>
                   <li>Home</li>
                 </Link>
-                <Link to="/destinos">
+                <Link to="/destinos" onClick={toggleMobileMenu}>
                   <li>Destinos</li>
                 </Link>
-                <Link to="/contacto">
+                <Link to="/contacto" onClick={toggleMobileMenu}>
                   <li>Contacto</li>
                 </Link>
                 <li></li>

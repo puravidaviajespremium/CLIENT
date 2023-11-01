@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate, useLocation  } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './views/Home/Home'
@@ -13,14 +13,19 @@ import './App.css'
 import PaymentSuccess from './views/CheckoutPayment/PaymentSuccess/PaymentSuccess'
 import AdminPanel from './views/AdminPanel/AdminPanel'
 import PaymentCancel from './views/CheckoutPayment/PaymentCancel/PaymentCancel'
+import MetricsDetail from './components/Dashboard/Users/Metrics/MetricsDetail/MetricsDetail'
 
 function App() {
-  const isDashboardRoute = location.pathname.startsWith('/admin');
+  const {pathname} = useLocation();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userLogued = user && (user.role === "Administrador" || user.role === "Colaborador");
+
   return (
     <>
-      {!isDashboardRoute && <Header/>}
+      {!pathname.startsWith('/admin/') && <Header/>}
       <main className='main'>
         <Routes>
+          <Route path='/admin/*' element={userLogued ? <AdminPanel /> : <Navigate to="/" element={<Home />} />} />
           <Route path='/' element={<Home />} />
           <Route path='/faqs' element={<Faqs />} />
           <Route path='/detalle/:id' element={<Detail />} />
@@ -31,10 +36,11 @@ function App() {
           <Route path='/payment/cancel' element={<PaymentCancel/>} />
           <Route path='/payment/success' element={<PaymentSuccess/>} />
           <Route path='/admin/*' element={<AdminPanel />} />
+          <Route path='/admin/metrics/detail/:id' element={<MetricsDetail />} />
           <Route path='*' element={<Error/>} />
         </Routes>
       </main>
-      {!isDashboardRoute && <Footer/>}
+      {!pathname.startsWith('/admin/') && <Footer/>}
     </>
   )
 }

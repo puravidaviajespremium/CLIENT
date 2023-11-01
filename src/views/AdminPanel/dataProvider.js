@@ -3,45 +3,53 @@ const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const customDataProvider = {
   getList: async (resource, params) => {
-    const { filter } = params;
-    const { firstName, country, userStatus, membershipStatus, contactStatus, continent } = filter;
+    const { filter, pagination } = params;
+    const { firstName, country, userStatus, membershipStatus, contactStatus, continent, UserId } = filter;
+    const { page, perPage } = pagination
 
-    let url = `${apiUrl}/${resource}`;
     const queryParams = {};
-
-    if (firstName) {
+    queryParams.page = page;
+    queryParams.perPage = perPage;
+    
+    let url = `${apiUrl}/${resource}`;    
+    
+    if(resource === 'clients') {
+      if (membershipStatus || contactStatus || UserId || firstName ) {
+        queryParams.membershipStatus = membershipStatus;
+        queryParams.contactStatus = contactStatus;
+        queryParams.UserId = UserId;
         queryParams.firstName = firstName;
-    }
+        url = `${apiUrl}/${resource}/bycoll`;
+      }
 
-    if (country) {
-        queryParams.country = country;
-    }
+    } else {
 
-    if (userStatus) {
-      queryParams.userStatus = userStatus;
-      url = `${apiUrl}/${resource}/filter/userStatus/${userStatus}`;
+      if (firstName) {
+        queryParams.firstName = firstName;
+      }
+      
+  
+      if (country) {
+          queryParams.country = country;
+      }
+  
+      if (userStatus) {
+        queryParams.userStatus = userStatus;
+        url = `${apiUrl}/${resource}/filter/userStatus`;
+      }
+      
+      if (continent) {
+        queryParams.continent = continent;
+        url = `${apiUrl}/${resource}/filter/continent`;
+      }
     }
-
-    if (membershipStatus) {
-      queryParams.membershipStatus = membershipStatus;
-      url = `${apiUrl}/${resource}/filter/membershipStatus/${membershipStatus}`;
-    }
-
-    if (contactStatus) {
-      queryParams.contactStatus = contactStatus;
-      url = `${apiUrl}/${resource}/filter/contactStatus/${contactStatus}`;
-    }
-
-    if (continent) {
-      queryParams.continent = continent;
-      url = `${apiUrl}/${resource}/filter/continent/${continent}`;
-    }
-
+    
     try {
       const response = await axios.get(url, { params: queryParams })
       return {
-        data: response.data,
-        total: response.data.length
+        data: response.data[resource],
+        total: response.data.total,
+        pageInfo: response.data.pageInfo
       }
     } catch (error) {
       console.error("Error en la solicitud:", error);
@@ -60,13 +68,16 @@ const customDataProvider = {
   },
 
   getOne: async (resource, params) => {
-    try {
-      const response = await axios.get(`${apiUrl}/${resource}/${params.id}`)
-      return { data: response.data }
-    } catch (error) {
-      console.error("Error en la solicitud:", error.response.data.error);
+    let url;
+    if (resource === 'countries') {
+        url = `${apiUrl}/${resource}/country/${params.id}`;
+    } else {
+        url = `${apiUrl}/${resource}/${params.id}`;
     }
-  },  
+      const response = await axios.get(url)
+      console.log("API Response: ", response.data);
+      return { data: response.data }
+  },   
 
   getMany: async (resource, params) => {
     try {
@@ -78,14 +89,17 @@ const customDataProvider = {
   },  
   
   update: async (resource, params) => {
-    const { data } = params;
+  const { data } = params;
+  const url = `${apiUrl}/${resource}/update/${params.id}`;
+  console.log("Complete URL:", url);
+  console.log("Payload:", data);
     try {
-      if (resource === "users") {
-        const response = await axios.put(`${apiUrl}/${resource}/update/${params.id}`, data);
-        return { data: response.data };
-      }
+      const response = await axios.put(url, data);
+      console.log("Axios Response:", response);
+      return response.data;
     } catch (error) {
-      console.error("Error en la solicitud:", error.response.data.error);
+      console.log("Axios Error:", error);
+      throw error;
     }
   },
   

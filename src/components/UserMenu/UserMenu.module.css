@@ -16,13 +16,14 @@
 .menuInfo {
     display: none;
     position: absolute;
-    right: -100px;
-    top: 100%;
+    right: 0px;
+    top: 3.5rem;
     border-radius: 5px; 
     background-color: var(--primary-color) ;
-    padding: 15px;
+    padding: 1rem;
+    padding-bottom: 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-    min-width: 150px;
+    min-width: 250px;
     border-bottom: 1px solid var(--primary-color);
 }
 
@@ -30,8 +31,23 @@
     font-family: var(--secondary-font);
     color: var(--color-white);
     font-size: 1rem;
+    margin: 0;
+}
+
+.menuInfo a {
+    font-family: var(--secondary-font);
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.menuInfo ul li {
+    padding-bottom: 1.5rem;
 }
 
 .menuInfoOpen {
     display: block;
+}
+
+@media (min-width: 768px){
+
 }

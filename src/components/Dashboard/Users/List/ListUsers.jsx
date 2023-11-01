@@ -12,8 +12,9 @@ const ListUsers = (props) => {
 
     return (
         <section className="containerList">
+            <h2>Lista de Usuarios</h2>
             <List {...props} exporter={false} filters={userFilters} >
-                <Datagrid rowClick="edit" bulkActionButtons={<BulkDeleteButton label="Eliminar" mutationMode="pessimistic" />}>
+                <Datagrid className="myList" rowClick="edit" bulkActionButtons={<BulkDeleteButton label="Eliminar" mutationMode="pessimistic" />}>
                     <TextField source="id" />
                     <TextField source="firstName" label="Nombres" />
                     <TextField source="lastName" label="Apellidos" />
@@ -22,9 +23,7 @@ const ListUsers = (props) => {
                     <TextField source="isBlocked" label="Bloqueado" />
                     <TextField source="userStatus" label="Tipo" />
                     <EditButton label="Editar" />
-                    <DeleteButton label="ELIMINAR" mutationMode="pessimistic" />
-                    
-
+                    <DeleteButton label="Eliminar" mutationMode="pessimistic" />
                 </Datagrid>
             </List>
         </section>

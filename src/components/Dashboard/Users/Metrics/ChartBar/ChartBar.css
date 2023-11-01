@@ -1,0 +1,38 @@
+.divGeneralChart {
+    display: flex;
+    font-family: var(--secondary-font);
+}
+
+.divDeBarras {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: auto;
+    padding: 1rem;
+    gap: 15px;
+}
+
+.divUno {
+    background-color: #003049;
+    margin: 10px;
+}
+
+.divDos {
+    background-color: #fcbf49;
+    margin: 10px;
+}
+
+.divTres {
+    background-color: #f77f00;
+    margin: 10px;
+}
+
+.divCuatro {
+    background-color: #84ae6a;
+    margin: 10px;
+}
+
+.divQuinto {
+    background-color: #d62828;
+    margin: 10px;
+}
