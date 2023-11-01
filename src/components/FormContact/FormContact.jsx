@@ -200,7 +200,7 @@ const FormContact = () => {
             <div className={styles.contentInput}>
               <div className={styles.inputLabel}>
                 <PhoneInput
-                  country={'pe'}
+                  country={'cr'}
                   onChange={handleChangeCountryOrigin}
                   inputClass={styles.phoneInput}
                   placeholder=""
