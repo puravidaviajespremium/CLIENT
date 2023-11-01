@@ -4,7 +4,7 @@ const apiUrl = import.meta.env.VITE_BASE_URL;
 const customDataProvider = {
   getList: async (resource, params) => {
     const { filter, pagination } = params;
-    const { firstName, country, userStatus, membershipStatus, contactStatus, continent } = filter;
+    const { firstName, country, userStatus, membershipStatus, contactStatus, continent, UserId } = filter;
     const { page, perPage } = pagination
 
     const queryParams = {};
@@ -12,6 +12,10 @@ const customDataProvider = {
     queryParams.perPage = perPage;
     
     let url = `${apiUrl}/${resource}`;
+
+    // if (UserId) {
+    //   queryParams.UserId = UserId;
+    // }
 
     if (firstName) {
         queryParams.firstName = firstName;
@@ -26,14 +30,11 @@ const customDataProvider = {
       url = `${apiUrl}/${resource}/filter/userStatus`;
     }
 
-    if (membershipStatus) {
+    if (membershipStatus || contactStatus || UserId ) {
       queryParams.membershipStatus = membershipStatus;
-      url = `${apiUrl}/${resource}/filter/membershipStatus`;
-    }
-
-    if (contactStatus) {
       queryParams.contactStatus = contactStatus;
-      url = `${apiUrl}/${resource}/filter/contactStatus`;
+      queryParams.UserId = UserId;
+      url = `${apiUrl}/${resource}/bycoll`;
     }
 
     if (continent) {

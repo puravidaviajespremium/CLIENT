@@ -14,7 +14,7 @@ const MyMenu = () => {
         <Menu className='myMenu'>
             { isColl && (
                 <>
-                <Menu.Item to="/admin/clients" primaryText="Clientes" leftIcon={<SupervisedUserCircleIcon />} className='menuOption'/>
+                <Menu.Item to="/admin/clients" primaryText="Mis Clientes" leftIcon={<SupervisedUserCircleIcon />} className='menuOption'/>
                 </>
             )},
 

@@ -13,6 +13,7 @@ import DetailClient from "../../components/Dashboard/Clients/Detail/DetailClient
 import EditCountry from "../../components/Dashboard/Countries/Edit/EditCountry";
 import EditClient from "../../components/Dashboard/Clients/Edit/EditClients";
 import Cards from "../../components/Dashboard/Users/Metrics/Cards/Cards";
+import ListMyClients from "../../components/Dashboard/MyClients/List/MyClients";
 
 const AdminPanel = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -24,7 +25,7 @@ const AdminPanel = () => {
 
             {isColl && (
                 <>
-                    <Resource name="clients" list={ListClients} show={DetailClient} create={CreateClient} edit={EditClient} />
+                    <Resource name="clients" list={ListMyClients} show={DetailClient} create={CreateClient} edit={EditClient} />
                 </>
             )}
 
