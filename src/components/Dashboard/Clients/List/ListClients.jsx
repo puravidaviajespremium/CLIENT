@@ -1,11 +1,14 @@
-import { List, Datagrid, TextField, TextInput, SelectInput, EditButton, DeleteButton, BulkDeleteButton, ReferenceField } from "react-admin";
+import { List, Datagrid, TextField, TextInput, SelectInput, EditButton, DeleteButton, BulkDeleteButton, ReferenceField, ReferenceInput } from "react-admin";
 import { FunctionField } from 'react-admin';
 import { renderStatus, renderMember } from './renderFunctions';
 
 
 const ListClients = (props) => {
     const clientFilters = [
-        <TextInput label="Nombres" source="firstName" alwaysOn />,        
+        <TextInput label="Nombres" source="firstName" alwaysOn />, 
+        <ReferenceInput label="Colaborador" source="UserId" reference="users" allowEmpty >
+             <SelectInput optionText={(choice) => `${choice.firstName} ${choice.lastName}`} label="Colaborador" />
+        </ReferenceInput>,
         <SelectInput label="Membresía" source="membershipStatus" choices={[
             { id: 'Plata', name: 'Plata' },
             { id: 'Dorado', name: 'Dorado' },
@@ -42,7 +45,7 @@ const ListClients = (props) => {
                         reference="users"
                         basePath="/users" 
                     >
-                        <TextField source="firstName" />
+                        <FunctionField label="Colaborador" render={(record) => `${record.firstName} ${record.lastName}`} />
                     </ReferenceField>
                     <EditButton label="Editar"/>
                     {isAdmin ? <DeleteButton label="Eliminar" mutationMode="pessimistic" /> : null}
