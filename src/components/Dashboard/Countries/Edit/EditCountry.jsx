@@ -1,5 +1,6 @@
 import { Edit, SimpleForm, TextInput, SelectInput, ArrayInput, SimpleFormIterator, SaveButton } from 'react-admin';
 import validateEditCountry from './validateEditCountry';
+import BackButton from '../../utils/BackButton';
 
 const EditCountry = (props) => {
     return (
@@ -31,7 +32,12 @@ const EditCountry = (props) => {
                     </SimpleFormIterator>
                 </ArrayInput>
                 <div className='containerButtonSave'>
-                    <SaveButton label="Guardar cambios" type="button" />
+                    <div>
+                        <SaveButton label="Guardar cambios" type="button" />
+                    </div>
+                    <div>
+                        <BackButton/>
+                    </div>
                 </div>
             </SimpleForm>
         </Edit>

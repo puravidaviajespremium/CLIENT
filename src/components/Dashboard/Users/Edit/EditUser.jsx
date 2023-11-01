@@ -1,5 +1,6 @@
 import { Edit, SimpleForm, TextInput, BooleanInput, SelectInput, SaveButton } from "react-admin";
 import validateUserCreation from "../Create/validate";
+import BackButton from "../../utils/BackButton";
 
 const EditUser = (props) => {
     return (
@@ -40,10 +41,16 @@ const EditUser = (props) => {
                     { id: 'Administrador', name: 'Administrador' },
                 ]} />
                 <div className='containerButtonSave'>
-                    <SaveButton 
-                    label="Guardar cambios" 
-                    type="button" 
-                    />
+                    <div>
+                        <SaveButton 
+                            label="Guardar cambios" 
+                            type="button" 
+                        />
+                    </div>
+                    <div>
+                        <BackButton/>
+                    </div>
+                    
                 </div>
             </SimpleForm>
         </Edit>
