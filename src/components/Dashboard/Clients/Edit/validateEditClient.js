@@ -7,7 +7,6 @@ const validateEditClient = (values) => {
     if (!values.lastName || values.lastName.length < 1) errors.lastName = 'Apellido inválido';
     if (!values.email) errors.email = 'El correo electrónico es requerido';
     if (!values.telephone) errors.telephone = 'El teléfono es requerido';
-    if (!values.destinationCountry) errors.destinationCountry = 'El país de destino es requerido';
     if (!values.membershipStatus) errors.membershipStatus = 'El estado de membresía es requerido';
     if (!values.contactStatus) errors.contactStatus = 'El estado de contacto es requerido';
 

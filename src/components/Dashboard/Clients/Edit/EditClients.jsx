@@ -16,7 +16,9 @@ const EditClient = (props) => {
                     <TextInput source="email" label="Correo Electrónico" className='inputContent' />
                     <TextInput source="telephone" label="Teléfono" className='inputContent' />
                 </div>
+
                 <TextInput source="destinationCountry" label="País de destino" className='inputContent' />
+                  
                 <div className="containerInputs">
                     <SelectInput
                         source="membershipStatus"

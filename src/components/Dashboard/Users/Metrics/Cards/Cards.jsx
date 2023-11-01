@@ -1,14 +1,13 @@
-
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import'./Cards.css'
+import './Cards.css'
 import BarChart from "../ChartBar/ChartBar";
 import { NavLink } from 'react-router-dom';
-import {BsFileBarGraphFill} from 'react-icons/bs';
+import { BsFileBarGraphFill } from 'react-icons/bs';
 
 
 const Cards = () => {
-    
+
     const [metricsData, setMetricsData] = useState([]);
 
     const [global, setGlobal] = useState(true);
@@ -25,7 +24,7 @@ const Cards = () => {
     useEffect(() => {
 
         allUserMetrics();
-        
+
         const handleResize = () => {
             if (window.innerWidth <= 768) {
                 setGlobal(false);
@@ -35,7 +34,7 @@ const Cards = () => {
         };
 
         window.addEventListener('resize', handleResize);
-        
+
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -55,9 +54,9 @@ const Cards = () => {
         lostCountTotal += parseInt(user.lostCount);
     });
 
-    return(
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <h1 className="titles">Métricas Individuales</h1>
+    return (
+        <div className="containerMetrics">
+            <h2>Métricas Individuales</h2>
             <table className='tablaGeneral'>
                 <thead>
                     <tr >
@@ -65,13 +64,13 @@ const Cards = () => {
                         <th className="tablaIndividual">Nombres</th>
                         <th className="tablaIndividual">Apellidos</th>
                         <th className="tablaIndividual">Correo electrónico</th>
-                        <th className="tablaIndividual">prospectCount</th>
-                        <th className="tablaIndividual">contactedCount</th>
+                        <th className="tablaIndividual">Prospectos</th>
+                        <th className="tablaIndividual">Contactados</th>
                         <th className="tablaIndividual">En espera</th>
-                        <th className="tablaIndividual">Ganado</th>
-                        <th className="tablaIndividual">Perdido</th>
+                        <th className="tablaIndividual">Ganados</th>
+                        <th className="tablaIndividual">Perdidos</th>
                         <th className="tablaIndividual">Total</th>
-                        <th className="tablaIndividual">Gráfico</th>
+                        <th className="tablaIndividual">Gráfico individual</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,28 +85,28 @@ const Cards = () => {
                             <td className="tablaIndividual">{user.waitingCount}</td>
                             <td className="tablaIndividual">{user.wonCount}</td>
                             <td className="tablaIndividual">{user.lostCount}</td>
-                             <td className="tablaIndividual">{user.clientCount}</td>
+                            <td className="tablaIndividual">{user.clientCount}</td>
                             <td className="tablaIndividual">
-                                <NavLink to={`/admin/metrics/detail/${user.id}`} key={user.id}>   
+                                <NavLink to={`/admin/metrics/detail/${user.id}`} key={user.id}>
                                     <button className="detailButton">
-                                        <BsFileBarGraphFill style={{paddingTop: '5px', marginRight: '2px'}} size={20} color="rgb(31, 138, 31)"></BsFileBarGraphFill>
-                                    DETALLE</button>      
+                                        <BsFileBarGraphFill style={{ paddingTop: '5px', marginRight: '2px' }} size={20} color="var(--primary-color)"></BsFileBarGraphFill>
+                                        DETALLE</button>
                                 </NavLink>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <h1 className="titles" style={{margin: '50px'}}>Métricas Globales</h1>
+            <h2 style={{ margin: '50px' }}>Métricas Globales</h2>
             <BarChart
-                prospectCount={prospectCountTotal} 
-                contactedCount={contactedCountTotal} 
+                prospectCount={prospectCountTotal}
+                contactedCount={contactedCountTotal}
                 waitingCount={waitingCountTotal}
                 wonCount={wonCountTotal}
                 lostCount={lostCountTotal}
                 global={global}>
             </BarChart>
-            <div style={{height: '100px'}}></div>
+            <div style={{ height: '100px' }}></div>
         </div>
     )
 }
