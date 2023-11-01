@@ -1,41 +1,57 @@
-
-
-
-.listTitles{
+.containerMetrics {
     display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    font-weight: normal;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     width: 100%;
-    justify-content: space-evenly;
 }
 
-.tablaGeneral{
+.containerMetrics h2 {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    letter-spacing: 0.00938em;
+}
+
+.tablaGeneral {
     width: 100%;
     text-align: center;
-    border:  1px solid rgb(0, 0, 0, 0.1);
-    border-collapse: collapse;
-    border-radius: 15px;
 }
 
-.tablaIndividual{
+th.tablaIndividual {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01071em;
+    font-weight: bold;
+    text-align: left;
+}
+
+td.tablaIndividual {
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    font-weight: 400;
+    text-align: left;
+}
+
+.tablaIndividual {
     margin: 0px;
     padding: 0px;
-    border-top:  1px solid rgb(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    border-top: 1px solid rgb(0, 0, 0, 0.1);
     padding: 7px;
-    font-size: 14px;
-    font-weight: normal;
 }
 
-.detailButton{
-    color: rgb(31, 138, 31);
+.detailButton {
+    color: var(--primary-color);
     padding-right: 2px;
     background-color: transparent;
     border: 0px solid transparent;
 }
 
-.detailButton:hover{
-    background-color: rgb(31, 138, 31, 0.1);
-    border-radius: 2px;
+.detailButton:active {
+    transform: scale(0.95);
 }

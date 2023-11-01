@@ -1,4 +1,3 @@
-
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from 'axios';
@@ -8,7 +7,7 @@ import './MetricsDetail.css'
 
 const MetricsDetail = () => {
 
-    const {id} = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const [detailData, setDetailData] = useState([]);
@@ -25,11 +24,11 @@ const MetricsDetail = () => {
     };
 
     useEffect(() => {
-        
+
         allUsersMetrics();
 
         const handleResize = () => {
-           
+
             if (window.innerWidth <= 768) {
                 setGlobal(false);
             } else {
@@ -50,27 +49,28 @@ const MetricsDetail = () => {
         navigate(-1);
     }
 
-    return(
-        <div>
-            <button className="backButton" onClick={backHandler}>Atrás</button>
+    return (
+        <div className="containerDetailMetrics">
+
             <div className="divGeneralDetail">
-            {filteredUsers && filteredUsers[0] ? (
-                <>
-                    <h1>{filteredUsers[0].firstName}</h1>
-                    <h2>{filteredUsers[0].lastName}</h2>
-                    <BarChart
-                        prospectCount={filteredUsers[0].prospectCount}
-                        contactedCount={filteredUsers[0].contactedCount}
-                        waitingCount={filteredUsers[0].waitingCount}
-                        wonCount={filteredUsers[0].wonCount}
-                        lostCount={filteredUsers[0].lostCount}
-                        global={global}
-                    ></BarChart>
-                </>
-            ) : (
-                <p>Loading...</p>
-            )}
+                {filteredUsers && filteredUsers[0] ? (
+                    <>
+                        <h1>{filteredUsers[0].firstName} {filteredUsers[0].lastName}</h1>
+                        <BarChart
+                            prospectCount={filteredUsers[0].prospectCount}
+                            contactedCount={filteredUsers[0].contactedCount}
+                            waitingCount={filteredUsers[0].waitingCount}
+                            wonCount={filteredUsers[0].wonCount}
+                            lostCount={filteredUsers[0].lostCount}
+                            global={global}
+                        ></BarChart>
+                    </>
+                ) : (
+                    <p>Loading...</p>
+                )}
+
             </div>
+            <button className="btnPrimary" onClick={backHandler}>REGRESAR</button>
         </div>
     )
 };
