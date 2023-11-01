@@ -22,8 +22,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    font-size: 0.5rem;
-    font-weight: 600;
     width: 90vw;
     font-family: var(--primary-font);
 }
@@ -32,6 +30,7 @@
     color: var(--color-white);
     font-size: 1rem;
     font-family: var(--secondary-font);
+    padding-right: 1rem;
 }
 
 /*Layout*/
@@ -132,11 +131,6 @@
         width: 80vw; 
     }
 
-    .menuNavBar a {
-        font-size: 1.25rem;
-        padding: 2rem;
-    }
-
     .containerAppBar .titleAppBar{
         font-size: 1.25rem;
         width: 100vw;
@@ -183,11 +177,6 @@
     .inputContent{
         width: 220px;
     }
-
-    .menuNavBar {
-        width: 90vw; 
-    }
-
 }
 
 @media (min-width: 1400px){
