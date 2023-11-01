@@ -121,66 +121,56 @@
     width: 100%;
 }
 
-
 /*Etiquetas ListClients*/
+.status-prospecto,
+.status-contactado,
+.status-en-espera,
+.status-ganado,
+.status-perdido,
+.status-plata,
+.status-dorado,
+.status-diamante { 
+    color: var(--color-white);
+    border-radius: 0 10px 0px 10px;
+    padding: 0.35rem;
+    letter-spacing: 1px;
+    width: 90px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .status-prospecto { 
     background-color: #003049; 
-    color: var(--color-white);
-    border-radius: 0 10px 0px 10px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
+
 .status-contactado { 
     background-color: #fcbf49; 
-    color: var(--color-white);
-    border-radius: 0 10px 0px 10px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
+
 .status-en-espera { 
     background-color: #f77f00; 
-    color: black;
-    border-radius: 0 10px 0px 10px;
-    padding: 0.35rem;
-    letter-spacing: 1px
 }
+
 .status-ganado { 
     background-color: #84ae6a; 
-    color: black;
-    border-radius: 0 10px 0px 10px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
+
 .status-perdido { 
     background-color: #d62828; 
-    color: var(--color-white);
-    border-radius: 0 10px 0px 10px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
 
 .status-plata {
     background-color: #6b8fa6;
-    color: var(--color-white);
-    border-radius: 10px 0px 10px 0px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
 
 .status-dorado {
     background-color: #efb810;
-    color: black;
-    border-radius: 10px 0px 10px 0px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
 
 .status-diamante {
     background-color: #2b4f6e;
-    color: var(--color-white);
-    border-radius: 10px 0px 10px 0px;
-    padding: 0.35rem;
-    letter-spacing: 1px;
 }
 
 .divDetail .divDetailTop {
