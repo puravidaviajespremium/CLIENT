@@ -3,6 +3,12 @@ import { Show, SimpleShowLayout, TextField, ReferenceField, ArrayField, DateFiel
 import BackButton from "../../utils/BackButton";
 
 const DetailClient = (props) => {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    const isAdmin = user && user.role === "Administrador";
+    const isColl = user && user.role === "Colaborador";   
+
+
     return (
         <>
 
@@ -18,9 +24,9 @@ const DetailClient = (props) => {
                     <TextField source="countryOrigin" label="Origen" />
                     <TextField source="telephone" label="Celular" />
                     <TextField source="email" label="Correo electrónico" />
-                    <ReferenceField label="Colaborador" source="UserId" reference="users" basePath="/users" >
+                    {isAdmin ? <ReferenceField label="Colaborador" source="UserId" reference="users" basePath="/users" >
                         <TextField source="firstName" />
-                    </ReferenceField>
+                    </ReferenceField> : null }
                     <TextField source="membershipStatus" label="Membresía" />
                     <TextField source="contactStatus" label="Estado" />
 

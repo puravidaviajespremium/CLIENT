@@ -11,35 +11,37 @@ const customDataProvider = {
     queryParams.page = page;
     queryParams.perPage = perPage;
     
-    let url = `${apiUrl}/${resource}`;
-
-    // if (UserId) {
-    //   queryParams.UserId = UserId;
-    // }
-
-    if (firstName) {
+    let url = `${apiUrl}/${resource}`;    
+    
+    if(resource === 'clients') {
+      if (membershipStatus || contactStatus || UserId || firstName ) {
+        queryParams.membershipStatus = membershipStatus;
+        queryParams.contactStatus = contactStatus;
+        queryParams.UserId = UserId;
         queryParams.firstName = firstName;
-    }
+        url = `${apiUrl}/${resource}/bycoll`;
+      }
 
-    if (country) {
-        queryParams.country = country;
-    }
+    } else {
 
-    if (userStatus) {
-      queryParams.userStatus = userStatus;
-      url = `${apiUrl}/${resource}/filter/userStatus`;
-    }
-
-    if (membershipStatus || contactStatus || UserId ) {
-      queryParams.membershipStatus = membershipStatus;
-      queryParams.contactStatus = contactStatus;
-      queryParams.UserId = UserId;
-      url = `${apiUrl}/${resource}/bycoll`;
-    }
-
-    if (continent) {
-      queryParams.continent = continent;
-      url = `${apiUrl}/${resource}/filter/continent`;
+      if (firstName) {
+        queryParams.firstName = firstName;
+      }
+      
+  
+      if (country) {
+          queryParams.country = country;
+      }
+  
+      if (userStatus) {
+        queryParams.userStatus = userStatus;
+        url = `${apiUrl}/${resource}/filter/userStatus`;
+      }
+      
+      if (continent) {
+        queryParams.continent = continent;
+        url = `${apiUrl}/${resource}/filter/continent`;
+      }
     }
     
     try {
