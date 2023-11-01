@@ -1,20 +1,24 @@
 import { Edit, SimpleForm, TextInput, SelectInput, SaveButton } from "react-admin";
 import validateEditClient from "./validateEditClient";
+import BackButton from "../../utils/BackButton";
 
 const EditClient = (props) => {
     return (
         <Edit {...props} className="createContainer">
             <SimpleForm toolbar={false} validate={validateEditClient}>
                 <h1 className="titleForm">Modificar Cliente</h1>
-                <TextInput disabled source="id" label="ID" className='inputContent'/>
+                <TextInput disabled source="id" label="ID" className='inputContent' />
                 <div className="containerInputs">
-                    <TextInput source="firstName" label="Nombre" className='inputContent'/>
-                    <TextInput source="lastName" label="Apellido" className='inputContent'/>
+                    <TextInput source="firstName" label="Nombre" className='inputContent' />
+                    <TextInput source="lastName" label="Apellido" className='inputContent' />
                 </div>
                 <div className="containerInputs">
-                    <TextInput source="email" label="Correo Electrónico" className='inputContent'/>
-                    <TextInput source="telephone" label="Teléfono" className='inputContent'/>
+                    <TextInput source="email" label="Correo Electrónico" className='inputContent' />
+                    <TextInput source="telephone" label="Teléfono" className='inputContent' />
                 </div>
+
+                <TextInput source="destinationCountry" label="País de destino" className='inputContent' />
+                  
                 <div className="containerInputs">
                     <SelectInput
                         source="membershipStatus"
@@ -40,7 +44,12 @@ const EditClient = (props) => {
                     />
                 </div>
                 <div className="containerButtonSave">
-                    <SaveButton label="Guardar cambios" type="button" />
+                    <div>
+                        <SaveButton label="Guardar cambios" type="button" />
+                    </div>
+                    <div>
+                        <BackButton />
+                    </div>
                 </div>
             </SimpleForm>
         </Edit>
