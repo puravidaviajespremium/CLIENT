@@ -13,8 +13,9 @@ const EditClient = (props) => {
                     <TextInput source="lastName" label="Apellido" className='inputContent' />
                 </div>
                 <div className="containerInputs">
-                    <TextInput source="email" label="Correo Electrónico" className='inputContent' />
-                    <TextInput source="telephone" label="Teléfono" className='inputContent' />
+                    <TextInput source="email" label="Correo Electrónico" className='inputContent'/>
+                    <TextInput source="telephone" label="Teléfono" className='inputContent'/>
+                    <TextInput source="countryOrigin" label="País de Origen" className='inputContent'/>
                 </div>
 
                 <TextInput source="destinationCountry" label="País de destino" className='inputContent' />
