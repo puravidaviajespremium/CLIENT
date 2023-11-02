@@ -4,6 +4,7 @@ import axios from 'axios';
 import BarChart from "../ChartBar/ChartBar";
 import './MetricsDetail.css'
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const MetricsDetail = () => {
 
@@ -16,7 +17,7 @@ const MetricsDetail = () => {
 
     const allUsersMetrics = async () => {
         try {
-            const response = (await axios.get('http://localhost:3001/users/metrics')).data;
+            const response = (await axios.get(`${apiUrl}/users/metrics`)).data;
             setDetailData(response);
         } catch (error) {
             throw error;
