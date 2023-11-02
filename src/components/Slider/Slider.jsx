@@ -44,7 +44,7 @@ const Slider = () =>{
             <section className='titleSlider'>
                 <h1> Amas viajar y quieres<br/>  vivir una aventura diferente.</h1>
                 <p>Personalizamos cada experiencia para que se ajuste a tus deseos y necesidades.</p>
-                <Link to="/destinos" className='btn btnPrimary btnDestinations'>COMENCEMOS </Link>
+                <Link to="/contacto" className='btn btnPrimary btnDestinations'>COMENCEMOS </Link>
             </section>
       </Swiper>
     )

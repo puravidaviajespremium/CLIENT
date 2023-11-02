@@ -1,6 +1,6 @@
 /* Mobile First */
 .faqsBanner {
-    background-image: url('./images/faqsBanner.jpg');
+    background-image: url('/images/faqsBanner.jpg');
     background-position: center;
     background-size: cover;
     padding-top: 7.5rem;
