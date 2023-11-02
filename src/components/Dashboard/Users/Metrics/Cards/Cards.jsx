@@ -5,6 +5,7 @@ import BarChart from "../ChartBar/ChartBar";
 import { NavLink } from 'react-router-dom';
 import { BsFileBarGraphFill } from 'react-icons/bs';
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const Cards = () => {
 
@@ -14,7 +15,7 @@ const Cards = () => {
 
     const allUserMetrics = async () => {
         try {
-            const response = (await axios.get('http://localhost:3001/users/metrics')).data;
+            const response = (await axios.get(`${apiUrl}/users/metrics`)).data;
             setMetricsData(response)
         } catch (error) {
             throw error;
