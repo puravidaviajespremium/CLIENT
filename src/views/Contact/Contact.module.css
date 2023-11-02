@@ -6,7 +6,7 @@
 /*Desktop*/
 @media (min-width: 992px){
     .contactBanner{
-        background-image: url('./images/contactBanner.jpg');
+        background-image: url('/images/contactBanner.jpg');
         background-position: center;
         background-size: cover;
         padding-top: 9rem;
