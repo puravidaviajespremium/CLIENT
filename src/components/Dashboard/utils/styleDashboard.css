@@ -269,7 +269,7 @@
 
     /*Detalle del Cliente*/
 
-    .containerDetail .css-jfdv4h-MuiStack-root {
+    .containerDetail > .RaSimpleShowLayout-stack {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
